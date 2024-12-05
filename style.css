@@ -1,29 +1,101 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin-top: 50px;
-    background-color: #ffffff;
-    color: #4f29b6;
-  }
+  background-color: rgb(20,20,20);
+  font-family: Arial;
   
+}
 
-  button {
-    background-color: #007bff;
-    color: rgb(0, 0, 0);
-    border: 100px;
-    padding: 10px 10px;
-    font-size: 20px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
+
+
+
+
+
+
+
+/*titles*/
+
+h1{
   
-  button:hover {
-    background-color: #618bbb;
-  }
   
-  #output {
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: thin;
-  }
+  padding: 10px;
+  margin: 0px;
+  color: rgb(255, 255, 255);
   
+  font-size: 50px;
+  font-family: Arial;
+  text-align: center;
+  /*text-shadow: 0px 0px 90px rgba(255, 255, 255, .5), 0px 0px 5px rgba(63, 161, 241, .5);*/
+}
+
+h2{
+  will-change: text-shadow;
+  color: white;
+  font-size: 25px;
+  text-align: center;
+  line-height: 35px;
+  
+  
+}
+
+
+
+
+  /*text*/
+
+  p {
+  font-family: Arial;
+  }
+
+  .tnr{
+    font-family: 'Times New Roman';
+    font-style: italic;
+    font-size: 30px;
+  }
+
+.variable {
+  color: white; 
+  padding: 5px ;
+}
+
+
+
+
+/*buttons*/
+
+.compute-button {
+  margin-top: 100px;
+  background-color: rgb(40, 40, 40);
+  color: white;
+  
+  border-color: rgba(255, 255, 255, .25);
+  border-style: solid;
+  border-radius: 50px;
+  border-width: 0px;
+  
+  width: 80px;
+  height: 30px;
+
+  transition: background-color .25s, box-shadow .25s;
+}
+
+.compute-button:hover{
+  cursor: pointer;
+  background-color: rgb(60,60,60);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 1) ;
+  
+}
+
+.compute-button:active{
+  /*box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.25) ;*/
+  
+  background-color: rgb(75, 75, 75);
+  border-width: 1px;
+  
+}
+
+
+
+
+
+
+
+
