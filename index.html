@@ -5,27 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sylvester Solver</title>
     <link rel="stylesheet" href="style.css">
+
+    
   </head>
   <body>
+
     <script src="dist/logic.js" defer></script>
     
     <h1>
       Sylvester Solver
     </h1>
+    
     <h2>  
       Computes a solution (<span class="tnr">X</span>) to the Sylvester equation <span class="tnr"> AX + XB  = C </span><br>
       Enter matrices <span class="tnr">A</span>,  <span class="tnr">B</span> and, <span class="tnr">C</span> below:
     </h2>
 
 
-    <p class = "variable">
-      A = 
-    </p>
+    <div class = dimension-div>
+      <label class="dem-label" for="dem">Enter the dimension (n) for the n&times;n matrices:</label>
+      <input class="dem" type="number" placeholder="max 9" id = "dem" min="1" max="9" step ="1">
+    </div>
     
     
-    <button class = "compute-button">
-      Compute
-    </button>
+    <!--<button class = "compute-button"> Compute </button>*/-->
+
+    <div class = "matrix-div">
+      <div class = variable-div>
+        A = 
+      </div>
+    </div>
+
+    <div class = "matrix-div">
+      <div class = variable-div>
+        B = 
+      </div>
+    </div>
+
+    <div class = "matrix-div">
+      <div class = variable-div>
+        C = 
+      </div>
+    </div>
+
+    <div class = "matrix-div">
+      <div class = variable-div>
+        X = 
+      </div>
+    </div>
+
+
+    
 
   </body>
 </html>
