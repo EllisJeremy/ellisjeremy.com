@@ -1,8 +1,8 @@
 body {
   background-color: rgb(20,20,20);
   font-family: Arial;
-  margin-left: 250px;
-  margin-right: 250px;
+  margin-left: 200px;
+  margin-right: 200px;
   
 }
 
@@ -10,6 +10,7 @@ body {
 
 /*main title*/
 h1{
+  text-shadow: 0px 0px 3px rgba(37, 247, 247,.75);
   padding: 10px;
   margin: 0px;
   color: rgb(255, 255, 255);
@@ -29,12 +30,18 @@ h2{
   line-height: 35px;
   
   margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .tnr{
   font-family: 'Times New Roman';
   font-style: italic;
   font-size: 30px;
+}
+.tnr2{
+  font-family: 'Times New Roman';
+  font-style: italic;
+  font-size: 22px;
 }
 
 .dimension-div{
@@ -49,72 +56,144 @@ font-family: Arial;
 
 
 /*dimension input label*/
-.dem-label{
+.dimension-label{
+  
+  display: inline-block;
   color: white;
   font-size: 20px;
   margin-top: 50px;
-  margin-bottom: 50px;
+  
   
 }
 
 
 
-/*italic times new roman font for the formula formatting */
 
 
+/*UI ELEMENTS __________________________________________________________*/
 
-
-
-
-/*buttons*/
-
-.compute-button {
-  
+.dimension-input,.compute-button,.matrix-div{
   background-color: rgb(40, 40, 40);
   color: white;
-  
-  border-color: rgba(255, 255, 255, .25);
   border-style: solid;
-  border-radius: 50px;
-  border-width: 0px;
-  
-  width: 80px;
-  height: 30px;
-
+  border-radius: 10px;
   transition: background-color .25s, box-shadow .25s;
+ 
+
+
+}
+
+
+
+
+.dimension-input:hover,.compute-button:hover,.matrix-div:hover{
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
+  background-color: rgb(60,60,60);
+
+}
+
+
+/*dimension input __________________________________________________________*/
+
+.dimension-input{
+  margin-bottom: 50px;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, .25);
+}
+
+.dimension-input:hover{
+  
+  
+}
+
+.dimension-input:active{
+  
+  
+}
+
+/*Button __________________________________________________________*/
+
+
+.compute-button {
+  display: block;
+  border-color: rgba(255, 255, 255, .25);
+  border-width: 0px;
+  font-size: 20px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-bottom: 100px;
+  margin: 40px auto;
+  
 }
 
 .compute-button:hover{
   cursor: pointer;
-  background-color: rgb(60,60,60);
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 1) ;
+  
+  
   
 }
 
 .compute-button:active{
   /*box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.25) ;*/
-  
+  font-size: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 15px;
+  padding-left: 15px;
   background-color: rgb(75, 75, 75);
   border-width: 1px;
   
 }
 
 
+/*matrix div __________________________________________________________*/
 
 .matrix-div{
+  
   display: inline-block;
-  width: 300px;
+  width: 340px;
+  height: 300px;
   border-radius: 10px;
   border-style: solid;
-  border-color: rgba(255, 255, 255, .5);
+  border-color: rgba(255, 255, 255, .25);
+  margin: 15px;
+  text-align: left;
+  border-width: 1px;
+  
 }
 
+.matrix-div:hover{
+  
+}
+
+
+
+.full-matrix-div{
+
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+
+
+
+
+
+
 .variable-div{
+  font-family: 'Times New Roman';
+  font-style: italic;
+  margin-top: 142px;
+  margin-bottom: 142px;
+  margin-left: 5px;
+  margin-right: 5px;
   display: inline-block;
   color: white;
-  margin-top: 200px;
-  margin-bottom: 200px;
-
+  width: 30px;
 }
 
 
