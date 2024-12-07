@@ -9,6 +9,10 @@ body {
   font-family: Arial;
 }
 
+/*DIV ELEMENTS __________________________________________________________
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+_________________________________________________________________________*/
+
 header{
   
 }
@@ -23,6 +27,114 @@ main{
   text-align: center;
   display: block;
 }
+
+/*dimensions div __________________________________________________________*/
+
+
+.dimension-div{
+  
+  
+}
+
+.full-dimension-input-div{
+  display: inline-block;
+  
+  
+}
+
+.dimension-input-div{
+  margin: 5px;
+  
+}
+
+
+.full-dimension-examples-div{
+  margin-top: 15px;
+}
+
+.dimension-examples-div{
+  display: inline-block;
+  
+ 
+  margin: 5px;
+  color: white;
+  
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  
+  background-color: rgb(40, 40, 40);
+  border-radius: 10px;
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, .25);
+  border-style: solid;
+  padding-top: 7px;
+  
+}
+
+
+
+
+
+/*matrix div __________________________________________________________*/
+
+.matrix-div{
+  
+  display: inline-block;
+  width: 340px;
+  height: 300px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, .25);
+  margin: 15px;
+  text-align: left;
+  border-width: 1px;
+  
+}
+
+.matrix-div:hover{
+  
+}
+
+
+
+.full-matrix-div{
+
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+
+.variable-div{
+  font-family: 'Times New Roman';
+  font-style: italic;
+  margin-top: 142px;
+  margin-bottom: 142px;
+  margin-left: 5px;
+  margin-right: 5px;
+  display: inline-block;
+  color: white;
+  width: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*Text*/
@@ -41,14 +153,14 @@ h1{
 
 /*sub title*/
 h2{
-  will-change: text-shadow;
+  
   color: white;
   font-size: 25px;
   text-align: center;
   line-height: 35px;
   
   margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 50px;
 }
 
 .tnr{
@@ -59,20 +171,20 @@ h2{
 .tnr2{
   font-family: 'Times New Roman';
   font-style: italic;
-  font-size: 22px;
+  font-size: 18px;
 }
 
 
 
 
 
-/*dimension input label*/
-.dimension-label{
+/*dimension input title*/
+.dimension-title{
   
-  display: inline-block;
+  display: block;
   color: white;
   font-size: 20px;
-  margin-top: 50px;
+  margin-top: 2px;
   
   
 }
@@ -86,9 +198,9 @@ h2{
 .dimension-input,.compute-button,.matrix-div{
   background-color: rgb(40, 40, 40);
   color: white;
-  border-style: solid;
   border-radius: 10px;
   transition: background-color .25s, box-shadow .25s;
+  
  
 
 
@@ -100,14 +212,19 @@ h2{
 .dimension-input:hover,.compute-button:hover,.matrix-div:hover{
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
   background-color: rgb(60,60,60);
-
 }
 
 
 /*dimension input __________________________________________________________*/
 
+
+
+.dimension-label{
+  color: white;
+}
+
 .dimension-input{
-  margin-bottom: 50px;
+  
   border-radius: 5px;
   border-width: 1px;
   border-color: rgba(255, 255, 255, .25);
@@ -161,52 +278,7 @@ h2{
 }
 
 
-/*matrix div __________________________________________________________*/
 
-.matrix-div{
-  
-  display: inline-block;
-  width: 340px;
-  height: 300px;
-  border-radius: 10px;
-  border-style: solid;
-  border-color: rgba(255, 255, 255, .25);
-  margin: 15px;
-  text-align: left;
-  border-width: 1px;
-  
-}
-
-.matrix-div:hover{
-  
-}
-
-
-
-.full-matrix-div{
-
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-  width: 100%;
-}
-
-
-
-
-
-
-.variable-div{
-  font-family: 'Times New Roman';
-  font-style: italic;
-  margin-top: 142px;
-  margin-bottom: 142px;
-  margin-left: 5px;
-  margin-right: 5px;
-  display: inline-block;
-  color: white;
-  width: 30px;
-}
 
 
 
