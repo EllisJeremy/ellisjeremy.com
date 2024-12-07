@@ -8,59 +8,65 @@
 
     
   </head>
+
+
+<!-- Start of body _________________________________________________________________________________________________________________ -->
+
+
+
   <body>
 
     <script src="dist/logic.js" defer></script>
-    
-    <h1>
-      Sylvester Solver
-    </h1>
-    
-    <h2>  
-      Computes a solution (<span class="tnr">X</span>) to the Sylvester equation <span class="tnr"> AX + XB  = C </span><br>
-      Enter matrices <span class="tnr">A</span>,  <span class="tnr">B</span> and, <span class="tnr">C</span> below:
-    </h2>
 
+    <header>
+      <h1>
+        Sylvester Solver
+      </h1>
+      <h2>  
+        Computes a solution (<span class="tnr">X</span>) to the Sylvester equation <span class="tnr"> AX + XB  = C </span>
+      </h2>
+    </header>
 
-    <div class = dimension-div>
-      <label class="dimension-label" for="dimension">Enter the dimension (n) for the n&times;n matrices:</label>
-      <input class="dimension-input" type="number" placeholder="max 9" id = "dimension" min="1" max="9" step ="1">
-    </div>
-    
-    
-    <button class = "compute-button"> Compute <span class="tnr2">X</span></button>
+    <main>
 
-    
-    <div class = "full-matrix-div">
-
-      <div class = "matrix-div">
-        <div class = variable-div>
-          A = 
-        </div>
+      <div class = dimension-div>
+        <p class="dimension-label">Enter dimensions n and m to customize the matrices below:</p>
+        <input class="dimension-input" type="number" placeholder="max 9" id = "dimension" min="1" max="9" step ="1">
       </div>
-
-      <div class = "matrix-div">
-        <div class = variable-div>
-          B = 
-        </div>
-      </div>
-
-      <div class = "matrix-div">
-        <div class = variable-div>
-          C = 
-        </div>
-      </div>
-
       
-      <div class = "matrix-div">
-        <div class = variable-div>
-          X = 
+      <button class = "compute-button"> Compute <span class="tnr2">X</span></button>
+
+      <!-- Start matrix section _________________________________________________________________________________________________________________ -->
+
+      <div class = "full-matrix-div">
+
+        <div class = "matrix-div">
+          <div class = variable-div>
+            A = 
+          </div>
         </div>
+
+        <div class = "matrix-div">
+          <div class = variable-div>
+            B = 
+          </div>
+        </div>
+
+        <div class = "matrix-div">
+          <div class = variable-div>
+            C = 
+          </div>
+        </div>
+
+        <div class = "matrix-div">
+          <div class = variable-div>
+            X = 
+          </div>
+        </div>
+
       </div>
 
-    </div>
-
-    
+    </main>
 
   </body>
 </html>
