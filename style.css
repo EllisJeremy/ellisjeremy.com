@@ -78,19 +78,9 @@ main{
 
 /*matrix div __________________________________________________________*/
 
-.matrix-div{
+
   
-  display: inline-block;
-  width: 340px;
-  height: 300px;
-  border-radius: 10px;
-  border-style: solid;
-  border-color: rgba(255, 255, 255, .25);
-  margin: 15px;
-  text-align: left;
-  border-width: 1px;
-  
-}
+
 
 .matrix-div:hover{
   
@@ -106,16 +96,37 @@ main{
   width: 100%;
 }
 
+.matrix-div{
+  
+  display: inline-block;
+  width: 340px;
+  height: 300px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, .25);
+  margin: 15px;
+  text-align: left;
+  border-width: 1px;
+}
+
 .variable-div{
+  display: inline-block;
   font-family: 'Times New Roman';
   font-style: italic;
   margin-top: 142px;
   margin-bottom: 142px;
   margin-left: 5px;
   margin-right: 5px;
-  display: inline-block;
   color: white;
   width: 30px;
+}
+
+.dynamic-matrix-div{
+
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: antiquewhite;
 }
 
 
