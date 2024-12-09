@@ -31,7 +31,7 @@
 
       <div class = dimension-div>
         <p class="dimension-title">Enter dimensions n and m to customize the matrices below:</p>
-
+        <p class="dimension-title-error">^This feature is not currently functional^ | matrices will be 2 &#215 2</p>
         
 
         <div class = "full-dimension-input-div">
@@ -86,7 +86,7 @@
           <div class="matrix-flex-div">
 
             <div class = variable-div>
-              A=
+              A &nbsp=
             </div>
 
             <div class="dynamic-matrix-div"> 
@@ -94,11 +94,11 @@
               <!--Matrix Cell will be created here _______________________________________________________________________________________________-->
               <div class = "matrix-row-div">
                 <div class="matrix-cell-div">
-                  <input class="matrix-cell-input" type="number" id = "n-m" step ="1">
+                  <input class="matrix-cell-input" type="number" id = "A00" step ="1">
                 </div>
 
                 <div class="matrix-cell-div">
-                  <input class="matrix-cell-input" type="number" id = "n-m" step ="1">
+                  <input class="matrix-cell-input" type="number" id = "A01" step ="1">
                 </div>
               </div>
 
@@ -107,11 +107,94 @@
 
               <div class = "matrix-row-div">
                 <div class="matrix-cell-div">
-                  <input class="matrix-cell-input" type="number" id = "n-m" step ="1">
+                  <input class="matrix-cell-input" type="number" id = "A10" step ="1">
                 </div>
 
                 <div class="matrix-cell-div">
-                  <input class="matrix-cell-input" type="number" id = "n-m" step ="1">
+                  <input class="matrix-cell-input" type="number" id = "A11" step ="1">
+                </div>
+              </div>
+              <!--Matrix Cell will be created here _______________________________________________________________________________________________-->
+              
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class = "matrix-div">
+
+          <div class="matrix-flex-div">
+
+            <div class = variable-div>
+              B &nbsp=
+            </div>
+
+            <div class="dynamic-matrix-div"> 
+              
+              <!--Matrix Cell will be created here _______________________________________________________________________________________________-->
+              <div class = "matrix-row-div">
+                <div class="matrix-cell-div">
+                  <input class="matrix-cell-input" type="number" id = "B00" step ="1">
+                </div>
+
+                <div class="matrix-cell-div">
+                  <input class="matrix-cell-input" type="number" id = "B01" step ="1">
+                </div>
+              </div>
+
+              
+              
+
+              <div class = "matrix-row-div">
+                <div class="matrix-cell-div">
+                  <input class="matrix-cell-input" type="number" id = "B10" step ="1">
+                </div>
+
+                <div class="matrix-cell-div">
+                  <input class="matrix-cell-input" type="number" id = "B11" step ="1">
+                </div>
+              </div>
+              <!--Matrix Cell will be created here _______________________________________________________________________________________________-->
+              
+            </div>
+          </div>
+        </div>
+
+        
+        
+
+        <div class = "matrix-div">
+
+          <div class="matrix-flex-div">
+
+            <div class = variable-div>
+              C &nbsp=
+            </div>
+
+            <div class="dynamic-matrix-div"> 
+              
+              <!--Matrix Cell will be created here _______________________________________________________________________________________________-->
+              <div class = "matrix-row-div">
+                <div class="matrix-cell-div">
+                  <input class="matrix-cell-input" type="number" id = "C00" step ="1">
+                </div>
+
+                <div class="matrix-cell-div">
+                  <input class="matrix-cell-input" type="number" id = "C01" step ="1">
+                </div>
+              </div>
+
+              
+              
+
+              <div class = "matrix-row-div">
+                <div class="matrix-cell-div">
+                  <input class="matrix-cell-input" type="number" id = "C10" step ="1">
+                </div>
+
+                <div class="matrix-cell-div">
+                  <input class="matrix-cell-input" type="number" id = "C11" step ="1">
                 </div>
               </div>
               <!--Matrix Cell will be created here _______________________________________________________________________________________________-->
@@ -121,20 +204,41 @@
         </div>
 
         <div class = "matrix-div">
-          <div class = variable-div>
-            B = 
-          </div>
-        </div>
 
-        <div class = "matrix-div">
-          <div class = variable-div>
-            C = 
-          </div>
-        </div>
+          <div class="matrix-flex-div">
 
-        <div class = "matrix-div">
-          <div class = variable-div>
-            X = 
+            <div class = variable-div>
+              X &nbsp=
+            </div>
+
+            <div class="dynamic-matrix-div"> 
+              
+              <!--Matrix Cell will be created here _______________________________________________________________________________________________-->
+              <div class = "matrix-row-div">
+                <div class="matrix-cell-div">
+                  <p class = matrix-cell-output id="X00">1</p>
+                </div>
+
+                <div class="matrix-cell-div">
+                  <p class = matrix-cell-output id="X01">1</p>
+                </div>
+              </div>
+
+              
+              
+
+              <div class = "matrix-row-div">
+                <div class="matrix-cell-div">
+                  <p class = matrix-cell-output id="X01">1</p>
+                </div>
+
+                <div class="matrix-cell-div">
+                  <p class = matrix-cell-output id="X11">1</p>
+                </div>
+              </div>
+              <!--Matrix Cell will be created here _______________________________________________________________________________________________-->
+              
+            </div>
           </div>
         </div>
 
