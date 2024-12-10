@@ -1,15 +1,11 @@
 "use strict";
-var _a, _b, _c, _d;
-Object.defineProperty(exports, "__esModule", { value: true });
-const mathjs_1 = require("mathjs");
-const math = (0, mathjs_1.create)(mathjs_1.all);
 //function to compute the sylvester equation
-//I'm not naming it sylvester because I consistently spell that word wrong 
+//I'm not naming it sylvester because I consistently spell that word wrong
 function compute(matrixA, matrixB, matrixC) {
     // we are going to solve for the X terms using the from Y * X = C
-    // Xv is a vector of our unknowns X matrix values 
-    // Cv is a vector of our known C values 
-    // Ym is a matrix of known A B values 
+    // Xv is a vector of our unknowns X matrix values
+    // Cv is a vector of our known C values
+    // Ym is a matrix of known A B values
     // the v and m denote vector or matrix variables respectively
     // I am naming these differently from the other matrices to avoid confusion
     let Ym = [[(matrixA[0][0] + matrixB[0][0]), matrixB[1][0], matrixA[0][1], 0],
@@ -18,13 +14,8 @@ function compute(matrixA, matrixB, matrixC) {
         [0, matrixA[1][0], matrixB[0][1], (matrixA[1][1] + matrixB[1][1])]];
     let Cv = [matrixC[0][0], matrixC[0][1], matrixC[1][0], matrixC[1][1]];
     //solve the system
-    let Xv = math.lusolve(Ym, Cv);
-    let example = Xv[0][0];
-    //create matrix X
-    let matrixX = [[Xv[0][0], Xv[1][0]],
-        [Xv[2][0], Xv[3][0]]];
     //output matrix X
-    return matrixX;
+    return Ym;
 }
 //retrieve the button from html
 const button = document.getElementById('compute');
@@ -63,13 +54,3 @@ button.addEventListener('click', () => {
     document.getElementById('X10').textContent = matrixX[1][0].toString();
     document.getElementById('X11').textContent = matrixX[1][1].toString();
 });
-const A00 = parseFloat(((_a = document.getElementById('A00')) === null || _a === void 0 ? void 0 : _a.value) || '0');
-const A01 = parseFloat(((_b = document.getElementById('A01')) === null || _b === void 0 ? void 0 : _b.value) || '0');
-const A10 = parseFloat(((_c = document.getElementById('A10')) === null || _c === void 0 ? void 0 : _c.value) || '0');
-const A11 = parseFloat(((_d = document.getElementById('A11')) === null || _d === void 0 ? void 0 : _d.value) || '0');
-let matrixA = [[A00, A01],
-    [A10, A11]];
-document.getElementById('X00').textContent = matrixA[0][0].toString();
-document.getElementById('X01').textContent = matrixA[0][1].toString();
-document.getElementById('X10').textContent = matrixA[1][0].toString();
-document.getElementById('X11').textContent = matrixA[1][1].toString();
