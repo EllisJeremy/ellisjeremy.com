@@ -1,4 +1,56 @@
 "use strict";
+function LU(A, fast = false) {
+    const n = A.length;
+    const L = Array.from({ length: n }, (_, i) => Array(n).fill(0).map((_, j) => (i === j ? 1 : 0)));
+    const U = A.map(row => row.slice()); // Deep copy of A
+    for (let i = 0; i < n; i++) {
+        for (let j = i + 1; j < n; j++) {
+            const factor = U[j][i] / U[i][i];
+            L[j][i] = factor;
+            for (let k = i; k < n; k++) {
+                U[j][k] -= factor * U[i][k];
+            }
+        }
+    }
+    return { L, U, P: Array.from({ length: n }, (_, i) => Array(n).fill(0).map((_, j) => (i === j ? 1 : 0))) };
+}
+function LUsolve(LU, b) {
+    const { L, U } = LU;
+    const n = L.length;
+    // Forward substitution for L * y = b
+    const y = Array(n).fill(0);
+    for (let i = 0; i < n; i++) {
+        y[i] = b[i];
+        for (let j = 0; j < i; j++) {
+            y[i] -= L[i][j] * y[j];
+        }
+        y[i] /= L[i][i];
+    }
+    // Backward substitution for U * x = y
+    const x = Array(n).fill(0);
+    for (let i = n - 1; i >= 0; i--) {
+        x[i] = y[i];
+        for (let j = i + 1; j < n; j++) {
+            x[i] -= U[i][j] * x[j];
+        }
+        x[i] /= U[i][i];
+    }
+    return x;
+}
+function solve(A, b, fast = false) {
+    const LUResult = LU(A, fast);
+    return LUsolve(LUResult, b);
+}
+const A = [
+    [2, 1, 5, 6],
+    [1, 3, 6, 12],
+    [1, 3, 5, 12],
+    [3, 5, 3, 2]
+];
+const b = [8, 13, 5, 8];
+// Solve the system
+const x = solve(A, b);
+console.log(x);
 //function to compute the sylvester equation
 //I'm not naming it sylvester because I consistently spell that word wrong
 function compute(matrixA, matrixB, matrixC) {
@@ -8,14 +60,17 @@ function compute(matrixA, matrixB, matrixC) {
     // Ym is a matrix of known A B values
     // the v and m denote vector or matrix variables respectively
     // I am naming these differently from the other matrices to avoid confusion
-    let Ym = [[(matrixA[0][0] + matrixB[0][0]), matrixB[1][0], matrixA[0][1], 0],
+    let matrixY = [[(matrixA[0][0] + matrixB[0][0]), matrixB[1][0], matrixA[0][1], 0],
         [matrixB[0][1], (matrixA[0][0] + matrixB[1][1]), 0, matrixA[0][1]],
         [matrixA[1][0], 0, (matrixA[1][1] + matrixB[0][0]), matrixB[1][0]],
         [0, matrixA[1][0], matrixB[0][1], (matrixA[1][1] + matrixB[1][1])]];
-    let Cv = [matrixC[0][0], matrixC[0][1], matrixC[1][0], matrixC[1][1]];
+    let vectorC = [matrixC[0][0], matrixC[0][1], matrixC[1][0], matrixC[1][1]];
     //solve the system
+    const vectorX = solve(matrixY, vectorC);
+    let matrixX = [[vectorX[0], vectorX[1]],
+        [vectorX[2], vectorX[3]]];
     //output matrix X
-    return Ym;
+    return matrixX;
 }
 //retrieve the button from html
 const button = document.getElementById('compute');

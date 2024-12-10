@@ -1,7 +1,72 @@
-import {create, all } from "mathjs";
-const math = create(all);
+interface LUResult {
+    L: number[][];
+    U: number[][];
+    P: number[][]; // Pivot matrix, included for completeness
+}
+
+function LU(A: number[][], fast: boolean = false): LUResult {
+    const n = A.length;
+    const L: number[][] = Array.from({ length: n }, (_, i) => Array(n).fill(0).map((_, j) => (i === j ? 1 : 0)));
+    const U: number[][] = A.map(row => row.slice()); // Deep copy of A
+
+    for (let i = 0; i < n; i++) {
+        for (let j = i + 1; j < n; j++) {
+            const factor = U[j][i] / U[i][i];
+            L[j][i] = factor;
+            for (let k = i; k < n; k++) {
+                U[j][k] -= factor * U[i][k];
+            }
+        }
+    }
+
+    return { L, U, P: Array.from({ length: n }, (_, i) => Array(n).fill(0).map((_, j) => (i === j ? 1 : 0))) };
+}
 
 
+function LUsolve(LU: LUResult, b: number[]): number[] {
+    const { L, U } = LU;
+    const n = L.length;
+
+    // Forward substitution for L * y = b
+    const y: number[] = Array(n).fill(0);
+    for (let i = 0; i < n; i++) {
+        y[i] = b[i];
+        for (let j = 0; j < i; j++) {
+            y[i] -= L[i][j] * y[j];
+        }
+        y[i] /= L[i][i];
+    }
+
+    // Backward substitution for U * x = y
+    const x: number[] = Array(n).fill(0);
+    for (let i = n - 1; i >= 0; i--) {
+        x[i] = y[i];
+        for (let j = i + 1; j < n; j++) {
+            x[i] -= U[i][j] * x[j];
+        }
+        x[i] /= U[i][i];
+    }
+
+    return x;
+}
+
+function solve(A: number[][], b: number[], fast: boolean = false): number[] {
+    const LUResult = LU(A, fast);
+    return LUsolve(LUResult, b);
+}
+
+const A: number[][] = [
+    [2, 1, 5, 6],
+    [1, 3, 6, 12],
+    [1, 3, 5, 12],
+    [3, 5, 3, 2]
+];
+const b: number[] = [8, 13,5, 8];
+
+// Solve the system
+const x: number[] = solve(A, b);
+
+console.log(x); 
 
 
 
@@ -33,29 +98,34 @@ function compute(matrixA: number[][],matrixB: number[][],matrixC: number[][]){
    
 
 
-    let Ym: number[][] = [[(matrixA[0][0] + matrixB[0][0]),matrixB[1][0],matrixA[0][1],0],
-                          [matrixB[0][1],(matrixA[0][0] + matrixB[1][1]),0,matrixA[0][1]],
-                          [matrixA[1][0],0,(matrixA[1][1] + matrixB[0][0]),matrixB[1][0]],
-                          [0,matrixA[1][0],matrixB[0][1],(matrixA[1][1] + matrixB[1][1])]];
+    let matrixY: number[][] = [[(matrixA[0][0] + matrixB[0][0]),matrixB[1][0],matrixA[0][1],0],
+                               [matrixB[0][1],(matrixA[0][0] + matrixB[1][1]),0,matrixA[0][1]],
+                               [matrixA[1][0],0,(matrixA[1][1] + matrixB[0][0]),matrixB[1][0]],
+                               [0,matrixA[1][0],matrixB[0][1],(matrixA[1][1] + matrixB[1][1])]];
    
-    let Cv: number[] = [matrixC[0][0],matrixC[0][1],matrixC[1][0],matrixC[1][1]];                        
+    let vectorC: number[] = [matrixC[0][0],matrixC[0][1],matrixC[1][0],matrixC[1][1]];                        
+
+
+
+
+
 
 
 
 
     //solve the system
-    let Xv = math.lusolve(Ym,Cv) as number[][];
+    
    
 
-
-    let example: number = Xv[0][0];
-
-
+    const vectorX: number[] = solve(matrixY, vectorC);
+    
 
 
-    //create matrix X
-    let matrixX: number[][] = [[Xv[0][0],Xv[1][0]],
-                               [Xv[2][0],Xv[3][0]]];
+
+
+   
+    let matrixX: number[][] = [[vectorX[0],vectorX[1]],
+                               [vectorX[2],vectorX[3]]];
     //output matrix X
     return matrixX;
 }
