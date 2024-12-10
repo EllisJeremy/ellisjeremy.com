@@ -37,13 +37,10 @@ main{
 
 .full-dimension-input-div{
   display: inline-block;
-  
-  
 }
 
 .dimension-input-div{
   margin: 5px;
-  
 }
 
 
@@ -53,22 +50,17 @@ main{
 
 .dimension-examples-div{
   display: inline-block;
-  
- 
   margin: 5px;
   color: white;
-  
   display: inline-block;
   width: 100px;
   height: 30px;
-  
   background-color: rgb(40, 40, 40);
   border-radius: 10px;
   border-width: 1px;
   border-color: rgba(255, 255, 255, .25);
   border-style: solid;
   padding-top: 7px;
-  
 }
 
 
@@ -88,17 +80,13 @@ main{
 
 
 .full-matrix-div{
-
   display: inline-block;
-  
-  
   text-align: center;
   width: 100%;
 }
 
 .matrix-div{
   display: inline-block;
-  
   width: 340px;
   height: 300px;
   border-radius: 10px;
@@ -112,33 +100,24 @@ main{
 .matrix-flex-div{
   display: flex;
   flex-direction: row;
-  
 }
 
 .variable-div{
   
   font-family: 'Times New Roman';
   font-style: italic;
-  
   color: white;
-  
-  
   width: 30px;
   padding-top: 142px;
   padding-top: 142px;
   padding-left: 7px;
-  
-  
 }
 
 .dynamic-matrix-div{
   display: flex;
   flex: 1;
   flex-direction: column;
-  
-
   height: 280px;
-  
   margin: 10px;
 }
 
@@ -146,21 +125,17 @@ main{
   width: 100%;
   display: flex;
   flex: 1;
-  
 }
 
 .matrix-cell-div{
   margin: 3%;
   flex:1;
-  
-  
 }
 
 .matrix-cell-input{
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-
   text-align: center;
   border-radius: 7%;
   border-style: solid;
@@ -168,13 +143,11 @@ main{
   background-color: rgb(60,60,60);
   color: white;
   transition: background-color .25s, box-shadow .25s;
-  
 }
 
 .matrix-cell-input:hover,.matrix-cell-output:hover{
   background-color: rgb(80,80,80);
   box-shadow: 0px 0px 15px rgba(0, 0, 0, .7);
-  
 }
 
 input:focus {
@@ -201,7 +174,6 @@ input:focus {
 .matrix-cell-output:hover{
   background-color: rgb(80,80,80);
   box-shadow: 0px 0px 15px rgba(0, 0, 0, .7);
-  
 }
 
 

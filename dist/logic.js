@@ -1,8 +1,10 @@
 "use strict";
+//these 3 functions are necessary to solve the systems of equations we will make in the solver function 
+// Decomposes a given matrix A into its LU decomposition with optional partial pivoting.
 function LU(A, fast = false) {
     const n = A.length;
     const L = Array.from({ length: n }, (_, i) => Array(n).fill(0).map((_, j) => (i === j ? 1 : 0)));
-    const U = A.map(row => row.slice()); // Deep copy of A
+    const U = A.map(row => row.slice());
     for (let i = 0; i < n; i++) {
         for (let j = i + 1; j < n; j++) {
             const factor = U[j][i] / U[i][i];
@@ -14,6 +16,7 @@ function LU(A, fast = false) {
     }
     return { L, U, P: Array.from({ length: n }, (_, i) => Array(n).fill(0).map((_, j) => (i === j ? 1 : 0))) };
 }
+// Solves the system of linear equations using the LU decomposition and a given vector b.
 function LUsolve(LU, b) {
     const { L, U } = LU;
     const n = L.length;
@@ -37,10 +40,12 @@ function LUsolve(LU, b) {
     }
     return x;
 }
+// Solves a system of linear equations A * x = b by performing LU decomposition and substitution.
 function solve(A, b, fast = false) {
     const LUResult = LU(A, fast);
     return LUsolve(LUResult, b);
 }
+//this is not part of the program i was just using it to make sure the functions above worked
 const A = [
     [2, 1, 5, 6],
     [1, 3, 6, 12],
@@ -66,15 +71,20 @@ function compute(matrixA, matrixB, matrixC) {
         [0, matrixA[1][0], matrixB[0][1], (matrixA[1][1] + matrixB[1][1])]];
     let vectorC = [matrixC[0][0], matrixC[0][1], matrixC[1][0], matrixC[1][1]];
     //solve the system
-    const vectorX = solve(matrixY, vectorC);
+    let vectorX = solve(matrixY, vectorC);
+    //round to 10 decimal places
+    vectorX = vectorX.map(x => Number(x.toFixed(10)));
+    //convert vector x into a matrix
     let matrixX = [[vectorX[0], vectorX[1]],
         [vectorX[2], vectorX[3]]];
     //output matrix X
     return matrixX;
 }
+//START OF WEBSITE______________________________________________________________________________________
 //retrieve the button from html
 const button = document.getElementById('compute');
 //if the button is hit this program will run
+//if the input has no value it defaults to 0 ?.value || '0'
 button.addEventListener('click', () => {
     var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
     //retrieve values for A

@@ -1,13 +1,17 @@
+
+//these 3 functions are necessary to solve the systems of equations we will make in the solver function 
+
 interface LUResult {
     L: number[][];
     U: number[][];
-    P: number[][]; // Pivot matrix, included for completeness
+    P: number[][]; 
 }
 
+// Decomposes a given matrix A into its LU decomposition with optional partial pivoting.
 function LU(A: number[][], fast: boolean = false): LUResult {
     const n = A.length;
     const L: number[][] = Array.from({ length: n }, (_, i) => Array(n).fill(0).map((_, j) => (i === j ? 1 : 0)));
-    const U: number[][] = A.map(row => row.slice()); // Deep copy of A
+    const U: number[][] = A.map(row => row.slice()); 
 
     for (let i = 0; i < n; i++) {
         for (let j = i + 1; j < n; j++) {
@@ -22,6 +26,7 @@ function LU(A: number[][], fast: boolean = false): LUResult {
     return { L, U, P: Array.from({ length: n }, (_, i) => Array(n).fill(0).map((_, j) => (i === j ? 1 : 0))) };
 }
 
+// Solves the system of linear equations using the LU decomposition and a given vector b.
 
 function LUsolve(LU: LUResult, b: number[]): number[] {
     const { L, U } = LU;
@@ -50,11 +55,15 @@ function LUsolve(LU: LUResult, b: number[]): number[] {
     return x;
 }
 
+
+// Solves a system of linear equations A * x = b by performing LU decomposition and substitution.
 function solve(A: number[][], b: number[], fast: boolean = false): number[] {
     const LUResult = LU(A, fast);
     return LUsolve(LUResult, b);
 }
 
+
+//this is not part of the program i was just using it to make sure the functions above worked
 const A: number[][] = [
     [2, 1, 5, 6],
     [1, 3, 6, 12],
@@ -67,10 +76,6 @@ const b: number[] = [8, 13,5, 8];
 const x: number[] = solve(A, b);
 
 console.log(x); 
-
-
-
-
 
 
 
@@ -108,28 +113,27 @@ function compute(matrixA: number[][],matrixB: number[][],matrixC: number[][]){
 
 
 
-
-
-
-
-
     //solve the system
     
    
 
-    const vectorX: number[] = solve(matrixY, vectorC);
+    let vectorX: number[] = solve(matrixY, vectorC);
     
 
+    //round to 10 decimal places
+    vectorX = vectorX.map(x => Number(x.toFixed(10)));
 
-
-
-   
+   //convert vector x into a matrix
     let matrixX: number[][] = [[vectorX[0],vectorX[1]],
                                [vectorX[2],vectorX[3]]];
     //output matrix X
     return matrixX;
 }
 
+
+
+
+//START OF WEBSITE______________________________________________________________________________________
 
 
 
@@ -140,6 +144,7 @@ const button = document.getElementById('compute') as HTMLButtonElement;
 
 
 //if the button is hit this program will run
+//if the input has no value it defaults to 0 ?.value || '0'
 button.addEventListener('click', () => {
     //retrieve values for A
     const A00: number = parseFloat((document.getElementById('A00') as HTMLInputElement)?.value || '0');
@@ -182,14 +187,6 @@ button.addEventListener('click', () => {
     (document.getElementById('X10') as HTMLParagraphElement).textContent = matrixX[1][0].toString();
     (document.getElementById('X11') as HTMLParagraphElement).textContent = matrixX[1][1].toString();
    
-
-
-
-
-
-
-
-
 });
 
 
