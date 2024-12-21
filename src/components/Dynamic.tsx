@@ -1,6 +1,6 @@
 function Dynamic() {
 	return(
-		<div>Dynamic</div>
+		<div></div>
 	);
 }
 

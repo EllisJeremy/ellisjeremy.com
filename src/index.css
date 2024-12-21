@@ -1,8 +1,278 @@
+/*structure*/
+
 body {
   background-color: rgb(20, 20, 20);
+  font-family: Arial;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  font-family: Arial;
 }
 
-h1 {
+/*DIV ELEMENTS __________________________________________________________
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+_________________________________________________________________________*/
+
+header {
+}
+
+main {
+}
+
+/*div for dimension input area*/
+.dimension-div {
+  text-align: center;
+  display: block;
+}
+
+/*dimensions div __________________________________________________________*/
+
+.dimension-div {
+}
+
+.full-dimension-input-div {
+  display: inline-block;
+}
+
+.dimension-input-div {
+  margin: 5px;
+}
+
+.full-dimension-examples-div {
+  margin-top: 15px;
+}
+
+.dimension-examples-div {
+  display: inline-block;
+  margin: 5px;
   color: white;
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  background-color: rgb(40, 40, 40);
+  border-radius: 10px;
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, 0.25);
+  border-style: solid;
+  padding-top: 7px;
+}
+
+/*matrix div __________________________________________________________*/
+
+.matrix-div:hover {
+}
+
+.full-matrix-div {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+.matrix-div {
+  display: inline-block;
+  width: 340px;
+  height: 300px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.25);
+  margin: 15px;
+  text-align: left;
+  border-width: 1px;
+}
+
+.matrix-flex-div {
+  display: flex;
+  flex-direction: row;
+}
+
+.variable-div {
+  font-family: "Times New Roman";
+  font-style: italic;
+  color: white;
+  width: 30px;
+  padding-top: 142px;
+  padding-top: 142px;
+  padding-left: 7px;
+}
+
+.dynamic-matrix-div {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: 280px;
+  margin: 10px;
+}
+
+.matrix-row-div {
+  width: 100%;
+  display: flex;
+  flex: 1;
+}
+
+.matrix-cell-div {
+  margin: 3%;
+  flex: 1;
+}
+
+.matrix-cell-input {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 7%;
+  border-style: solid;
+  border-width: 1px;
+  background-color: rgb(60, 60, 60);
+  color: white;
+  transition: background-color 0.25s, box-shadow 0.25s;
+}
+
+.matrix-cell-input:hover,
+.matrix-cell-output:hover {
+  background-color: rgb(80, 80, 80);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7);
+}
+
+input:focus {
+  outline: 2px solid rgba(154, 183, 192, 0.7);
+}
+
+.matrix-cell-output {
+  width: 100%;
+  height: 55%;
+  padding-top: 45%;
+  text-align: center;
+  font-size: 12px;
+  border-radius: 7%;
+  border-style: solid;
+  border-width: 1px;
+  background-color: rgb(60, 60, 60);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: white;
+  transition: background-color 0.25s, box-shadow 0.25s;
+  margin: 0px;
+}
+
+.matrix-cell-output:hover {
+  background-color: rgb(80, 80, 80);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7);
+}
+
+/*Text*/
+/*main title*/
+h1 {
+  padding: 10px;
+  margin: 0px;
+  color: rgb(255, 255, 255);
+
+  font-size: 50px;
   font-family: Arial;
+  text-align: center;
+  /*text-shadow: 0px 0px 90px rgba(255, 255, 255, .5), 0px 0px 5px rgba(63, 161, 241, .5);*/
+}
+
+/*sub title*/
+h2 {
+  color: white;
+  font-size: 25px;
+  text-align: center;
+  line-height: 35px;
+
+  margin-top: 0px;
+  margin-bottom: 50px;
+}
+
+.tnr {
+  font-family: "Times New Roman";
+  font-style: italic;
+  font-size: 30px;
+}
+.tnr2 {
+  font-family: "Times New Roman";
+  font-style: italic;
+  font-size: 18px;
+}
+
+/*dimension input title*/
+.dimension-title {
+  display: block;
+  color: white;
+  font-size: 20px;
+  margin-top: 2px;
+}
+
+.dimension-title-error {
+  display: block;
+  color: rgba(255, 1, 1, 0.5);
+  font-size: 20px;
+  margin-top: 2px;
+}
+
+/*UI ELEMENTS __________________________________________________________*/
+
+.dimension-input,
+.compute-button,
+.matrix-div {
+  background-color: rgb(40, 40, 40);
+  color: white;
+  border-radius: 10px;
+  transition: background-color 0.25s, box-shadow 0.25s;
+}
+
+.matrix-div:hover {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
+}
+
+.dimension-input:hover,
+.compute-button:hover {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
+  background-color: rgb(60, 60, 60);
+}
+
+/*dimension input __________________________________________________________*/
+
+.dimension-label {
+  color: white;
+}
+
+.dimension-input {
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.dimension-input:hover {
+}
+
+.dimension-input:active {
+}
+
+/*Button __________________________________________________________*/
+
+.compute-button {
+  display: block;
+  border-color: rgba(255, 255, 255, 0.25);
+  border-width: 0px;
+  font-size: 20px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-bottom: 100px;
+  margin: 40px auto;
+}
+
+.compute-button:hover {
+  cursor: pointer;
+}
+
+.compute-button:active {
+  /*box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.25) ;*/
+  font-size: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 15px;
+  padding-left: 15px;
+  background-color: rgb(75, 75, 75);
+  border-width: 1px;
 }
