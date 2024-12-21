@@ -1,11 +1,13 @@
-import Static from './components/Static';
-import Dynamic from './components/Dynamic';
+import Titles from './components/Titles';
+import Dimensions from './components/Dimensions';
+import Matrices from './components/Matrices';
 
 function App() {
   return (
     <div>
-      <Static />
-      <Dynamic />
+      <Titles />
+      <Dimensions />
+      <Matrices />
     </div>
   );
 }
