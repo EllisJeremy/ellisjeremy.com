@@ -1,4 +1,4 @@
-function Titles() {
+export default function Titles() {
   return(
         
 		<header>
@@ -14,4 +14,4 @@ function Titles() {
 }
 
 
-export default Titles;
+ 

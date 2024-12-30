@@ -1,4 +1,4 @@
-function Dimensions(){
+export default function Dimensions(){
 	return(
 		<div className = "dimension-div">
 			<p className="dimension-title">Enter dimensions n and m to customize the matrices below:</p>
@@ -46,4 +46,3 @@ function Dimensions(){
 	)
 }
 
-export default Dimensions;

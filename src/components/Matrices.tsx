@@ -1,7 +1,9 @@
-function Matricies() {
+export default function Matrices() {
 	return(
     <>
 			<div className = "full-matrix-div">
+
+			{/* Matrix A */}
 
 			<div className = "matrix-div">
 
@@ -13,29 +15,8 @@ function Matricies() {
 
 					<div className="dynamic-matrix-div"> 
 						
-						
-						<div className = "matrix-row-div">
-							<div className="matrix-cell-div">
-								<input className="matrix-cell-input" type="number" id = "A00" step ="1"></input>
-							</div>
-
-							<div className="matrix-cell-div">
-								<input className="matrix-cell-input" type="number" id = "A01" step ="1"></input>
-							</div>
-						</div>
-
-						
-						
-
-						<div className = "matrix-row-div">
-							<div className="matrix-cell-div">
-								<input className="matrix-cell-input" type="number" id = "A10" step ="1"></input>
-							</div>
-
-							<div className="matrix-cell-div">
-								<input className="matrix-cell-input" type="number" id = "A11" step ="1"></input>
-							</div>
-						</div>
+					  {/* Dynamic part */}
+            
 						
 						
 					</div>
@@ -53,7 +34,7 @@ function Matricies() {
 					</div>
 
 					<div className="dynamic-matrix-div"> 
-						
+						{/* Dynamic part */}
 						
 						
 						
@@ -75,7 +56,7 @@ function Matricies() {
 					</div>
 
 					<div className="dynamic-matrix-div"> 
-						
+						{/* Dynamic part */}
 						
 						
 						
@@ -93,7 +74,7 @@ function Matricies() {
 					</div>
 
 					<div className="dynamic-matrix-div"> 
-						
+						{/* Dynamic part */}
 						
 						
 						
@@ -109,4 +90,3 @@ function Matricies() {
 	)
 }
 
-export default Matricies;
