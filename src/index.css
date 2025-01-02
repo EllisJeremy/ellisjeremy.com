@@ -110,7 +110,7 @@ main {
 }
 
 .matrix-cell-div {
-  margin: 3%;
+  margin: 1.5%;
   flex: 1;
 }
 
@@ -125,6 +125,8 @@ main {
   background-color: rgb(60, 60, 60);
   color: white;
   transition: background-color 0.25s, box-shadow 0.25s;
+
+  
 }
 
 .matrix-cell-input:hover,
@@ -271,3 +273,14 @@ h2 {
   background-color: rgb(75, 75, 75);
   border-width: 1px;
 }
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+
+
+

@@ -1,3 +1,9 @@
+
+import {CreateMatrixA} from "./subComponents/MatrixCreator.tsx"
+
+
+
+
 export default function Matrices() {
 	return(
     <>
@@ -12,11 +18,11 @@ export default function Matrices() {
 					<div className = "variable-div">
 						A =
 					</div>
-
+					
 					<div className="dynamic-matrix-div"> 
 						
 					  {/* Dynamic part */}
-            
+            <CreateMatrixA />
 						
 						
 					</div>
@@ -87,6 +93,6 @@ export default function Matrices() {
 
 			<button className = "compute-button" id = "compute"> Compute <span className="tnr2">X</span></button>
 		</>
-	)
+	);
 }
 

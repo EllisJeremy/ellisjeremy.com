@@ -10,7 +10,7 @@ export default function Titles() {
 			</h2>
 		</header>
      
-  )
+  );
 }
 
 
