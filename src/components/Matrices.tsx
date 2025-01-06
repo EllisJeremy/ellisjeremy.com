@@ -1,4 +1,4 @@
-import {CreateMatrixA} from "./subComponents/MatrixCreator.tsx"
+import {CreateMatrixA, CreateMatrixB, CreateMatrixC, CreateMatrixX} from "./subComponents/MatrixCreator.tsx"
 import {useState} from 'react';
 
 
@@ -6,14 +6,30 @@ import {useState} from 'react';
 
 export default function Matrices() {
 
-	const [n, setN] = useState<number>(2)
-	const [m, setM] = useState<number>(2)
+	{/*inputs*/}
+	const [n, setN] = useState<number>()
+	const [m, setM] = useState<number>()
 
 	function handleNChange(event: React.ChangeEvent<HTMLInputElement>){
 		setN(event.currentTarget.valueAsNumber);
 	}
 	function handleMChange(event: React.ChangeEvent<HTMLInputElement>){
 		setM(event.currentTarget.valueAsNumber);
+	}
+
+	{/*matrices*/}
+	const [matrixAInputs, setMatrixAInputs] = useState<number[][]>([]);
+
+
+	function handlematrixAInputs(event: React.ChangeEvent<HTMLInputElement>){
+		setMatrixAInputs(event.currentTarget.valueAsNumber);
+	}
+	
+	function handleMatrixAInputs(row: number, col: number, event: React.ChangeEvent<HTMLInputElement>){
+    const inputValue = event.currentTarget.valueAsNumber;
+    function setMatrixAInputs(prev: number) {
+        
+		}
 	}
 	
 	return(
@@ -87,7 +103,7 @@ export default function Matrices() {
 					<div className="dynamic-matrix-div"> 
 						
 					  {/* Dynamic part */}
-            <CreateMatrixA  />
+            <CreateMatrixA n = {n} />
 						
 						
 					</div>
@@ -106,7 +122,7 @@ export default function Matrices() {
 
 					<div className="dynamic-matrix-div"> 
 						{/* Dynamic part */}
-						
+						<CreateMatrixB m = {m} />
 						
 						
 						
@@ -128,7 +144,7 @@ export default function Matrices() {
 
 					<div className="dynamic-matrix-div"> 
 						{/* Dynamic part */}
-						
+						<CreateMatrixC n = {n} m = {m} />
 						
 						
 						
@@ -152,7 +168,7 @@ export default function Matrices() {
 
 					<div className="dynamic-matrix-div"> 
 						{/* Dynamic part */}
-						
+						<CreateMatrixX  n = {n} m = {m}/>
 						
 						
 						

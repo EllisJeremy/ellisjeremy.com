@@ -1,9 +1,14 @@
 export function CreateMatrixA(
-	{n = 7}:
+	{n = 2}:
 	{n?: number}
 ){
+	if( n > 9 ){
+		n = 9
+	}
+	
 	return (
     <>
+		
 			{/* create the columns */}
       {Array.from({ length: n }, (_, indexN) => (
         <div key={indexN} className="matrix-row-div">
@@ -13,7 +18,12 @@ export function CreateMatrixA(
 					<div key={indexM} className="matrix-cell-div">
 
 						{/* create each input */}
-						<input className ="matrix-cell-input" type="number" id = {"A" + indexN.toString() + indexM.toString() } step="any"></input>
+						<input 
+							className ="matrix-cell-input" 
+							type="number" 
+							
+							step="any">
+						</input>
 
 					</div>
 				))}
@@ -24,13 +34,16 @@ export function CreateMatrixA(
 }
 
 export function CreateMatrixB(
-	{n = 3, m = 5}:
-	{n?: number, m?: number}
+	{m = 2}:
+	{ m?: number}
 ){
+	if( m > 9 ){
+		m = 9
+	}
 	return (
     <>
 			{/* create the columns */}
-      {Array.from({ length: n }, (_, indexN) => (
+      {Array.from({ length: m }, (_, indexN) => (
         <div key={indexN} className="matrix-row-div">
 					
 					{/* create the cells in each column (= to rows) */}
@@ -38,7 +51,12 @@ export function CreateMatrixB(
 					<div key={indexM} className="matrix-cell-div">
 
 						{/* create each input */}
-						<input className ="matrix-cell-input" type="number" id = {"A" + indexN.toString() + indexM.toString() } step="any"></input>
+						<input 
+							className ="matrix-cell-input" 
+							type="number" 
+							value = {"B" + indexN.toString() + indexM.toString() } 
+							step="any">
+						</input>
 
 					</div>
 				))}
@@ -49,9 +67,15 @@ export function CreateMatrixB(
 }
 
 export function CreateMatrixC(
-	{n = 3, m = 5}:
+	{n = 2, m = 2}:
 	{n?: number, m?: number}
 ){
+	if( n > 9 ){
+		n = 9
+	}
+	if( m > 9 ){
+		m = 9
+	}
 	return (
     <>
 			{/* create the columns */}
@@ -66,7 +90,7 @@ export function CreateMatrixC(
 						<input 
 							className ="matrix-cell-input" 
 							type="number" 
-							id = {"A" + indexN.toString() + indexM.toString()} 
+							value = {"C" + indexN.toString() + indexM.toString()} 
 							step="any">
 						</input>
 					</div>
@@ -78,10 +102,17 @@ export function CreateMatrixC(
 }
 
 export function CreateMatrixX(
-	{n = 3, m = 5}:
+	{n = 2, m = 2}:
 	{n?: number, m?: number}
 ){
+	if( n > 9 ){
+		n = 9
+	}
+	if( m > 9 ){
+		m = 9
+	}
 	return (
+		
     <>
 			{/* create the columns */}
       {Array.from({ length: n }, (_, indexN) => (
@@ -92,7 +123,7 @@ export function CreateMatrixX(
 					<div key={indexM} className="matrix-cell-div">
 
 						{/* create each input */}
-						<input className ="matrix-cell-input" type="number" id = {"A" + indexN.toString() + indexM.toString() } step="any"></input>
+						<p className ="matrix-cell-output">hello</p>
 
 					</div>
 				))}
