@@ -135,6 +135,7 @@ main {
 .matrix-cell-output:hover {
   background-color: rgb(80, 80, 80);
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7);
+  
 }
 
 input:focus {
@@ -142,10 +143,12 @@ input:focus {
 }
 
 .matrix-cell-output {
-  width: 100%;
-  height: 55%;
-  padding-top: 45%;
-  text-align: center;
+  /*size */
+  max-width: 100%;
+  height: 100%;
+  margin: 0px; 
+
+  /*style */
   font-size: 12px;
   border-radius: 7%;
   border-style: solid;
@@ -154,7 +157,18 @@ input:focus {
   border-color: rgba(255, 255, 255, 0.25);
   color: white;
   transition: background-color 0.25s, box-shadow 0.25s;
-  margin: 0px;
+
+  /*centering text */
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+
+   /* Text overflow control */
+   
+   
+   
+   
+   
 }
 
 .matrix-cell-output:hover {

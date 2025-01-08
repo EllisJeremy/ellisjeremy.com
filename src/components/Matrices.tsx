@@ -18,20 +18,16 @@ export default function Matrices() {
 	}
 
 	{/*matrices*/}
-	const [matrixAInputs, setMatrixAInputs] = useState<number[][]>([]);
+	
 
 
-	function handlematrixAInputs(event: React.ChangeEvent<HTMLInputElement>){
-		setMatrixAInputs(event.currentTarget.valueAsNumber);
-	}
+
+
 	
-	function handleMatrixAInputs(row: number, col: number, event: React.ChangeEvent<HTMLInputElement>){
-    const inputValue = event.currentTarget.valueAsNumber;
-    function setMatrixAInputs(prev: number) {
-        
-		}
-	}
-	
+
+
+
+		
 	return(
     <>
 		{/*First part is for the matrix dimension inputs */}

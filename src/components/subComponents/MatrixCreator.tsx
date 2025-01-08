@@ -1,10 +1,18 @@
+
+
+
+
+
+
 export function CreateMatrixA(
-	{n = 2}:
+	{n = 2, }:
 	{n?: number}
 ){
 	if( n > 9 ){
 		n = 9
 	}
+
+	
 	
 	return (
     <>
@@ -21,17 +29,22 @@ export function CreateMatrixA(
 						<input 
 							className ="matrix-cell-input" 
 							type="number" 
+							step="any"
 							
-							step="any">
-						</input>
-
+						/>
+              
+						
+						
 					</div>
 				))}
 				</div>
       ))}
+			
     </>
   );
 }
+
+
 
 export function CreateMatrixB(
 	{m = 2}:
@@ -65,6 +78,11 @@ export function CreateMatrixB(
     </>
   );
 }
+
+
+
+
+
 
 export function CreateMatrixC(
 	{n = 2, m = 2}:
@@ -123,7 +141,7 @@ export function CreateMatrixX(
 					<div key={indexM} className="matrix-cell-div">
 
 						{/* create each input */}
-						<p className ="matrix-cell-output">hello</p>
+						<p className ="matrix-cell-output">textsss</p>
 
 					</div>
 				))}
