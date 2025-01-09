@@ -35,7 +35,10 @@ main {
 }
 
 .dimension-input-div {
+  display: flex;
   margin: 5px;
+  align-items: center;
+  
 }
 
 .full-dimension-examples-div {
@@ -230,7 +233,7 @@ h2 {
 
 .dimension-input,
 .compute-button,
-.matrix-div {
+.matrix-div , .dimension-input-button{
   background-color: rgb(40, 40, 40);
   color: white;
   border-radius: 10px;
@@ -257,8 +260,32 @@ h2 {
   border-radius: 5px;
   border-width: 1px;
   border-color: rgba(255, 255, 255, 0.25);
+  margin-right: 5px;
+  margin-left: 7px;
+  text-align: center;
 }
 
+.dimension-input-button{
+  width: 20px;
+  padding: 0px;
+  vertical-align: middle;
+  
+
+  border: 1px solid rgb(83, 83, 83);
+  margin: 1px;
+  border-radius: 5px;
+  transition: background-color .25s;
+}
+
+.dimension-input-button:hover{
+  background-color: rgb(60, 60, 60);
+  cursor: pointer;
+}
+
+.dimension-input-button:active{
+  background-color: rgb(80, 80, 80);
+  cursor: pointer;
+}
 
 /*Button __________________________________________________________*/
 
