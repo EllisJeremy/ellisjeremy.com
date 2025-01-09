@@ -1,14 +1,21 @@
-import Titles from './components/Titles';
-import Matrices from './components/Matrices';
 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import Home from "./pages/Home/Home";
+import Sylvester from "./pages/Sylvester/Sylvester";
 
 export default function App() {
   
   return (
-    <>
-      <Titles />
-      <Matrices />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Sylvester" element={<Sylvester />} />
+      </Routes>
+    </Router>
+
+    
+    
   );
 }
 
