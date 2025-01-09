@@ -67,7 +67,7 @@ export function CreateMatrixB(
 						<input 
 							className ="matrix-cell-input" 
 							type="number" 
-							value = {"B" + indexN.toString() + indexM.toString() } 
+							//value = {"B" + indexN.toString() + indexM.toString() } 
 							step="any">
 						</input>
 
@@ -108,7 +108,7 @@ export function CreateMatrixC(
 						<input 
 							className ="matrix-cell-input" 
 							type="number" 
-							value = {"C" + indexN.toString() + indexM.toString()} 
+							
 							step="any">
 						</input>
 					</div>
