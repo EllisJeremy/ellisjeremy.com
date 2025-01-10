@@ -119,7 +119,8 @@ main {
   
 }
 
-.matrix-cell-input {
+.matrix-cell-input,
+.matrix-cell-output {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -141,38 +142,18 @@ main {
   
 }
 
-input:focus {
+.matrix-cell-input:focus,
+.dimension-input:focus {
   outline: 2px solid rgba(154, 183, 192, 0.7);
+  
 }
 
-.matrix-cell-output {
-  /*size */
-  max-width: 100%;
-  height: 100%;
-  margin: 0px; 
-
-  /*style */
-  font-size: 12px;
-  border-radius: 7%;
-  border-style: solid;
-  border-width: 1px;
-  background-color: rgb(60, 60, 60);
-  border-color: rgba(255, 255, 255, 0.25);
-  color: white;
-  transition: background-color 0.25s, box-shadow 0.25s;
-
-  /*centering text */
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-
-   /* Text overflow control */
-   
-   
-   
-   
-   
+.matrix-cell-output:focus {
+  outline: 0px;
+  caret-color: transparent;
 }
+
+
 
 .matrix-cell-output:hover {
   background-color: rgb(80, 80, 80);

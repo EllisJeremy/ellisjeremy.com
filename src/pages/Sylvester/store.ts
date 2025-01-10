@@ -73,7 +73,7 @@ export const matricesStore = create<matricesStoreType>(
     matrixA: [[]],
     matrixB: [[]],
     matrixC: [[]],
-    matrixX: [[]],
+    matrixX: [[1,2],[3,4]],
 
 
     setMatrixA : (matrixA: number[][]) => set(() => ({matrixA})),

@@ -187,10 +187,10 @@ export function CreateMatrixX(
 		m = 9
 	}
 
-	const { matrixA, matrixB, matrixC} = matricesStore();
+	//const {matrixX} = matricesStore();
 
 
-	const matrixX: number[][] = [[0,1],[2 ,3]]
+	
 
 	return (
 		
@@ -203,8 +203,9 @@ export function CreateMatrixX(
 					{Array.from({ length: m }, (_, indexM) => (
 					<div key={indexM} className="matrix-cell-div">
 
-						{/* this need to be an input to handle overflow (when the number is bigger than the element)*/}
-						<input className = "matrix-cell-input" value={matrixX[indexN][indexM]} />
+						{/* this needs to be an input to handle overflow (when the number is bigger than the element) 
+						this may show an error in the browser console, but this is the intended implementation*/}
+						<input className = "matrix-cell-output" value= {''} />
 
 					</div>
 				))}
