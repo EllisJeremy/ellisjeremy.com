@@ -1,10 +1,22 @@
-import { inputsStore } from "../store"
+import { inputsStore, matricesStore } from "../store"
 
 
 export default function Inputs() {
 	
   const {n, m, setN, setM, incrementN, decrementN, incrementM, decrementM} = inputsStore();
- 
+	
+	function resizeMatrixA() {
+		const { setMatrixA } = matricesStore();
+		
+	
+		// Create a new matrix with n rows and m columns, filled with empty values
+		const newMatrix = Array.from({ length: 5}, () =>
+			Array.from({ length: 5 }, () => 5)
+		);
+	
+		// Update the matrixA in the store
+		setMatrixA(newMatrix);
+	}
 
 	return(
     <>
@@ -26,7 +38,7 @@ export default function Inputs() {
 						}} 
 						
 						></input>
-            <button className="dimension-input-button" onClick={decrementN}>-</button>
+            <button className="dimension-input-button" onClick={() => {decrementN(); resizeMatrixA();}}>-</button>
             <button className="dimension-input-button" onClick={incrementN}>+</button>
 					</div>
 
