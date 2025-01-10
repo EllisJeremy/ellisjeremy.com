@@ -15,9 +15,14 @@ export function CreateMatrixA(
 		n = 9
 	}
 
-	function handleCellChange(rowIndex: number, colIndex: number, value: number){
+	const handleCellChange = (rowIndex: number, colIndex: number, value: number) => {
+		if ( matrixA[rowIndex] === undefined) {
+			matrixA[rowIndex] = [];
+		}
 		const updatedMatrix: number[][] = matrixA;
 		updatedMatrix[rowIndex][colIndex] = value;
+		
+		
 		setMatrixA(updatedMatrix); // Update the store with the modified matrix
 	};
 	
@@ -41,7 +46,7 @@ export function CreateMatrixA(
 							
 							value={matrixA[indexN]?.[indexM]}//if this breaks add || 0 to the end
 							onChange={(e) => {
-								
+								handleCellChange(indexN, indexM, parseFloat(e.target.value));   
 								console.log('Key pressed in cell', indexN, indexM, e.target.value);
 								console.log(matrixA)
 							}} //if this breaks add || 0 to the end

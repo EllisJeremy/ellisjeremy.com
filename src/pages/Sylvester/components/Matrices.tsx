@@ -1,5 +1,5 @@
 import {CreateMatrixA, CreateMatrixB, CreateMatrixC, CreateMatrixX} from "./subComponents/MatrixCreator.tsx"
-import { inputsStore } from "../store"
+import { inputsStore, matricesStore } from "../store"
 
 
 
@@ -7,6 +7,7 @@ import { inputsStore } from "../store"
 export default function Matrices() {
 
 	const {n, m,} = inputsStore();
+	const {matrixA} = matricesStore();
 
 	return(
     <>
@@ -101,7 +102,7 @@ export default function Matrices() {
 
 			</div>
 
-			<button className = "compute-button" id = "compute"> Compute <span className="tnr2">X</span></button>
+			<button onClick={() => console.log(matrixA)} className = "compute-button" id = "compute"> Compute <span className="tnr2">X</span></button>
 		</>
 	);
 }

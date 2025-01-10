@@ -4,19 +4,22 @@ import { inputsStore, matricesStore } from "../store"
 export default function Inputs() {
 	
   const {n, m, setN, setM, incrementN, decrementN, incrementM, decrementM} = inputsStore();
+	const { matrixA, setMatrixA} = matricesStore();
+
+	const matrixAResizer = (input: number) => {
 	
-	function resizeMatrixA() {
-		const { setMatrixA } = matricesStore();
+		console.log('n changes')
 		
-	
-		// Create a new matrix with n rows and m columns, filled with empty values
-		const newMatrix = Array.from({ length: 5}, () =>
-			Array.from({ length: 5 }, () => 5)
-		);
-	
-		// Update the matrixA in the store
-		setMatrixA(newMatrix);
+		
+		const resizedMatrix: number[][] = matrixA.slice(0, input).map((row: number[]) => row.slice(0, input));
+		
+		setMatrixA(resizedMatrix);
+		
+		
+		
 	}
+		
+
 
 	return(
     <>
@@ -34,11 +37,12 @@ export default function Inputs() {
 						<input className="dimension-input" type="number" placeholder="max 9" value = {n} 
 						onChange={(e) =>{
 							setN(e.currentTarget.valueAsNumber);
-							resizeMatrixA();
+							matrixAResizer(e.currentTarget.valueAsNumber);
 						}} 
 						
+						
 						></input>
-            <button className="dimension-input-button" onClick={() => {decrementN(); resizeMatrixA();}}>-</button>
+            <button className="dimension-input-button" onClick={decrementN}>-</button>
             <button className="dimension-input-button" onClick={incrementN}>+</button>
 					</div>
 
