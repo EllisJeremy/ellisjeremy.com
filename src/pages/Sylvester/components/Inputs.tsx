@@ -42,7 +42,7 @@ export default function Inputs() {
 						
 						
 						></input>
-            <button className="dimension-input-button" onClick={decrementN}>-</button>
+            <button className="dimension-input-button" onClick={() => {decrementN(); matrixAResizer(n - 1);}}>-</button>
             <button className="dimension-input-button" onClick={incrementN}>+</button>
 					</div>
 
