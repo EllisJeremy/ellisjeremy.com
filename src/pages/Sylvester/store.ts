@@ -57,16 +57,25 @@ export const inputsStore = create<inputsStoreType>((set) => ({
 export interface matricesStoreType {
   
   matrixA: number[][];
+  matrixB: number[][];
+  matrixC: number[][];
   
   setMatrixA: (matrixA: number[][]) => void;
+  setMatrixB: (matrixB: number[][]) => void;
+  setMatrixC: (matrixC: number[][]) => void;
 }
 
 export const matricesStore = create<matricesStoreType>(
   (set) => ({
 
     matrixA: [[]],
+    matrixB: [[]],
+    matrixC: [[]],
+
 
     setMatrixA : (matrixA: number[][]) => set(() => ({matrixA})),
+    setMatrixB : (matrixB: number[][]) => set(() => ({matrixB})),
+    setMatrixC : (matrixC: number[][]) => set(() => ({matrixC})),
    
   })
 );

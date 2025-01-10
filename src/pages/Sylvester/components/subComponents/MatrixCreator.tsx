@@ -9,21 +9,20 @@ export function CreateMatrixA(
 	{n?: number}
 ){
 
-	const { matrixA, setMatrixA} = matricesStore();
-
 	if( n > 9 ){
 		n = 9
 	}
 
-	const handleCellChange = (rowIndex: number, colIndex: number, value: number) => {
+	const { matrixA, setMatrixA} = matricesStore();
+
+	const handleCellChangeA = (rowIndex: number, colIndex: number, value: number) => {
 		if ( matrixA[rowIndex] === undefined) {
 			matrixA[rowIndex] = [];
 		}
 		const updatedMatrix: number[][] = matrixA;
 		updatedMatrix[rowIndex][colIndex] = value;
 		
-		
-		setMatrixA(updatedMatrix); // Update the store with the modified matrix
+		setMatrixA(updatedMatrix); 
 	};
 	
 	
@@ -44,12 +43,12 @@ export function CreateMatrixA(
 							className ="matrix-cell-input" 
 							type="number" 
 							
-							value={matrixA[indexN]?.[indexM]}//if this breaks add || 0 to the end
+							value={matrixA[indexN]?.[indexM]}
 							onChange={(e) => {
-								handleCellChange(indexN, indexM, parseFloat(e.target.value));   
+								handleCellChangeA(indexN, indexM, parseFloat(e.target.value));   
 								console.log('Key pressed in cell', indexN, indexM, e.target.value);
-								console.log(matrixA)
-							}} //if this breaks add || 0 to the end
+								
+							}} 
 						/>
               
 						
@@ -69,9 +68,23 @@ export function CreateMatrixB(
 	{m = 2}:
 	{ m?: number}
 ){
+
 	if( m > 9 ){
 		m = 9
 	}
+
+	const { matrixB, setMatrixB} = matricesStore();
+
+	const handleCellChangeB = (rowIndex: number, colIndex: number, value: number) => {
+		if ( matrixB[rowIndex] === undefined) {
+			matrixB[rowIndex] = [];
+		}
+		const updatedMatrix: number[][] = matrixB;
+		updatedMatrix[rowIndex][colIndex] = value;
+		
+		setMatrixB(updatedMatrix); 
+	}
+
 	return (
     <>
 			{/* create the columns */}
@@ -86,9 +99,15 @@ export function CreateMatrixB(
 						<input 
 							className ="matrix-cell-input" 
 							type="number" 
-							//value = {"B" + indexN.toString() + indexM.toString() } 
-							step="any">
-						</input>
+							 
+							value={matrixB[indexN]?.[indexM]}
+							onChange={(e) => {
+								handleCellChangeB(indexN, indexM, parseFloat(e.target.value));   
+								console.log('Key pressed in cell', indexN, indexM, e.target.value);
+								
+							}} 
+						/>
+						
 
 					</div>
 				))}
