@@ -55,7 +55,7 @@ export default function Inputs() {
 							onChange={(e) => {
 								setM(e.currentTarget.valueAsNumber)
 								matrixBResizer(e.currentTarget.valueAsNumber);
-								matrixCResizer(n, e.currentTarget.valueAsNumber )
+								matrixCResizer(n, e.currentTarget.valueAsNumber );
 						}} />
 
             <button className="dimension-input-button" onClick={() => {decrementM(); matrixBResizer(m - 1); matrixCResizer(n, m - 1)}}>-</button>
