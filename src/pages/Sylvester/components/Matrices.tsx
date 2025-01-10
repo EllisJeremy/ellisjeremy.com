@@ -7,7 +7,7 @@ import { inputsStore, matricesStore } from "../store"
 export default function Matrices() {
 
 	const {n, m,} = inputsStore();
-	const {matrixA, matrixB} = matricesStore();
+	const {matrixA, matrixB, matrixC} = matricesStore();
 
 	return(
     <>
@@ -102,7 +102,7 @@ export default function Matrices() {
 
 			</div>
 
-			<button onClick={() => console.log(matrixA, matrixB)} className = "compute-button" id = "compute"> Compute <span className="tnr2">X</span></button>
+			<button onClick={() => console.log(matrixA, matrixB, matrixC)} className = "compute-button" id = "compute"> Compute <span className="tnr2">X</span></button>
 		</>
 	);
 }

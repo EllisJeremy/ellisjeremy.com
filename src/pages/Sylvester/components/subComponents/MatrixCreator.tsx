@@ -132,6 +132,20 @@ export function CreateMatrixC(
 	if( m > 9 ){
 		m = 9
 	}
+
+	const { matrixC, setMatrixC} = matricesStore();
+
+	const handleCellChangeC = (rowIndex: number, colIndex: number, value: number) => {
+		if ( matrixC[rowIndex] === undefined) {
+			matrixC[rowIndex] = [];
+		}
+		const updatedMatrix: number[][] = matrixC;
+		updatedMatrix[rowIndex][colIndex] = value;
+		
+		setMatrixC(updatedMatrix); 
+	}
+
+
 	return (
     <>
 			{/* create the columns */}
@@ -147,8 +161,13 @@ export function CreateMatrixC(
 							className ="matrix-cell-input" 
 							type="number" 
 							
-							step="any">
-						</input>
+							value={matrixC[indexN]?.[indexM]}
+							onChange={(e) => {
+								handleCellChangeC(indexN, indexM, parseFloat(e.target.value));   
+								console.log('Key pressed in cell', indexN, indexM, e.target.value);
+								
+							}} />
+						
 					</div>
 				))}
 				</div>
