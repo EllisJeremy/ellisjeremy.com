@@ -190,7 +190,7 @@ export function CreateMatrixX(
 		m = 9
 	}
 
-	const {matrixX, displayMatrixX} = matricesStore();
+	const {matrixX} = matricesStore();
 
 
 	
@@ -208,7 +208,7 @@ export function CreateMatrixX(
 
 						{/* this needs to be an input to handle overflow (when the number is bigger than the element) 
 						this may show an error in the browser console, but this is the intended implementation*/}
-						<input className = "matrix-cell-output" value = {displayMatrixX ? matrixX[indexN][indexM] : 'no'} />
+						<input className = "matrix-cell-output" value = { matrixX[indexN][indexM]} />
 
 					</div>
 				))}

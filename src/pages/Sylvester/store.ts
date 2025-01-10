@@ -59,14 +59,14 @@ export interface matricesStoreType {
   matrixA: number[][];
   matrixB: number[][];
   matrixC: number[][];
-  matrixX: number[][];
-  displayMatrixX: boolean;
+  matrixX: (number | string)[][];
+  
   
   setMatrixA: (matrixA: number[][]) => void;
   setMatrixB: (matrixB: number[][]) => void;
   setMatrixC: (matrixC: number[][]) => void;
   setMatrixX: (matrixC: number[][]) => void;
-  setDisplayMatrixX: (displayMatrixX: boolean) => void;
+  
 }
 
 export const matricesStore = create<matricesStoreType>(
@@ -75,15 +75,15 @@ export const matricesStore = create<matricesStoreType>(
     matrixA: [[]],
     matrixB: [[]],
     matrixC: [[]],
-    matrixX: [[1,2],[3,4]],
-    displayMatrixX: true,
+    matrixX: [['a', 'b'],[ 'c', 'd']],
+    
 
 
     setMatrixA : (matrixA: number[][]) => set(() => ({matrixA})),
     setMatrixB : (matrixB: number[][]) => set(() => ({matrixB})),
     setMatrixC : (matrixC: number[][]) => set(() => ({matrixC})),
-    setMatrixX : (matrixC: number[][]) => set(() => ({matrixC})),
-    setDisplayMatrixX: (displayMatrixX: boolean) => set(() => ({displayMatrixX})),
+    setMatrixX : (matrixX: number[][]) => set(() => ({matrixX})),
+    
    
   })
 );

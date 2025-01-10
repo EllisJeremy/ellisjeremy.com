@@ -3,11 +3,12 @@ import { matricesStore } from "../store"
 
 export default function Button(){
 
-  const {matrixA, matrixB, matrixC, matrixX, setMatrixX, setDisplayMatrixX} = matricesStore();
+  const {matrixA, matrixB, matrixC, matrixX, setMatrixX } = matricesStore();
 
 	function matrixXSolver(){
     console.log("is it working?")
-		setDisplayMatrixX(true);
+		const testMatrix: number[][] = [[1,2],[3,4]];
+    setMatrixX(testMatrix);
 		
 	}
 
