@@ -1,27 +1,38 @@
+import { matricesStore } from "../../store";
 
 
-
-
+ 
 
 
 export function CreateMatrixA(
 	{n = 2, }:
 	{n?: number}
 ){
+
+	const { matrixA, setMatrixA} = matricesStore();
+
 	if( n > 9 ){
 		n = 9
 	}
 
+	const handleCellChange = (rowIndex: number, colIndex: number, value: number) => {
+		const updatedMatrix: number[][] = matrixA;
+		updatedMatrix[rowIndex][colIndex] = value;
+		
+		
+		setMatrixA(updatedMatrix); // Update the store with the modified matrix
+	};
+	
 	
 	
 	return (
     <>
 		
-			{/* create the columns */}
+			{/* create the rows */}
       {Array.from({ length: n }, (_, indexN) => (
         <div key={indexN} className="matrix-row-div">
 					
-					{/* create the cells in each column (= to rows) */}
+					{/* create the cells in each row */}
 					{Array.from({ length: n }, (_, indexM) => (
 					<div key={indexM} className="matrix-cell-div">
 
@@ -29,8 +40,12 @@ export function CreateMatrixA(
 						<input 
 							className ="matrix-cell-input" 
 							type="number" 
-							step="any"
 							
+							value={matrixA[indexN]?.[indexM]}//if this breaks add || 0 to the end
+							onChange={(e) => {
+								handleCellChange(indexN, indexM, parseFloat(e.target.value));   
+								console.log('Key pressed in cell', indexN, indexM, e.target.value);
+							}} //if this breaks add || 0 to the end
 						/>
               
 						
