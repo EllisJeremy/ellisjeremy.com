@@ -45,6 +45,7 @@ export function CreateMatrixA(
 							onChange={(e) => {
 								handleCellChange(indexN, indexM, parseFloat(e.target.value));   
 								console.log('Key pressed in cell', indexN, indexM, e.target.value);
+								console.log(matrixA)
 							}} //if this breaks add || 0 to the end
 						/>
               

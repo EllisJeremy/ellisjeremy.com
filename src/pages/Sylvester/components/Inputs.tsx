@@ -2,7 +2,7 @@ import { inputsStore } from "../store"
 
 
 export default function Inputs() {
-
+	
   const {n, m, setN, setM, incrementN, decrementN, incrementM, decrementM} = inputsStore();
  
 
@@ -19,7 +19,13 @@ export default function Inputs() {
 						<label className="dimension-label" htmlFor  = "dimension-n">
 							<span className="tnr2">n</span>&nbsp;&nbsp; = &nbsp;
 						</label>
-						<input className="dimension-input" type="number" placeholder="max 9" value = {n} onChange={(e) => setN(e.currentTarget.valueAsNumber)} min="1" max="9" step ="1"></input>
+						<input className="dimension-input" type="number" placeholder="max 9" value = {n} 
+						onChange={(e) =>{
+							setN(e.currentTarget.valueAsNumber);
+							resizeMatrixA();
+						}} 
+						
+						></input>
             <button className="dimension-input-button" onClick={decrementN}>-</button>
             <button className="dimension-input-button" onClick={incrementN}>+</button>
 					</div>

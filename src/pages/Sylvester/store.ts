@@ -64,7 +64,7 @@ export interface matricesStoreType {
 export const matricesStore = create<matricesStoreType>(
   (set) => ({
 
-    matrixA: [[]],
+    matrixA: [[0,0],[0,0]],
 
     setMatrixA : (matrixA: number[][]) => set(() => ({matrixA})),
    
