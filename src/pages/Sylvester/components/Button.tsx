@@ -134,7 +134,7 @@ function solve(A: number[][], b: number[]): number[] {
     
     console.log(vectorX);
     
-
+    console.log(vectorize([[1,0],[0,1]]))
 
 
 
