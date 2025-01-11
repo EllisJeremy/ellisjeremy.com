@@ -43,11 +43,12 @@ export default function Button(){
 
   function vectorize(matrix: number[][]){
     const vector: number[] = [];
-    for (let n: number = 0; n < matrix.length; n++){
-      for (let m: number = 0; m < matrix[n].length; m++){
-        
-        vector.push(matrix[n][m]);
-    }}
+    for (let col = 0; col < matrix[0].length; col++) {
+      for (let row = 0; row < matrix.length; row++) {
+          vector.push(matrix[row][col]);
+      }
+  }
+    
 
     return vector;
 
@@ -123,25 +124,35 @@ function solve(A: number[][], b: number[], fast: boolean = false): number[] {
     
     
     console.log(matrixA, matrixB, matrixC)
-
+    console.log(matrixB[1][0])
     //create the parts from the equation above
     const identityN: number[][] = numeric.identity(n);
+    console.log('identityN')
+    console.log(identityN)
     const identityM: number[][] = numeric.identity(m);
+    console.log('identityM')
+    console.log(identityM)
     const transposeB: number[][] = numeric.transpose(matrixB);
+    console.log('transposeB')
+    console.log(transposeB)
 
     //do kronecker products for each side and add them 
     const leftKronecker: number[][] = kronecker(identityM, matrixA);
+    console.log('leftKronecker')
+    console.log(leftKronecker)
     const rightKronecker: number[][] = kronecker(transposeB, identityN);
+    console.log('rightKronecker')
+    console.log(rightKronecker)
     const coefficient: number[][] = addMatrix(leftKronecker, rightKronecker);
-    console.log('big matriox')
+    console.log('coefficient')
     console.log(coefficient)
+    
     //solve system of equations for vector x
     const vectorC: number[] = vectorize(matrixC)
-    console.log('vector c')
+    console.log('vectorC')
     console.log(vectorC)
     const vectorX: number[] = solve(coefficient, vectorC);
-
-    console.log('answer here ')
+    console.log('vectorX');
     console.log(vectorX);
     
     
