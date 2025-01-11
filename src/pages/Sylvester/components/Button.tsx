@@ -122,7 +122,8 @@ function solve(A: number[][], b: number[], fast: boolean = false): number[] {
     //(Im x A + Bt x In)vec(X) = vec(C)
     
     
-    /*
+    console.log(matrixA, matrixB, matrixC)
+
     //create the parts from the equation above
     const identityN: number[][] = numeric.identity(n);
     const identityM: number[][] = numeric.identity(m);
@@ -132,14 +133,18 @@ function solve(A: number[][], b: number[], fast: boolean = false): number[] {
     const leftKronecker: number[][] = kronecker(identityM, matrixA);
     const rightKronecker: number[][] = kronecker(transposeB, identityN);
     const coefficient: number[][] = addMatrix(leftKronecker, rightKronecker);
-
+    console.log('big matriox')
+    console.log(coefficient)
     //solve system of equations for vector x
     const vectorC: number[] = vectorize(matrixC)
+    console.log('vector c')
+    console.log(vectorC)
     const vectorX: number[] = solve(coefficient, vectorC);
-    
+
+    console.log('answer here ')
     console.log(vectorX);
-    console.log(vectorize([[1,2],[3,4]]))
-    */
+    
+    
 
 
 
@@ -148,12 +153,12 @@ function solve(A: number[][], b: number[], fast: boolean = false): number[] {
 
 
 
-
-
+    /*
+    
     //testing section
     const matrixExample1: number[][] = [
       [1,2,3,4,5],
-      [1,7,3,8,5],
+      [1,7,-7,8,5],
       [1,6,23,5,3],
     ]
 
@@ -183,25 +188,25 @@ function solve(A: number[][], b: number[], fast: boolean = false): number[] {
     console.log(numeric.transpose(matrixExample1))
     console.log(numeric.transpose(matrixExample2))
 
-    //kronecker  
+    //kronecker  yes*
     console.log('kronecker')
     console.log(kronecker(matrixExample1,matrixExample2))
     console.log(kronecker(matrixExample2,matrixExample3))
 
-    //addMatrix 
+    //addMatrix yes
     console.log('add')
     console.log(addMatrix(matrixExample2,matrixExample3))
 
-    //vectorize
+    //vectorize yes
     console.log('vectorize')
     console.log(vectorize(matrixExample1))
     console.log(vectorize(matrixExample2))
 
-    //solve
+    //solve yes
     console.log('solve')
     console.log(solve(matrixExample1, vectorExample1))
 
-
+    */
 
 
 
