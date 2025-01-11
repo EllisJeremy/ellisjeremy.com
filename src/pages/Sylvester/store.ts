@@ -75,7 +75,7 @@ export const matricesStore = create<matricesStoreType>(
     matrixA: [[]],
     matrixB: [[]],
     matrixC: [[]],
-    matrixX: [['a', 'b'],[ 'c', 'd']],
+    matrixX: [['', ''],[ '', '']],
     
 
 

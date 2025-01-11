@@ -3,7 +3,7 @@ import numeric  from 'numeric';
 
 export default function Button(){
 
-  const {matrixA, matrixB, matrixC, matrixX } = matricesStore();
+  const {matrixA, matrixB, matrixC, setMatrixX } = matricesStore();
   const {n, m } = inputsStore();
 
   function kronecker(A: number[][], B: number[][]) {
@@ -49,8 +49,26 @@ export default function Button(){
       }
   }
     
-
     return vector;
+
+  }
+
+
+  function reshape(vector: number[]){
+    //make an empty matrix of n x m 
+    const matrix: (string | number)[][] = Array.from({ length: n }, () => Array(m).fill(''));
+    //make n and m one smaller because indexing starts with 0
+    
+    let indexV: number = 0
+
+    for (let indexM = 0; indexM < matrix[0].length; indexM++){
+      for (let indexN = 0; indexN < matrix.length; indexN++){
+        
+        matrix[indexN][indexM] = vector[indexV++];
+      }
+    }
+  
+    return matrix;
 
   }
 
@@ -124,7 +142,7 @@ function solve(A: number[][], b: number[], fast: boolean = false): number[] {
     
     
     console.log(matrixA, matrixB, matrixC)
-    console.log(matrixB[1][0])
+    
     //create the parts from the equation above
     const identityN: number[][] = numeric.identity(n);
     console.log('identityN')
@@ -155,9 +173,15 @@ function solve(A: number[][], b: number[], fast: boolean = false): number[] {
     console.log('vectorX');
     console.log(vectorX);
     
+    //turn x back into a matrix
     
+    
+    console.log(reshape(vectorX))
+    setMatrixX(reshape(vectorX));
 
-    console.log(numeric.transpose([[1,2],[3,4]]))
+
+
+    
 
 
 
@@ -217,27 +241,10 @@ function solve(A: number[][], b: number[], fast: boolean = false): number[] {
     console.log('solve')
     console.log(solve(matrixExample1, vectorExample1))
 
+    /reshape yes
+    const exampleVector: number[] = [1,2,3,4,5,6,7,8,98]
+    console.log(reshape(exampleVector))
     */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
