@@ -29,7 +29,7 @@ export default function Inputs() {
 			inputM = 1;
 		}
 		
-		const resizedMatrix: string[][] = Array.from({ length: inputN }, () => Array(inputM).fill('O'));
+		const resizedMatrix: string[][] = Array.from({ length: inputN }, () => Array(inputM).fill(''));
 		setMatrixX(resizedMatrix);
 	}
 		
