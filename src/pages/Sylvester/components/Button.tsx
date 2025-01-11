@@ -157,7 +157,7 @@ function solve(A: number[][], b: number[], fast: boolean = false): number[] {
     
     
 
-
+    console.log(numeric.transpose([[1,2],[3,4]]))
 
 
 
