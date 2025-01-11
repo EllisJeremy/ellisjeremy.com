@@ -22,6 +22,13 @@ export default function Inputs() {
 	}
 
 	const matrixXResizer = (inputN: number, inputM: number) => {
+		if (inputN < 1){
+			inputN = 1;
+		}
+		if (inputM < 1){
+			inputM = 1;
+		}
+		
 		const resizedMatrix: string[][] = Array.from({ length: inputN }, () => Array(inputM).fill('O'));
 		setMatrixX(resizedMatrix);
 	}

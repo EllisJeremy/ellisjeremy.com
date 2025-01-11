@@ -1,5 +1,5 @@
 import { inputsStore, matricesStore } from "../store"
-import numeric from 'numeric';
+import  {transpose, solve} from 'numeric';
 
 export default function Button(){
 
@@ -28,14 +28,17 @@ export default function Button(){
   }
 
   //both matrices are the same size
-  function addMatrix(matrix1: number[][] , matrix2: number[][]){
-    for (let n: number = 0; n < matrix1.length; n++){
-      for (let m: number = 0; m < matrix1[n].length; m++){
-        matrix1[n][m] = matrix1[n][m] + matrix2[n][m];
-    }}
-
-    return matrix1
-  }
+  function addMatrix(matrix1: number[][], matrix2: number[][]): number[][] {
+    const result: number[][] = [];
+    for (let i = 0; i < matrix1.length; i++) {
+        const row = [];
+        for (let j = 0; j < matrix1[i].length; j++) {
+            row.push(matrix1[i][j] + matrix2[i][j]);
+        }
+        result.push(row);
+    }
+    return result;
+}
 
 
   function vectorize(matrix: number[][]){
@@ -119,22 +122,24 @@ function solve(A: number[][], b: number[]): number[] {
     //(Im x A + Bt x In)vec(X) = vec(C)
     
     
-
+    /*
     //create the parts from the equation above
     const identityN: number[][] = numeric.identity(n);
     const identityM: number[][] = numeric.identity(m);
-    
+    const transposeB: number[][] = numeric.transpose(matrixB);
+
     //do kronecker products for each side and add them 
     const leftKronecker: number[][] = kronecker(identityM, matrixA);
-    const rightKronecker: number[][] = kronecker(numeric.transpose(matrixB), identityN);
+    const rightKronecker: number[][] = kronecker(transposeB, identityN);
     const coefficient: number[][] = addMatrix(leftKronecker, rightKronecker);
-    const vectorC: number[] = vectorize(matrixC)
 
+    //solve system of equations for vector x
+    const vectorC: number[] = vectorize(matrixC)
     const vectorX: number[] = solve(coefficient, vectorC);
     
     console.log(vectorX);
-    
-    console.log(vectorize([[1,0],[0,1]]))
+    console.log(vectorize([[1,2],[3,4]]))
+    */
 
 
 
@@ -145,8 +150,56 @@ function solve(A: number[][], b: number[]): number[] {
 
 
 
+    //testing section
+    const matrixExample1: number[][] = [
+      [1,2,3,4,5],
+      [1,7,3,8,5],
+      [1,6,23,5,3],
+    ]
 
+    const matrixExample2: number[][] = [
+      [3,2,3,4],
+      [1,7,3,8],
+      [1,6,23,5],
+      [8,6,3,34]
+    ]
 
+    const matrixExample3: number[][] = [
+      [3,2,3,4],
+      [1,2,3,8],
+      [1,5,23,5],
+      [8,6,7,34]
+    ]
+
+    const vectorExample1: number[] = [1,2,3]
+
+    //identity  yes
+    console.log('identity')
+    console.log(numeric.identity(5));
+    console.log(numeric.identity(7));
+
+    //transpose  yes
+    console.log('transpose')
+    console.log(numeric.transpose(matrixExample1))
+    console.log(numeric.transpose(matrixExample2))
+
+    //kronecker  
+    console.log('kronecker')
+    console.log(kronecker(matrixExample1,matrixExample2))
+    console.log(kronecker(matrixExample2,matrixExample3))
+
+    //addMatrix 
+    console.log('add')
+    console.log(addMatrix(matrixExample2,matrixExample3))
+
+    //vectorize
+    console.log('vectorize')
+    console.log(vectorize(matrixExample1))
+    console.log(vectorize(matrixExample2))
+
+    //solve
+    console.log('solve')
+    console.log(numeric.solve(matrixExample1, vectorExample1))
 
 
 
@@ -177,7 +230,9 @@ function solve(A: number[][], b: number[]): number[] {
 	}
 
   return(
-    <button onClick={() =>  {matrixXSolver(); console.log(matrixA, matrixB, matrixC, matrixX)}} 
-    className = "compute-button" id = "compute"> Compute <span className="tnr2">X</span></button>
+    <button onClick={matrixXSolver}
+    className = "compute-button" > Compute <span className="tnr2">X</span></button>
   )
 }
+
+//onClick={() =>  {matrixXSolver(); console.log(matrixA, matrixB, matrixC, matrixX)}}
