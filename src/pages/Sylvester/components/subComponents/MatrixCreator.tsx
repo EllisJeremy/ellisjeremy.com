@@ -23,9 +23,9 @@ export function CreateMatrixA(
 		updatedMatrix[rowIndex][colIndex] = value;
 		
 		setMatrixA(updatedMatrix); 
-	};
+	}
 	
-	
+
 	
 	return (
     <>
