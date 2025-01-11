@@ -4,7 +4,7 @@ import { inputsStore, matricesStore } from "../store"
 export default function Inputs() {
 	
   const {n, m, setN, setM, incrementN, decrementN, incrementM, decrementM} = inputsStore();
-	const { matrixA, matrixB, matrixC, setMatrixA, setMatrixB, setMatrixC} = matricesStore();
+	const { matrixA, matrixB, matrixC,  setMatrixA, setMatrixB, setMatrixC, setMatrixX} = matricesStore();
 
 	const matrixAResizer = (inputN: number) => {
 		const resizedMatrix: number[][] = matrixA.slice(0, inputN).map((row: number[]) => row.slice(0, inputN));
@@ -19,6 +19,11 @@ export default function Inputs() {
 	const matrixCResizer = (inputN: number, inputM: number) => {
 		const resizedMatrix: number[][] = matrixC.slice(0, inputN).map((row: number[]) => row.slice(0, inputM));
 		setMatrixC(resizedMatrix);
+	}
+
+	const matrixXResizer = (inputN: number, inputM: number) => {
+		const resizedMatrix: string[][] = Array.from({ length: inputN }, () => Array(inputM).fill('O'));
+		setMatrixX(resizedMatrix);
 	}
 		
 
@@ -41,10 +46,11 @@ export default function Inputs() {
 								setN(e.currentTarget.valueAsNumber);
 								matrixAResizer(e.currentTarget.valueAsNumber);
 								matrixCResizer(e.currentTarget.valueAsNumber, m)
+								matrixXResizer(e.currentTarget.valueAsNumber, m)
 							}} />
 						
-            <button className="dimension-input-button" onClick={() => {decrementN(); matrixAResizer(n - 1); matrixCResizer(n - 1, m)}}>-</button>
-            <button className="dimension-input-button" onClick={incrementN}>+</button>
+            <button className="dimension-input-button" onClick={() => {decrementN(); matrixAResizer(n - 1); matrixCResizer(n - 1, m);; matrixXResizer(n - 1, m)}}>-</button>
+            <button className="dimension-input-button" onClick={() => {incrementN(); matrixXResizer(n + 1, m)}}>+</button>
 					</div>
 
 					<div className = "dimension-input-div">
@@ -56,10 +62,11 @@ export default function Inputs() {
 								setM(e.currentTarget.valueAsNumber)
 								matrixBResizer(e.currentTarget.valueAsNumber);
 								matrixCResizer(n, e.currentTarget.valueAsNumber );
+								matrixXResizer(n, e.currentTarget.valueAsNumber );
 						}} />
 
-            <button className="dimension-input-button" onClick={() => {decrementM(); matrixBResizer(m - 1); matrixCResizer(n, m - 1)}}>-</button>
-            <button className="dimension-input-button" onClick={incrementM}>+</button>
+            <button className="dimension-input-button" onClick={() => {decrementM(); matrixBResizer(m - 1); matrixCResizer(n, m - 1); matrixXResizer(n, m - 1)}}>-</button>
+            <button className="dimension-input-button" onClick={() => {incrementM(); matrixXResizer(n, m + 1)}}>+</button>
 					</div>
 
 				</div>
