@@ -1,13 +1,13 @@
-import Titles from "./components/Titles";
-import Inputs from "./components/Inputs";
-import Matrices from "./components/Matrices";
-import Button from "./components/Button";
+import Titles from "./components/Titles/Titles";
+import Dimensions from "./components/Dimensions/Dimensions";
+import Matrices from "./components/Matrices/Matrices";
+import Button from "./components/Button/Button";
 
 export default function Sylvester(){
   return(
     <>
       <Titles />
-      <Inputs />
+      <Dimensions />
       <Matrices />
       <Button />
     </>

@@ -1,0 +1,47 @@
+.fullMatrixDiv {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+.matrixDiv {
+  display: inline-block;
+  width: 340px;
+  height: 300px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.25);
+  margin: 15px;
+  text-align: left;
+  border-width: 1px;
+  background-color: rgb(40, 40, 40);
+  transition: background-color 0.25s, box-shadow 0.25s;
+}
+
+
+
+.matrixDiv:hover {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
+}
+
+.matrixFlexDiv {
+  display: flex;
+  flex-direction: row;
+}
+
+.variableDiv {
+  font-family: "Times New Roman";
+  font-style: italic;
+  color: white;
+  width: 30px;
+  padding-top: 142px;
+  padding-left: 7px;
+}
+
+.dynamicMatrixDiv {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: 280px;
+  margin: 10px;
+}

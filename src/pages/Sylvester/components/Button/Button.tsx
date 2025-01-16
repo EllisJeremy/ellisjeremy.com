@@ -1,5 +1,6 @@
-import { inputsStore, matricesStore } from "../store"
+import { inputsStore, matricesStore } from "../../store"
 import numeric  from 'numeric';
+import styles from "./Button.module.css"
 
 export default function Button(){
 
@@ -254,7 +255,7 @@ function solve(A: number[][], b: number[]): number[] {
 
   return(
     <button onClick={matrixXSolver}
-    className = "compute-button" > Compute <span className="tnr2">X</span></button>
+    className = {styles.computeButton} > Compute <span className={styles.tnr2}>X</span></button>
   )
 }
 
