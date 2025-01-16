@@ -36,7 +36,7 @@ export default function Dimensions() {
   return(
     <>
       <div className={styles.dimensionDiv}>
-        <p >Enter dimensions n and m to customize the matrices below:</p>
+        <p >Enter dimensions <span className={styles.tnr2}>n</span> and <span className={styles.tnr2}>m</span> to customize the matrices below:</p>
 
         <div className={styles.fullDimensionInputDiv}>
 
