@@ -1,0 +1,23 @@
+
+.sylvester {
+  background-color: rgb(20, 20, 20);
+  font-family: Arial;
+  
+  margin: 2vw;
+  font-family: Arial;
+
+  
+}
+
+
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+
+
+
