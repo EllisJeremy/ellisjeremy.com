@@ -81,7 +81,7 @@ interface LUResult {
 }
 
 // Decomposes a given matrix A into its LU decomposition with optional partial pivoting.
-function LU(A: number[][], fast: boolean = false): LUResult {
+function LU(A: number[][]): LUResult {
   const n = A.length;
   const L: number[][] = Array.from({ length: n }, (_, i) => Array(n).fill(0).map((_, j) => (i === j ? 1 : 0)));
   const U: number[][] = A.map(row => row.slice()); 
@@ -130,8 +130,8 @@ function LUsolve(LU: LUResult, b: number[]): number[] {
 
 
 // Solves a system of linear equations A * x = b by performing LU decomposition and substitution.
-function solve(A: number[][], b: number[], fast: boolean = false): number[] {
-  const LUResult = LU(A, fast);
+function solve(A: number[][], b: number[]): number[] {
+  const LUResult = LU(A);
   return LUsolve(LUResult, b);
 }
 
