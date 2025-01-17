@@ -1,6 +1,10 @@
 .home{
   background-color: rgb(29, 33, 42);
-  
-  
+  font-family: Arial;
+  margin-top: 50px;
+}
+
+.content{
+  justify-content: center;
 }
 
