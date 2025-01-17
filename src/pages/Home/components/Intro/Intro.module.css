@@ -1,3 +1,9 @@
+.lightBar{
+  box-shadow: 0px -50px 200px 50px rgba(103, 255, 247, 0.1);
+  width: 50%;
+  margin-left: 25%;
+}
+
 .homeDiv {
   display: inline-block;
   text-align: center;

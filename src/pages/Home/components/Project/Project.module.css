@@ -13,7 +13,7 @@
   
   transition: background-color 0.25s, box-shadow 0.25s, border-color .25s;
   border-top: 2px solid rgba(255, 255, 255, 0.1);
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.075);
   padding: 10px;
 }
 
@@ -22,10 +22,85 @@
 .projectDiv:hover {
   border-top: 2px solid rgba(255, 255, 255, 0.22);
   background-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
 }
 
+.spaceDiv{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
 
+.title{
+  color: rgba(255, 255, 255, 1);
+  margin: 0px;
+  margin-left: 6px;
+}
+
+.gitDiv{
+  display: flex;
+  
+  align-items: center;
+  border-top: 2px solid rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  transition: background-color 0.25s, box-shadow 0.25s, border-color .25s;
+  
+}
+
+.gitDiv:hover, .stackDivChild:hover{
+  cursor: pointer;
+  
+  border-top: 2px solid rgba(255, 255, 255, 0.22);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.gitHub{
+  height: 40px;
+}
+
+.gitCat{
+  height: 30px;
+  margin: 6px;
+  
+}
+
+.stackDiv{
+  display: flex;
+  flex-direction: column;
+  margin-right: 4px;
+}
+
+.stackDivChild{
+  display: flex;
+  width: 110px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  padding-top: 2.5px;
+  padding-bottom: 2.5px;
+  margin-top: 2.5px;
+
+  border-top: 2px solid rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  transition: background-color 0.25s, box-shadow 0.25s, border-color .25s;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.stackImg{
+  height: 25px;
+}
+
+.stackImgTypescript{
+  height: 20px;
+  margin: 2.5px;
+}
+
+.sylvester{
+  width: 00%;
+  border-radius: 6px;
+  border-top: 2px solid rgba(255, 255, 255, 0.22);
+}
 
 
 

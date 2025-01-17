@@ -6,10 +6,11 @@ export default function Intro() {
 
   return (
     <>
+      <div className={styles.lightBar}/>
       <div className={styles.homeDiv}>
         <Project />
         <Project />
-        
+      
         
 
       
