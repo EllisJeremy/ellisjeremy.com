@@ -25,18 +25,33 @@
   box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
 }
 
-.spaceDiv{
+.titleDiv{
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
+  height: 50px;
 }
 
 .title{
   color: rgba(255, 255, 255, 1);
   margin: 0px;
   margin-left: 6px;
+  border-radius: 10px;
+  padding: 6px;
+  border-top: 2px solid rgba(255, 255, 255, 0);
+  padding-top: 0px;
+  transition: background-color 0.25s, box-shadow 0.25s, border-color .25s;
 }
+
+.title:hover{
+  color: rgba(255, 255, 255, 1);
+  margin: 0px;
+  margin-left: 6px;
+  cursor: pointer;
+  
+}
+
 
 .gitDiv{
   display: flex;
@@ -48,7 +63,7 @@
   
 }
 
-.gitDiv:hover, .stackDivChild:hover{
+.gitDiv:hover, .stackDivChild:hover, .title:hover{
   cursor: pointer;
   
   border-top: 2px solid rgba(255, 255, 255, 0.22);
@@ -62,6 +77,14 @@
 .gitCat{
   height: 30px;
   margin: 6px;
+  
+}
+
+.midDiv{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
   
 }
 

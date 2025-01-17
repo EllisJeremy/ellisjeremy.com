@@ -1,4 +1,4 @@
-
+import { useNavigate } from 'react-router-dom';
 import styles from "./Project.module.css";
 
 import gitHub from "../.././assets/GitHub_Logo_White.png"
@@ -14,9 +14,13 @@ import numeric from "../.././assets/numeric.png"
 
 
 export default function Project() {
-  
+  const navigate = useNavigate();
+
+  const sylvesterLink = () => {
+    navigate('/sylvester');
+  };
   const sylvesterGitLink = () => {
-    window.open('https://react.dev/', '_blank'); 
+    window.open('https://github.com/EllisJeremy/ellisjeremy.com/tree/main/src/pages/Sylvester', '_blank'); 
   };
   const reactLink = () => {
     window.open('https://react.dev/', '_blank'); 
@@ -38,15 +42,17 @@ export default function Project() {
         
         <div className={styles.projectDiv}>
 
-          <div className={styles.spaceDiv}>
-            <h1 className={styles.title}>Sylvester Solver</h1>
-            <div className={styles.gitDiv} onClick={typescriptLink}>
+          <div className={styles.titleDiv}>
+            <h1 className={styles.title} onClick={sylvesterLink}> 
+              Sylvester Solver
+            </h1>
+            <div className={styles.gitDiv} onClick={sylvesterGitLink}>
               <img src={gitHub} className={styles.gitHub}/>
               <img src={gitCat} className={styles.gitCat}/>
             </div>
           </div>
 
-          <div className={styles.spaceDiv}>
+          <div className={styles.midDiv}>
             text
             <div className={styles.stackDiv}>
               <div className={styles.stackDivChild} onClick={reactLink}>
