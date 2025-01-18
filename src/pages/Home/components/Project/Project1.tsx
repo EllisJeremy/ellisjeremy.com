@@ -10,7 +10,7 @@ import zustand from "../.././assets/zustand.svg"
 import numeric from "../.././assets/numeric.png"
 
 
-//import sylvester from "../.././assets/sylvester.png"
+import sylvester from "../.././assets/sylvester.png"
 
 
 export default function Project() {
@@ -36,6 +36,19 @@ export default function Project() {
   };
 
 
+  const linearAlgebraLink = () => {
+    window.open('https://en.wikipedia.org/wiki/Linear_algebra', '_blank'); 
+  };
+
+  const sylvesterEquationLink = () => {
+    window.open('https://en.wikipedia.org/wiki/Sylvester_equation', '_blank'); 
+  };
+
+  const methodLink = () => {
+    window.open('https://en.wikipedia.org/wiki/Sylvester_equation#Existence_and_uniqueness_of_the_solutions', '_blank'); 
+  };
+
+
   return (
     <>
       
@@ -54,9 +67,9 @@ export default function Project() {
 
           <div className={styles.midDiv}>
             <ul className={styles.list}>
-              <li className={styles.listItem}>A Linear Algebra tool that solves the Sylvester equation for user inputted matrices</li>
+              <li className={styles.listItem}>A <span className={styles.textLink} onClick={linearAlgebraLink} >Linear Algebra </span>tool that solves the <span className={styles.textLink} onClick={sylvesterEquationLink} >Sylvester equation</span> for user inputted matrices</li>
               <li className={styles.listItem}>Compatible with with n by m matrices up to 9 by 9</li>
-              <li className={styles.listItem}>Solves using the Kronecker Product Vectorization Method</li>
+              <li className={styles.listItem}>Solves using the <span className={styles.textLink} onClick={methodLink} >Kronecker Product Vectorization Method</span></li>
               
             </ul>
             <div className={styles.stackDiv}>
@@ -80,8 +93,9 @@ export default function Project() {
             </div>
             
           </div>
-
-          
+          <div className={styles.projectImgDiv}>
+            <img src={sylvester} className={styles.projectImg} onClick={sylvesterLink}/>
+          </div>
         </div>
 
         

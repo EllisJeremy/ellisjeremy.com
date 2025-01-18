@@ -8,9 +8,10 @@ import react from "../.././assets/react.svg"
 import typescript from "../.././assets/typescript.svg"
 import zustand from "../.././assets/zustand.svg"
 
+import calendar from "../.././assets/calendar.png"
 
 
-//import sylvester from "../.././assets/sylvester.png"
+
 
 
 export default function Project2() {
@@ -19,8 +20,8 @@ export default function Project2() {
   const calendarLink = () => {
     navigate('/calendar');
   };
-  const sylvesterGitLink = () => {
-    window.open('https://github.com/EllisJeremy/ellisjeremy.com/tree/main/src/pages/Sylvester', '_blank'); 
+  const calendarGitLink = () => {
+    window.open('https://github.com/EllisJeremy/calendarSignUp', '_blank'); 
   };
   const reactLink = () => {
     window.open('https://react.dev/', '_blank'); 
@@ -44,7 +45,7 @@ export default function Project2() {
             <h1 className={styles.title} onClick={calendarLink}> 
               Orchard Signup
             </h1>
-            <div className={styles.gitDiv} onClick={sylvesterGitLink}>
+            <div className={styles.gitDiv} onClick={calendarGitLink}>
               <img src={gitHub} className={styles.gitHub}/>
               <img src={gitCat} className={styles.gitCat}/>
             </div>
@@ -75,7 +76,9 @@ export default function Project2() {
             </div>
             
           </div>
-
+          <div className={styles.projectImgDiv}>
+            <img src={calendar} className={styles.projectImg} onClick={calendarLink}/>
+          </div>
           
         </div>
 
