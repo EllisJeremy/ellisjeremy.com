@@ -7,17 +7,17 @@ import gitCat from "../.././assets/github-mark-white.svg"
 import react from "../.././assets/react.svg"
 import typescript from "../.././assets/typescript.svg"
 import zustand from "../.././assets/zustand.svg"
-import numeric from "../.././assets/numeric.png"
+
 
 
 //import sylvester from "../.././assets/sylvester.png"
 
 
-export default function Project() {
+export default function Project2() {
   const navigate = useNavigate();
 
-  const sylvesterLink = () => {
-    navigate('/sylvester');
+  const calendarLink = () => {
+    navigate('/calendar');
   };
   const sylvesterGitLink = () => {
     window.open('https://github.com/EllisJeremy/ellisjeremy.com/tree/main/src/pages/Sylvester', '_blank'); 
@@ -31,9 +31,7 @@ export default function Project() {
   const zustandLink = () => {
     window.open('https://zustand.docs.pmnd.rs/getting-started/introduction', '_blank'); 
   };
-  const numericLink = () => {
-    window.open('https://ccc-js.github.io/numeric2/', '_blank'); 
-  };
+  
 
 
   return (
@@ -43,17 +41,22 @@ export default function Project() {
         <div className={styles.projectDiv}>
 
           <div className={styles.titleDiv}>
-            <h1 className={styles.title} onClick={sylvesterLink}> 
-              Sylvester Solver
+            <h1 className={styles.title} onClick={calendarLink}> 
+              Orchard Signup
             </h1>
             <div className={styles.gitDiv} onClick={sylvesterGitLink}>
               <img src={gitHub} className={styles.gitHub}/>
               <img src={gitCat} className={styles.gitCat}/>
             </div>
           </div>
-
+              
           <div className={styles.midDiv}>
-            text
+            <ul className={styles.list}>
+              <li className={styles.listItem}>A Calendar tool made for The Orchard church for task sing-ups and events</li>
+              <li className={styles.listItem}>Allows for admin-level accounts to create tasks and events and for normal accounts to sign up</li>
+              <li className={styles.listItem}>The version linked here is separate from the real one, so feel free to add or remove tasks on it</li>
+              
+            </ul>
             <div className={styles.stackDiv}>
               <div className={styles.stackDivChild} onClick={reactLink}>
                 React
@@ -67,10 +70,7 @@ export default function Project() {
                 Zustand
                 <img src={zustand} className={styles.stackImg}/>
               </div>
-              <div className={styles.stackDivChild} onClick={numericLink}>
-                Numeric
-                <img src={numeric} className={styles.stackImg}/>
-              </div>
+              
               
             </div>
             

@@ -1,4 +1,5 @@
-import Project from "../Project/Project";
+import Project from "../Project/Project1";
+import Project2 from "../Project/Project2";
 import styles from "./Intro.module.css";
 
 export default function Intro() {
@@ -9,7 +10,7 @@ export default function Intro() {
       <div className={styles.lightBar}/>
       <div className={styles.homeDiv}>
         <Project />
-        <Project />
+        <Project2 />
       
         
 

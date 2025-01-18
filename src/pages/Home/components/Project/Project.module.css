@@ -83,8 +83,9 @@
 .midDiv{
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  
   margin-bottom: 10px;
+  height: 170px;
   
 }
 
@@ -123,6 +124,23 @@
   width: 00%;
   border-radius: 6px;
   border-top: 2px solid rgba(255, 255, 255, 0.22);
+}
+
+.list{
+  margin: 0px;
+  padding-left: 30px;
+}
+
+.listItem{
+  color: rgba(255, 255, 255, 0.6);
+  
+  align-items: center;
+  padding: 5px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-top: 4.5px;
+  width: 360px;
+  
 }
 
 
