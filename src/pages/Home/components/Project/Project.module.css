@@ -2,11 +2,12 @@
 
 .projectDiv {
   display: inline-block;
+  
   width: 600px;
   height: 578px;
   border-radius: 10px;
   
-  border-color: rgba(255, 255, 255, 0.25);
+  
   margin: 15px;
   text-align: left;
   
@@ -31,12 +32,13 @@
   align-items: center;
   margin-bottom: 10px;
   height: 50px;
+  
 }
 
 .title{
   color: rgba(255, 255, 255, 1);
   margin: 0px;
-  margin-left: 6px;
+  font-weight: normal;
   border-radius: 10px;
   padding: 6px;
   border-top: 2px solid rgba(255, 255, 255, 0);
@@ -45,9 +47,7 @@
 }
 
 .title:hover{
-  color: rgba(255, 255, 255, 1);
-  margin: 0px;
-  margin-left: 6px;
+  
   cursor: pointer;
   
 }
@@ -162,7 +162,7 @@
 
 .projectImg:hover{
   width: 100%;
-  transform: scale(1.1);
+  transform: scale(1.05);
   overflow: hidden;
   cursor: pointer;
 }

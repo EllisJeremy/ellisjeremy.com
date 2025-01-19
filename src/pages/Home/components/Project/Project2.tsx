@@ -53,7 +53,7 @@ export default function Project2() {
               
           <div className={styles.midDiv}>
             <ul className={styles.list}>
-              <li className={styles.listItem}>A Calendar tool made for The Orchard church for task sing-ups and events</li>
+              <li className={styles.listItem}>A Calendar tool made for The Orchard Church for task sing-ups and events</li>
               <li className={styles.listItem}>Allows for admin-level accounts to create tasks and events and for normal accounts to sign up</li>
               <li className={styles.listItem}>The version linked here is separate from the real one, so feel free to add or remove tasks on it</li>
               

@@ -1,12 +1,18 @@
 .home{
+  
   background-color: rgb(29, 33, 42);
-  font-family: Arial;
+  font-family: quicksand;
+  font-weight: 300;
   margin: 0;
-  margin-top: 50px;
+  margin-top: 80px;
+  text-align: center;
   
 }
 
-.content{
-  justify-content: center;
+
+.lightBar{
+  box-shadow: 0px -50px 200px 50px rgba(103, 255, 247, 0.15);
+  width: 50%;
+  margin-left: 25%;
 }
 
