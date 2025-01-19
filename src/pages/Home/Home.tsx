@@ -18,7 +18,7 @@ export default function Home() {
       </Helmet>
       <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-      <div className={styles.lightBar}/>
+      
       <Intro />
       <Project />
       <Project2 />
