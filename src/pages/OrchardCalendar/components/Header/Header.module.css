@@ -26,12 +26,17 @@
   background-color: rgb(255, 255, 255);
   border-style: none;
   
-  font-size: 18px;
-  border-radius: 15px;
-  width: 140px;
-  height: 45px;
+  font-size: 15px;
+  border-radius: 10px;
+  width: 120px;
+  height: 25px;
   margin-right: 20px;
   transition: background-color .4s, box-shadow .75s;
+
+  color: black; 
+  -webkit-appearance: none; 
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .buttonHome:hover{

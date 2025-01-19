@@ -3,6 +3,7 @@ import { taskStore } from '../../../store'
 import trash from '../../.././assets/trash.svg'
 import check from '../../.././assets/check.svg'
 
+
 const colorMap: Record<string, React.CSSProperties> = {
   Red: {
     backgroundColor: "rgba(255, 0, 0, 0.5)",
@@ -97,7 +98,7 @@ export default function TaskCreator() {
                 {tasks.description}
               </p>
               <button className={styles.selectButton}>
-                <img className={styles.plus} src='/check.svg'/> 
+                <img className={styles.plus} src={check}/> 
               </button>
             
               </div>
