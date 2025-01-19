@@ -15,7 +15,7 @@ export default function Header(){
       <div className={styles.headerDivFlex}>
         <img className={styles.headerLogo} src={orchardLogo} />
         <button className={styles.buttonHome} onClick={homeLink}>
-           Return Home
+           Home
         </button>
       </div>
     </div>

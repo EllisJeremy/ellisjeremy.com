@@ -13,6 +13,7 @@ export default function OrchardCalendar() {
     <>
       <Helmet>
         <body className={styles.orchardCalendar} />
+        <meta name="viewport" content="width=device-width, initial-scale=.9" />
       </Helmet>
       <Header />
       <div className={styles.calendar}>

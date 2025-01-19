@@ -11,7 +11,7 @@ export default function Button(){
 	
 
   return(
-    <button onClick={homeLink} className = {styles.computeButton} > Return Home </button>
+    <button onClick={homeLink} className = {styles.computeButton} > Home </button>
   )
 }
 

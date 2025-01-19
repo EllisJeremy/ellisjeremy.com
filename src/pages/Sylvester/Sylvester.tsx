@@ -11,6 +11,7 @@ export default function Sylvester(){
     <>
     <Helmet>
         <body className={styles.sylvester} />
+        <meta name="viewport" content="width=device-width, initial-scale=.95" />
     </Helmet>
     <Titles />
     <Dimensions />
