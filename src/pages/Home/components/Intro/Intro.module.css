@@ -8,13 +8,17 @@
   flex-wrap: wrap;
   width: 1270px;
   justify-content: space-between;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 @media (max-width: 1300px) {
   .introDiv {
     
     width: 620px;
+  }
+
+  .aboutDiv{
+    margin-top: 30px;
   }
 }
 
@@ -33,6 +37,7 @@
 
 .nameDiv{
   text-align: left;
+  margin-left: 20px;
 }
 
 .subName{
@@ -43,34 +48,36 @@
   margin: 0px;
 }
 
-.hokieDiv{
-  display: flex;
-}
+
 
 .subtitleDiv{
   display: flex;
+}
+
+.VirginiaTechDiv{
+  display: flex;
+  flex-direction: row;
+}
+
+.VirginiaTechDiv:hover{
+  cursor: pointer;
   
 }
 
-.subtitleDiv:hover{
-  cursor: pointer;
-}
-
-.subtitleDiv:hover .maroonSpan{
+.VirginiaTechDiv:hover .maroonSpan{
   color: rgb(134, 31, 65);
   transition: color .25s;
 
 }
 
-.subtitleDiv:hover .orangeSpan{
+.VirginiaTechDiv:hover .orangeSpan{
   color: rgb(229, 117,31);
   transition: color .25s;
 }
 
-.subtitleDiv:hover .hokie{
+.VirginiaTechDiv:hover .hokie{
   height: 44px;
   padding: 0px;
-  
 }
 
 .maroonSpan{
@@ -82,20 +89,62 @@
   transition: color .25s;
 }
 
-.hokie{
-  height: 40px;
-  padding: 2px;
-  
+.hokieDiv{
+  height: 44px;
+  width: 69.3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   
 }
 
+.hokie{
+  height: 40px;
+  transition: height .15s;
+}
+
+.aboutDiv{
+  margin-left: 20px;
+}
+
 .about{
+  width: 600px;
+  
+  text-align: left;
+  margin: 0px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 18px;
+  margin-top: 10px;
+  height: 50px;
+}
+
+.languagesDiv{
+  color: rgba(255, 255, 255, .8);
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  
+
+  
+}
+
+.languageDiv{
+  display: flex;
+  align-items: center;
+}
+
+.languageImg{
+  height: 40px;
+  margin: 5px;
+}
+
+.project{
   width: 620px;
   text-align: left;
   margin: 0px;
   color: rgba(255, 255, 255, 0.6);
-  font-size: 16px;
-  margin-top: 10px;
+  font-size: 18px;
 }
 
 
