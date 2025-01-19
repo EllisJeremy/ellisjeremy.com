@@ -1,11 +1,11 @@
 import styles from "./Intro.module.css";
 import hokie from "../.././assets/hokie.png"
-import python from "../.././assets/python.svg"
+import python from "../.././assets/python.png"
 import java from "../.././assets/java.svg"
 import javascript from "../.././assets/javascript.png"
 import typescript from "../.././assets/typescript2.svg"
-import html from "../.././assets/html.svg"
-import css from "../.././assets/css.svg"
+import html from "../.././assets/html.png"
+import css from "../.././assets/css.png"
 
 export default function Intro() {
   

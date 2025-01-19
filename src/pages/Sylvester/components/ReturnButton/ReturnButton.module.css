@@ -1,0 +1,35 @@
+.computeButton{
+  display: block;
+  border-color: rgba(255, 255, 255, 0.25);
+  border-width: 0px;
+  font-size: 20px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-bottom: 100px;
+  margin: 40px auto;
+  background-color: rgb(40, 40, 40);
+  color: white;
+  border-radius: 10px;
+  transition: background-color 0.25s, box-shadow 0.25s;
+}
+
+.computeButton:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
+  background-color: rgb(60, 60, 60);
+}
+
+.computeButton:active {
+  /*box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.25) ;*/
+  font-size: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 15px;
+  padding-left: 15px;
+  background-color: rgb(75, 75, 75);
+  border-width: 1px;
+}
+
+
