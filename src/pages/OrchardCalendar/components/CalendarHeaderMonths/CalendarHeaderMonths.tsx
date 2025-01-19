@@ -30,7 +30,7 @@ export default function CalendarHeader(){
           
         <div className={styles.logInDiv}>
           <button className={styles.buttonLogin} onClick={setAdmin}>
-            Admin
+            Toggle Admin
           </button>
         </div>
 

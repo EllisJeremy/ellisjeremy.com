@@ -14,9 +14,36 @@
   display: flex;
   padding-left: 20px;
   align-items: center;
+  justify-content: space-between;
 }
 
 .headerLogo{
   height: 70%;
 
+}
+
+.buttonHome{
+  background-color: rgb(255, 255, 255);
+  border-style: none;
+  
+  font-size: 18px;
+  border-radius: 15px;
+  width: 140px;
+  height: 45px;
+  margin-right: 20px;
+  transition: background-color .4s, box-shadow .75s;
+}
+
+.buttonHome:hover{
+  background-color: hsl(229, 22%, 90%);
+  box-shadow: 0px 0px 8px .75px rgba(0, 0, 0, 0);
+  cursor: pointer;
+  
+  
+}
+
+.buttonHome:active{
+  background-color: hsl(229, 22%, 85%);
+  transition: background-color .1s ;
+  
 }
