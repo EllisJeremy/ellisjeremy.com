@@ -79,7 +79,7 @@ export const modalStore = create<modalStoreType>((set) => ({
 
 //task class
 
-class TaskClass{
+export class TaskClass{
   public readonly date: string;
   public readonly title: string;
   public readonly dueTime: string;
