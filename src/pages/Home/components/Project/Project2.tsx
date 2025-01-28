@@ -7,6 +7,8 @@ import gitCat from "../.././assets/github-mark-white.svg"
 import react from "../.././assets/react.svg"
 import typescript from "../.././assets/typescript.svg"
 import zustand from "../.././assets/zustand.svg"
+import mysql from "../.././assets/mysql.svg"
+import php from "../.././assets/php.png"
 
 import calendar from "../.././assets/calendar.png"
 
@@ -31,6 +33,12 @@ export default function Project2() {
   };
   const zustandLink = () => {
     window.open('https://zustand.docs.pmnd.rs/getting-started/introduction', '_blank'); 
+  };
+  const mysqlLink = () => {
+    window.open('https://www.mysql.com/', '_blank'); 
+  };
+  const phpLink = () => {
+    window.open('https://www.php.net/', '_blank'); 
   };
   
 
@@ -70,6 +78,14 @@ export default function Project2() {
               <div className={styles.stackDivChild} onClick={zustandLink}>
                 Zustand
                 <img src={zustand} className={styles.stackImg}/>
+              </div>
+              <div className={styles.stackDivChild} onClick={mysqlLink}>
+                MySQL
+                <img src={mysql} className={styles.stackImg}/>
+              </div>
+              <div className={styles.stackDivChild} onClick={phpLink}>
+                PHP
+                <img src={php} className={styles.stackImg}/>
               </div>
               
               
