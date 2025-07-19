@@ -16,11 +16,7 @@ export default function Intro() {
     <>
       <div className={styles.introDiv}>
         <div className={styles.nameDiv}>
-          <h1 className={styles.name}>
-            Jeremy
-            <br />
-            Ellis
-          </h1>
+          <h1 className={styles.name}>Jeremy Ellis</h1>
 
           <div className={styles.subtitleDiv}>
             <h2 className={styles.subName}> CS student at &nbsp;</h2>
