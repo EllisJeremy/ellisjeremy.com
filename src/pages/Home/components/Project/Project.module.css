@@ -1,101 +1,108 @@
-
-
 .projectDiv {
   display: inline-block;
-  
+
   width: 600px;
   height: 578px;
-  border-radius: 10px;
-  
-  
+  border-radius: 15px;
+
   margin: 15px;
   text-align: left;
-  
-  
-  transition: background-color 0.25s, box-shadow 0.25s, border-color .25s;
+
+  transition: background-color 0.25s, box-shadow 0.25s, border-color 0.25s;
   border-top: 2px solid rgba(255, 255, 255, 0.1);
   background-color: rgba(255, 255, 255, 0.075);
-  padding: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
+  border-right: 0.5px solid rgba(255, 255, 255, 0.2);
 }
 
-
-
 .projectDiv:hover {
-  border-top: 2px solid rgba(255, 255, 255, 0.22);
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.3);
+  border-right: 0.5px solid rgba(255, 255, 255, 0.3);
   background-color: rgba(255, 255, 255, 0.1);
   box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
 }
 
-.titleDiv{
+.titleDiv {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
   height: 50px;
-  
 }
 
-.title{
+.title {
   color: rgba(255, 255, 255, 1);
   margin: 0px;
   font-weight: normal;
   border-radius: 10px;
   padding: 6px;
-  border-top: 2px solid rgba(255, 255, 255, 0);
+  border-top: 1px solid rgba(255, 255, 255, 0);
+  border-left: 1px solid rgba(255, 255, 255, 0);
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0);
+  border-right: 0.5px solid rgba(255, 255, 255, 0);
   padding-top: 0px;
-  transition: background-color 0.25s, box-shadow 0.25s, border-color .25s;
+  transition: background-color 0.25s, box-shadow 0.25s, border-color 0.25s;
 }
 
-.title:hover{
-  
+.title:hover {
   cursor: pointer;
-  
 }
 
-
-.gitDiv{
+.gitDiv {
   display: flex;
-  
+
   align-items: center;
   border-top: 2px solid rgba(255, 255, 255, 0);
   border-radius: 10px;
-  transition: background-color 0.25s, box-shadow 0.25s, border-color .25s;
-  
+  transition: background-color 0.25s, box-shadow 0.25s, border-color 0.25s;
 }
 
-.gitDiv:hover, .stackDivChild:hover, .title:hover{
+.gitDiv:hover,
+.stackDivChild:hover,
+.title:hover {
   cursor: pointer;
-  
-  border-top: 2px solid rgba(255, 255, 255, 0.22);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.3);
+  border-right: 0.5px solid rgba(255, 255, 255, 0.3);
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.gitHub{
+.gitHub {
   height: 40px;
 }
 
-.gitCat{
+.gitCat {
   height: 30px;
   margin: 6px;
-  
 }
 
-.midDiv{
+.midDiv {
   display: flex;
   justify-content: space-between;
-  
+
   margin-bottom: 10px;
   height: 170px;
-  
 }
 
-.stackDiv{
+.stackDiv {
   display: flex;
   flex-direction: column;
   margin-right: 4px;
 }
 
-.stackDivChild{
+.stackDivChild {
   display: flex;
   width: 110px;
   align-items: center;
@@ -107,66 +114,60 @@
 
   border-top: 2px solid rgba(255, 255, 255, 0);
   border-radius: 10px;
-  transition: background-color 0.25s, box-shadow 0.25s, border-color .25s;
+  transition: background-color 0.25s, box-shadow 0.25s, border-color 0.25s;
   color: rgba(255, 255, 255, 0.6);
 }
 
-.stackImg{
+.stackImg {
   height: 25px;
 }
 
-.stackImgTypescript{
+.stackImgTypescript {
   height: 20px;
   margin: 2.5px;
 }
 
-
-.list{
+.list {
   margin: 0px;
   padding-left: 30px;
 }
 
-.listItem{
+.listItem {
   color: rgba(255, 255, 255, 0.6);
-  
+
   align-items: center;
   padding: 5px;
   padding-top: 6px;
   padding-bottom: 6px;
   margin-top: 4.5px;
   width: 360px;
-  
 }
 
-.textLink{
+.textLink {
   color: rgba(255, 255, 255, 0.8);
-  transition: color .25s;
+  transition: color 0.25s;
 }
 
-.textLink:hover{
+.textLink:hover {
   color: rgba(255, 255, 255, 1);
   cursor: pointer;
 }
 
-.projectImgDiv{
+.projectImgDiv {
   height: 338px;
   border-radius: 6px;
-  
+
   overflow: hidden;
 }
 
-.projectImg{
+.projectImg {
   width: 100%;
   transition: transform 0.3s ease; /* Smooth zoom transition */
 }
 
-.projectImg:hover{
+.projectImg:hover {
   width: 100%;
   transform: scale(1.05);
   overflow: hidden;
   cursor: pointer;
 }
-
-
-
-

@@ -1,8 +1,4 @@
-
-
-
-.introDiv{
-  
+.introDiv {
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -13,103 +9,93 @@
 
 @media (max-width: 1300px) {
   .introDiv {
-    
     width: 620px;
   }
 
-  .aboutDiv{
+  .aboutDiv {
     margin-top: 30px;
   }
 }
 
-.name{
-  
-  font-family: quicksand;
+.name {
+  font-family: "Fattern";
   font-weight: 300;
   display: inline-block;
   color: rgba(255, 255, 255, 1);
   font-size: 60px;
   margin: 0px;
   margin-bottom: 20px;
-  
-  
 }
 
-.nameDiv{
+.nameDiv {
   text-align: left;
   margin-left: 20px;
 }
 
-.subName{
+.subName {
   font-family: quicksand;
   font-weight: 300;
   text-align: left;
-  color: rgba(255, 255, 255, .8);
+  color: rgba(255, 255, 255, 0.8);
   margin: 0px;
 }
 
-
-
-.subtitleDiv{
+.subtitleDiv {
   display: flex;
 }
 
-.VirginiaTechDiv{
+.VirginiaTechDiv {
   display: flex;
   flex-direction: row;
 }
 
-.VirginiaTechDiv:hover{
+.VirginiaTechDiv:hover {
   cursor: pointer;
-  
 }
 
-.VirginiaTechDiv:hover .maroonSpan{
+.VirginiaTechDiv:hover .maroonSpan {
   color: rgb(134, 31, 65);
-  transition: color .25s;
-
+  transition: color 0.25s;
 }
 
-.VirginiaTechDiv:hover .orangeSpan{
-  color: rgb(229, 117,31);
-  transition: color .25s;
+.VirginiaTechDiv:hover .orangeSpan {
+  color: rgb(229, 117, 31);
+  transition: color 0.25s;
 }
 
-.VirginiaTechDiv:hover .hokie{
+.VirginiaTechDiv:hover .hokie {
   height: 44px;
   padding: 0px;
 }
 
-.maroonSpan{
-  transition: color .25s;
-
+.maroonSpan {
+  transition: color 0.25s;
 }
 
-.orangeSpan{
-  transition: color .25s;
+.orangeSpan {
+  transition: color 0.25s;
 }
 
-.hokieDiv{
+.hokieDiv {
   height: 44px;
   width: 69.3px;
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
-.hokie{
+.hokie {
   height: 40px;
-  transition: height .15s;
+  transition: height 0.15s;
 }
 
-.aboutDiv{
+.aboutDiv {
   margin-left: 20px;
 }
 
-.about{
+.about {
   width: 600px;
-  
+
   text-align: left;
   margin: 0px;
   color: rgba(255, 255, 255, 0.6);
@@ -118,28 +104,26 @@
   height: 50px;
 }
 
-.languagesDiv{
-  color: rgba(255, 255, 255, .8);
+.languagesDiv {
+  color: rgba(255, 255, 255, 0.8);
   display: flex;
   justify-content: space-between;
   margin: 15px;
   margin-left: 0px;
   margin-right: 30px;
-
-  
 }
 
-.languageDiv{
+.languageDiv {
   display: flex;
   align-items: center;
 }
 
-.languageImg{
+.languageImg {
   height: 40px;
   margin: 5px;
 }
 
-.project{
+.project {
   width: 620px;
   text-align: left;
   margin: 0px;
@@ -147,54 +131,9 @@
   font-size: 18px;
 }
 
+.name {
+  text-shadow: 2px 2px 0 rgba(255, 255, 255, 0);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.names{
-  text-shadow: 
-    -1px -1px 0 rgba(88, 197, 188, 0.5), /* Top-left shadow */
-    1px -1px 0 rgba(161, 92, 92,.5),  /* Top-right shadow */
-    -1px 1px 0 black,  /* Bottom-left shadow */
-    1px 1px 0 black;   /* Bottom-right shadow */
-
-  color: rgba(255,255,255,.5);
-  font-size: 60px;
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 50px;
 }
-
-
-
-
-
