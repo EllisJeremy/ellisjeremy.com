@@ -21,6 +21,11 @@ export default function Intro() {
             <br />
             Ellis
           </h1>
+          <h1 className={styles.name2}>
+            Jeremy
+            <br />
+            Ellis
+          </h1>
 
           <div className={styles.subtitleDiv}>
             <h2 className={styles.subName}> CS student at &nbsp;</h2>

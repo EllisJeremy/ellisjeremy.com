@@ -17,7 +17,8 @@
   }
 }
 
-.name {
+.name,
+.name2 {
   font-family: "Fattern";
   font-weight: 300;
   display: inline-block;
@@ -131,9 +132,27 @@
   font-size: 18px;
 }
 
-.name {
-  text-shadow: 2px 2px 0 rgba(255, 255, 255, 0);
+.nameDiv {
+  position: relative;
+  display: inline-block;
+}
 
-  color: rgba(255, 255, 255, 0.2);
-  font-size: 50px;
+.name {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  color: red;
+  z-index: 0;
+  filter: blur(0.5px); /* optional to mimic stroke */
+  font-size: 100px;
+}
+
+.name2 {
+  color: transparent;
+  background: white; /* Or a gradient if you want fancy fill */
+  -webkit-background-clip: text;
+  background-clip: text;
+  position: relative;
+  z-index: 1;
+  font-size: 100px;
 }
