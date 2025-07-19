@@ -17,15 +17,18 @@
   }
 }
 
-.name,
-.name2 {
+.name {
   font-family: "Fattern";
   font-weight: 300;
   display: inline-block;
-  color: rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 0.075);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   font-size: 60px;
   margin: 0px;
   margin-bottom: 20px;
+  font-size: 100px;
 }
 
 .nameDiv {
@@ -130,29 +133,4 @@
   margin: 0px;
   color: rgba(255, 255, 255, 0.6);
   font-size: 18px;
-}
-
-.nameDiv {
-  position: relative;
-  display: inline-block;
-}
-
-.name {
-  position: absolute;
-  left: 0;
-  top: 2px;
-  color: red;
-  z-index: 0;
-  filter: blur(0.5px); /* optional to mimic stroke */
-  font-size: 100px;
-}
-
-.name2 {
-  color: transparent;
-  background: white; /* Or a gradient if you want fancy fill */
-  -webkit-background-clip: text;
-  background-clip: text;
-  position: relative;
-  z-index: 1;
-  font-size: 100px;
 }
