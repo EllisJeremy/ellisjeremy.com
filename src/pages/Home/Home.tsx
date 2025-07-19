@@ -6,9 +6,6 @@ import Project from "./components/Project/Project1";
 import Project2 from "./components/Project/Project2";
 
 export default function Home() {
-  
-
-  
 
   return (
     <>
@@ -19,19 +16,12 @@ export default function Home() {
       </Helmet>
       <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-      <div className={styles.lightBar1}/>
+      <div className={styles.lightBar1} />
       <Intro />
       <Project />
       <Project2 />
-      <div className={styles.lightBar2}/>
-      
-     
-        
-        
+      <div className={styles.lightBar2} />
 
-        
-        
-      
     </>
   );
 }
