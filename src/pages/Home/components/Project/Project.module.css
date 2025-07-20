@@ -1,7 +1,7 @@
 .projectDiv {
   display: inline-block;
   margin-bottom: 30px;
-
+  position: relative;
   width: 600px;
   height: 578px;
   border-radius: 20px;
@@ -10,7 +10,7 @@
 
   transition: background-color 0.25s, box-shadow 0.25s, border-color 0.25s;
   border-top: 2px solid rgba(255, 255, 255, 0.1);
-  background-color: rgba(255, 255, 255, 0.075);
+  background-color: rgba(255, 255, 255, 0.05);
 
   padding: 20px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -23,11 +23,20 @@
   border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
   border-right: 0.5px solid rgba(255, 255, 255, 0.2);
   overflow: hidden;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.075),
+    rgba(255, 255, 255, 0.075)
+  );
 }
 
 .projectDiv::before {
   content: "";
   position: absolute;
+  z-index: 0;
+
   top: 0;
   left: 0;
   right: 0;
@@ -42,6 +51,8 @@
 }
 
 .projectDiv::after {
+  z-index: -10;
+
   content: "";
   position: absolute;
   top: 0;
@@ -107,10 +118,10 @@
   border-right: 0.5px solid rgba(255, 255, 255, 0.3);
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.075),
+    rgba(255, 255, 255, 0.05),
     rgba(255, 255, 255, 0.125),
-    rgba(255, 255, 255, 0.075),
-    rgba(255, 255, 255, 0.075)
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.05)
   );
 }
 

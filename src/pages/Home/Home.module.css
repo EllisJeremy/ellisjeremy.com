@@ -12,6 +12,13 @@
   }
 }
 
+@media (min-width: 1350px) and (max-width: 1499px) {
+  .fullDiv {
+    margin-left: 75px;
+    margin-right: 75px;
+  }
+}
+
 .fullDiv {
   display: flex;
 
@@ -27,7 +34,6 @@
 
 .leftDiv,
 .rightDiv {
-  background-color: #ff5757;
 }
 
 .leftDiv {
@@ -37,15 +43,14 @@
   width: 650px;
 }
 .home {
-  height: 100vh;
+  height: 200vh;
   background: linear-gradient(135deg, #a8edea, #ff5757);
-  background: linear-gradient(135deg, rgb(29, 33, 42), #000000);
+  background: linear-gradient(135deg, rgb(0, 33, 42), rgb(29, 33, 42));
   /* use for light mode ? */
   background: linear-gradient(135deg, #fff8f8, rgb(180, 202, 255));
 
   background: rgb(29, 33, 42);
-
-  background-attachment: fixed; /* prevents scroll flicker */
+  background: linear-gradient(135deg, rgb(0, 57, 72), #10172a);
 
   font-family: quicksand;
   font-weight: 300;
