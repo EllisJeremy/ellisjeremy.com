@@ -5,10 +5,43 @@
   font-style: normal;
 }
 
+@media (min-width: 1500px) {
+  .fullDiv {
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+}
+
+.fullDiv {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.fillerDiv {
+  width: 400px;
+}
+
+.leftDiv,
+.rightDiv {
+  background-color: #ff5757;
+}
+
+.leftDiv {
+  position: fixed;
+}
+.rightDiv {
+  width: 650px;
+}
 .home {
   height: 100vh;
   background: linear-gradient(135deg, #a8edea, #ff5757);
   background: linear-gradient(135deg, rgb(29, 33, 42), #000000);
+  /* use for light mode ? */
+  background: linear-gradient(135deg, #fff8f8, rgb(180, 202, 255));
 
   background: rgb(29, 33, 42);
 

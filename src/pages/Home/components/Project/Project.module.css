@@ -1,11 +1,11 @@
 .projectDiv {
   display: inline-block;
+  margin-bottom: 30px;
 
   width: 600px;
   height: 578px;
   border-radius: 20px;
 
-  margin: 15px;
   text-align: left;
 
   transition: background-color 0.25s, box-shadow 0.25s, border-color 0.25s;
