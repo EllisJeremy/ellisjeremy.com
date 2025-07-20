@@ -32,12 +32,9 @@
   width: 400px;
 }
 
-.leftDiv,
-.rightDiv {
-}
-
 .leftDiv {
   position: fixed;
+  width: 400px;
 }
 .rightDiv {
   width: 650px;

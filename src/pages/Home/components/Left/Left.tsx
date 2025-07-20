@@ -1,9 +1,19 @@
 import styles from "./Left.module.css";
 import hokie from "../.././assets/hokie.png";
+import { homeStore } from "../../store";
 
 export default function Left() {
   const virginiaTechLink = () => {
     window.open("https://www.vt.edu/", "_blank");
+  };
+
+  const { section, setSection } = homeStore();
+
+  const topMap: Record<string, string> = {
+    home: "190px",
+    work: "245px",
+    projects: "300px",
+    school: "355px",
   };
 
   return (
@@ -23,6 +33,36 @@ export default function Left() {
             </div>
           </div>
         </div>
+      </div>
+      <div className={styles.sectionButtonDiv}>
+        <div
+          className={styles.slideOver}
+          style={{ top: topMap[section] || "0px" }}
+        />
+        <button
+          className={styles.sectionButton}
+          onClick={() => setSection("home")}
+        >
+          home
+        </button>
+        <button
+          className={styles.sectionButton}
+          onClick={() => setSection("work")}
+        >
+          work
+        </button>
+        <button
+          className={styles.sectionButton}
+          onClick={() => setSection("projects")}
+        >
+          projects
+        </button>
+        <button
+          className={styles.sectionButton}
+          onClick={() => setSection("school")}
+        >
+          school
+        </button>
       </div>
     </>
   );

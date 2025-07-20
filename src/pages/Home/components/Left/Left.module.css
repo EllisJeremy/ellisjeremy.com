@@ -7,16 +7,6 @@
   margin-bottom: 50px;
 }
 
-@media (max-width: 1300px) {
-  .introDiv {
-    width: 620px;
-  }
-
-  .aboutDiv {
-    margin-top: 30px;
-  }
-}
-
 .name {
   font-family: quicksand;
   font-weight: 300;
@@ -35,7 +25,7 @@ color: rgba(255, 255, 255, 0);
 
 .nameDiv {
   text-align: left;
-  margin-left: 20px;
+  margin-bottom: 50px;
 }
 
 .subName {
@@ -47,6 +37,7 @@ color: rgba(255, 255, 255, 0);
 }
 
 .subtitleDiv {
+  height: 45px;
   display: flex;
 }
 
@@ -95,17 +86,46 @@ color: rgba(255, 255, 255, 0);
   transition: height 0.15s;
 }
 
-.aboutDiv {
-  margin-left: 20px;
+.sectionButtonDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  gap: 5px;
 }
 
-.about {
-  width: 600px;
-
-  text-align: left;
-  margin: 0px;
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 18px;
-  margin-top: 10px;
+.sectionButton {
+  width: 150px;
   height: 50px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: quicksand;
+  font-size: 20px;
+  text-align: left;
+  padding-left: 15px;
+  outline: none;
+}
+
+.sectionButton:hover {
+  cursor: pointer;
+}
+
+.slideOver {
+  position: absolute;
+  width: 150px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.1);
+
+  transition: left 0.3s ease;
+  border-radius: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
+  border-right: 0.5px solid rgba(255, 255, 255, 0.2);
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  top: 190px;
+  transition: 0.5s;
 }
