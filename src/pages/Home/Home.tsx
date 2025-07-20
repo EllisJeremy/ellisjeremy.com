@@ -24,7 +24,6 @@ export default function Home() {
       <Intro />
       <Project />
       <Project2 />
-      <div className={styles.lightBar2} />
     </>
   );
 }
