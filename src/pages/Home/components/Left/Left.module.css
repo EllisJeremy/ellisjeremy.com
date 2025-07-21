@@ -127,5 +127,5 @@ color: rgba(255, 255, 255, 0);
   top: 190px;
   transition: 0.5s;
 
-  backdrop-filter: brightness(1.1) blur(2px) url(#displacementFilter);
+  backdrop-filter: brightness(1.1) blur(0px) url(#displacementFilter);
 }
