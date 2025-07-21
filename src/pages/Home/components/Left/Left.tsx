@@ -1,7 +1,6 @@
 import styles from "./Left.module.css";
 import hokie from "../.././assets/hokie.png";
 import { homeStore } from "../../store";
-import { useRef } from "react";
 
 export default function Left() {
   const virginiaTechLink = () => {
@@ -11,7 +10,7 @@ export default function Left() {
   const { section, setSection } = homeStore();
 
   const topMap: Record<string, string> = {
-    home: "190px",
+    home: "175px",
     work: "245px",
     projects: "300px",
     school: "355px",
@@ -41,6 +40,20 @@ export default function Left() {
             className={styles.slideOver}
             style={{ top: topMap[section] || "0px" }}
           />
+          <svg style={{ display: "none" }}>
+            <filter id="displacementFilter">
+              <feImage
+                href="data:image/png;base64,g+73FDgUL9YnSTEdfVLuv1MhE2XyrlJCXjgiLU6AXovAsqybPKAlHA/wH75uVy+EFM3wAAAABJRU5ErkJggg=="
+                preserveAspectRatio="none"
+              />
+              <feDisplacementMap
+                in="SourceGraphic"
+                scale="200"
+                xChannelSelector="R"
+                yChannelSelector="G"
+              />
+            </filter>
+          </svg>
           <button
             className={styles.sectionButton}
             onClick={() => setSection("home")}
