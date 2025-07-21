@@ -35,6 +35,12 @@
 .leftDiv {
   position: fixed;
   width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* -80px for margin top for the whole page and -80px for padding bottom */
+  height: calc(100% - 160px);
+  padding-bottom: 80px;
 }
 .rightDiv {
   width: 650px;
