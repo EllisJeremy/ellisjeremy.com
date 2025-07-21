@@ -46,7 +46,6 @@
   width: 650px;
 }
 .home {
-  height: 200vh;
   background: linear-gradient(135deg, #a8edea, #ff5757);
   background: linear-gradient(135deg, rgb(0, 33, 42), rgb(29, 33, 42));
   /* use for light mode ? */
