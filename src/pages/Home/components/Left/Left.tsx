@@ -11,7 +11,27 @@ export default function Left() {
     window.open("https://www.vt.edu/", "_blank");
   };
 
-  const { section, setSection } = homeStore();
+  const {
+    section,
+    setSection,
+    blur,
+    setBlur,
+    scale,
+    setScale,
+    filter,
+    setFilter,
+  } = homeStore();
+
+  const triggerSlideOverAnimation = (section: string) => {
+    setSection(section);
+
+    setTimeout(() => setScale(true), 0);
+    setTimeout(() => setBlur(true), 0);
+    setTimeout(() => setFilter(true), 0);
+    setTimeout(() => setScale(false), 300);
+    setTimeout(() => setBlur(false), 300);
+    setTimeout(() => setFilter(false), 300);
+  };
 
   const topMap: Record<string, string> = {
     about: "190px",
@@ -44,11 +64,19 @@ export default function Left() {
             className={styles.slideOver}
             style={{
               top: topMap[section] || "0px",
-              backdropFilter:
-                section === "about"
-                  ? "brightness(1.1)"
-                  : "brightness(1.1) blur(2px) url(#displacementFilter)",
-              transform: section === "about" ? "none" : "scale(1.1)",
+              backdropFilter: "brightness(1.1) url(#displacementFilter)",
+              transform: scale ? "scale(1.075)" : "none",
+              opacity: filter ? 1 : 0,
+            }}
+          />
+          <div
+            className={styles.slideOver}
+            style={{
+              top: topMap[section] || "0px",
+              backdropFilter: blur
+                ? "brightness(1.1) blur(2px)"
+                : "brightness(1.1)",
+              transform: scale ? "scale(1.075)" : "none",
             }}
           />
           <svg style={{ display: "none" }}>
@@ -67,28 +95,28 @@ export default function Left() {
           </svg>
           <button
             className={styles.sectionButton}
-            onClick={() => setSection("about")}
+            onClick={() => triggerSlideOverAnimation("about")}
           >
             about
             <img src={about} className={styles.logo} />
           </button>
           <button
             className={styles.sectionButton}
-            onClick={() => setSection("experience")}
+            onClick={() => triggerSlideOverAnimation("experience")}
           >
             experience
             <img src={experience} className={styles.logo} />
           </button>
           <button
             className={styles.sectionButton}
-            onClick={() => setSection("projects")}
+            onClick={() => triggerSlideOverAnimation("projects")}
           >
             projects
             <img src={projects} className={styles.logo} />
           </button>
           <button
             className={styles.sectionButton}
-            onClick={() => setSection("education")}
+            onClick={() => triggerSlideOverAnimation("education")}
           >
             education
             <img src={education} className={styles.logo} />
