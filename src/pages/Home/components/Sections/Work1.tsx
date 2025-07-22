@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import styles from "./Project.module.css";
+import styles from "./Sections.module.css";
 
 import gitHub from "../.././assets/GitHub_Logo_White.png";
 import gitCat from "../.././assets/github-mark-white.svg";
@@ -9,9 +9,7 @@ import typescript from "../.././assets/typescript.svg";
 import zustand from "../.././assets/zustand.svg";
 import numeric from "../.././assets/numeric.png";
 
-import sylvester from "../.././assets/sylvester.png";
-
-export default function Project() {
+export default function Work1() {
   const navigate = useNavigate();
 
   const sylvesterLink = () => {
@@ -56,10 +54,10 @@ export default function Project() {
 
   return (
     <>
-      <div className={styles.projectDiv}>
+      <div className={styles.experienceDiv}>
         <div className={styles.titleDiv}>
           <h1 className={styles.title} onClick={sylvesterLink}>
-            Sylvester Solver
+            Xometry: Software Eningeering Intern
           </h1>
           <div className={styles.gitDiv} onClick={sylvesterGitLink}>
             <img src={gitHub} className={styles.gitHub} />
@@ -108,13 +106,6 @@ export default function Project() {
               <img src={numeric} className={styles.stackImg} />
             </div>
           </div>
-        </div>
-        <div className={styles.projectImgDiv}>
-          <img
-            src={sylvester}
-            className={styles.projectImg}
-            onClick={sylvesterLink}
-          />
         </div>
       </div>
     </>

@@ -2,8 +2,9 @@ import { Helmet } from "react-helmet";
 import styles from "./Home.module.css";
 import Left from "./components/Left/Left";
 import Intro from "./components/Intro/Intro";
-import Project from "./components/Project/Project1";
-import Project2 from "./components/Project/Project2";
+import Project from "./components/Sections/Project1";
+import Project2 from "./components/Sections/Project2";
+import Work1 from "./components/Sections/Work1";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
         </div>
         <div className={styles.rightDiv}>
           <Intro />
+          <Work1 />
           <Project />
           <Project2 />
         </div>

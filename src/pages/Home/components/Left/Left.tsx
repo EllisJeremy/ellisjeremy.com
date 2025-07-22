@@ -42,7 +42,14 @@ export default function Left() {
         <div className={styles.sectionButtonDiv}>
           <div
             className={styles.slideOver}
-            style={{ top: topMap[section] || "0px" }}
+            style={{
+              top: topMap[section] || "0px",
+              backdropFilter:
+                section === "about"
+                  ? "brightness(1.1)"
+                  : "brightness(1.1) blur(2px) url(#displacementFilter)",
+              transform: section === "about" ? "none" : "scale(1.1)",
+            }}
           />
           <svg style={{ display: "none" }}>
             <filter id="displacementFilter">
