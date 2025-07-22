@@ -94,7 +94,7 @@ color: rgba(255, 255, 255, 0);
 }
 
 .sectionButton {
-  width: 150px;
+  width: 175px;
   height: 50px;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0);
@@ -116,7 +116,7 @@ color: rgba(255, 255, 255, 0);
 
 .slideOver {
   position: absolute;
-  width: 150px;
+  width: 175px;
   height: 50px;
   background-color: rgba(255, 255, 255, 0.1);
 
@@ -135,4 +135,5 @@ color: rgba(255, 255, 255, 0);
 
 .logo {
   height: 50%;
+  fill: rgba(255, 0, 0, 0.5); /* red with 50% opacity */
 }

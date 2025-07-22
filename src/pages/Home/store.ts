@@ -6,6 +6,6 @@ export interface homeStoreType {
 }
 
 export const homeStore = create<homeStoreType>((set) => ({
-  section: "home",
+  section: "about",
   setSection: (section: string) => set(() => ({ section })),
 }));

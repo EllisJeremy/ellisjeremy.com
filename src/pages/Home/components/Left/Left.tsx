@@ -1,7 +1,10 @@
 import styles from "./Left.module.css";
 import hokie from "../.././assets/hokie.png";
 import { homeStore } from "../../store";
-import reactLogo from "../../assets/react.svg";
+import about from "../../assets/about.svg";
+import experience from "../../assets/experience.svg";
+import projects from "../../assets/projects.svg";
+import education from "../../assets/education.svg";
 
 export default function Left() {
   const virginiaTechLink = () => {
@@ -11,10 +14,10 @@ export default function Left() {
   const { section, setSection } = homeStore();
 
   const topMap: Record<string, string> = {
-    home: "190px",
-    work: "245px",
+    about: "190px",
+    experience: "245px",
     projects: "300px",
-    school: "355px",
+    education: "355px",
   };
 
   return (
@@ -57,28 +60,31 @@ export default function Left() {
           </svg>
           <button
             className={styles.sectionButton}
-            onClick={() => setSection("home")}
+            onClick={() => setSection("about")}
           >
-            home
+            about
+            <img src={about} className={styles.logo} />
           </button>
           <button
             className={styles.sectionButton}
-            onClick={() => setSection("work")}
+            onClick={() => setSection("experience")}
           >
-            work
-            <img src={reactLogo} className={styles.logo}></img>
+            experience
+            <img src={experience} className={styles.logo} />
           </button>
           <button
             className={styles.sectionButton}
             onClick={() => setSection("projects")}
           >
             projects
+            <img src={projects} className={styles.logo} />
           </button>
           <button
             className={styles.sectionButton}
-            onClick={() => setSection("school")}
+            onClick={() => setSection("education")}
           >
-            school
+            education
+            <img src={education} className={styles.logo} />
           </button>
         </div>
       </header>
