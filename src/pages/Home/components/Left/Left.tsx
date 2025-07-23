@@ -28,9 +28,9 @@ export default function Left() {
     setTimeout(() => setScale(true), 0);
     setTimeout(() => setBlur(true), 0);
     setTimeout(() => setFilter(true), 0);
-    setTimeout(() => setScale(false), 300);
-    setTimeout(() => setBlur(false), 300);
-    setTimeout(() => setFilter(false), 300);
+    setTimeout(() => setScale(false), 3000);
+    setTimeout(() => setBlur(false), 3000);
+    setTimeout(() => setFilter(false), 3000);
   };
 
   const topMap: Record<string, string> = {
