@@ -60,6 +60,7 @@ export default function Left() {
           </div>
         </div>
         <div className={styles.sectionButtonDiv}>
+          {/*there are 2 slideOvers here, 1 for blur and 1 for filter because blur can be transitioned, but filter cannot */}
           <div
             className={styles.slideOver}
             style={{
