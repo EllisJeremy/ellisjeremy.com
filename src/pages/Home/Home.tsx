@@ -5,6 +5,7 @@ import Intro from "./components/Intro/Intro";
 import Project from "./components/Sections/Project1";
 import Project2 from "./components/Sections/Project2";
 import Work1 from "./components/Sections/Work1";
+import { Element } from "react-scroll";
 
 export default function Home() {
   return (
@@ -28,14 +29,18 @@ export default function Home() {
           <Left />
         </div>
         <div className={styles.rightDiv}>
-          <Intro />
-          <Work1 />
-          <Project />
+          <Element name="about">
+            <Intro />
+          </Element>
+          <Element name="experience">
+            <Work1 />
+          </Element>
+          <Element name="projects">
+            <Project />
+          </Element>
           <Project2 />
         </div>
       </div>
     </>
   );
 }
-
-//  <div className={styles.lightBar1} />

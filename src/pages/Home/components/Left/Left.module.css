@@ -94,17 +94,19 @@ color: rgba(255, 255, 255, 0);
 }
 
 .sectionButton {
-  width: 175px;
+  width: 145px;
   height: 50px;
   border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0);
   border: none;
   color: rgba(255, 255, 255, 0.8);
+  border-top: 1px solid rgba(255, 255, 255, 0);
+  border-left: 1px solid rgba(255, 255, 255, 0);
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0);
+  border-right: 0.5px solid rgba(255, 255, 255, 0);
   font-family: quicksand;
   font-size: 20px;
   text-align: left;
   padding: 0px 15px;
-  outline: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -127,8 +129,8 @@ color: rgba(255, 255, 255, 0);
   border-right: 0.5px solid rgba(255, 255, 255, 0.2);
 
   top: 190px;
-  transition: transform 03s ease-in-out, top 06s ease-in-out,
-    opacity 03s ease-in-out, backdrop-filter 03s ease-in-out;
+  transition: transform 0.3s ease-in-out, top 0.6s ease-in-out,
+    opacity 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
 
   backdrop-filter: brightness(1.1) blur(0px) url(#displacementFilter);
 }

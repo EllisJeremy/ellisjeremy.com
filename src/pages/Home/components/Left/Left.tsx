@@ -5,6 +5,7 @@ import about from "../../assets/about.svg";
 import experience from "../../assets/experience.svg";
 import projects from "../../assets/projects.svg";
 import education from "../../assets/education.svg";
+import { Link } from "react-scroll";
 
 export default function Left() {
   const virginiaTechLink = () => {
@@ -28,16 +29,16 @@ export default function Left() {
     setTimeout(() => setScale(true), 0);
     setTimeout(() => setBlur(true), 0);
     setTimeout(() => setFilter(true), 0);
-    setTimeout(() => setScale(false), 3000);
-    setTimeout(() => setBlur(false), 3000);
-    setTimeout(() => setFilter(false), 3000);
+    setTimeout(() => setScale(false), 300);
+    setTimeout(() => setBlur(false), 300);
+    setTimeout(() => setFilter(false), 300);
   };
 
   const topMap: Record<string, string> = {
     about: "190px",
-    experience: "245px",
-    projects: "300px",
-    education: "355px",
+    experience: "246.5px",
+    projects: "303px",
+    education: "359.5px",
   };
 
   return (
@@ -50,8 +51,8 @@ export default function Left() {
             <h2 className={styles.subName}> CS student at &nbsp;</h2>
             <div className={styles.VirginiaTechDiv} onClick={virginiaTechLink}>
               <h2 className={styles.subName}>
-                <span className={styles.maroonSpan}> Virginia</span>{" "}
-                <span className={styles.orangeSpan}>Tech</span>{" "}
+                <span className={styles.maroonSpan}> Virginia</span>
+                <span className={styles.orangeSpan}>Tech</span>
               </h2>
               <div className={styles.hokieDiv}>
                 <img className={styles.hokie} src={hokie}></img>
@@ -93,34 +94,50 @@ export default function Left() {
               />
             </filter>
           </svg>
-          <button
+          <Link
+            to="about"
+            smooth={true}
+            duration={600}
+            offset={-50}
             className={styles.sectionButton}
             onClick={() => triggerSlideOverAnimation("about")}
           >
             about
             <img src={about} className={styles.logo} />
-          </button>
-          <button
+          </Link>
+          <Link
+            to="experience"
+            smooth={true}
+            duration={600}
+            offset={-50}
             className={styles.sectionButton}
             onClick={() => triggerSlideOverAnimation("experience")}
           >
             experience
             <img src={experience} className={styles.logo} />
-          </button>
-          <button
+          </Link>
+          <Link
+            to="projects"
+            smooth={true}
+            duration={600}
+            offset={-50}
             className={styles.sectionButton}
             onClick={() => triggerSlideOverAnimation("projects")}
           >
             projects
             <img src={projects} className={styles.logo} />
-          </button>
-          <button
+          </Link>
+          <Link
+            to="education"
+            smooth={true}
+            duration={600}
+            offset={-50}
             className={styles.sectionButton}
             onClick={() => triggerSlideOverAnimation("education")}
           >
             education
             <img src={education} className={styles.logo} />
-          </button>
+          </Link>
         </div>
       </header>
       <footer>text</footer>

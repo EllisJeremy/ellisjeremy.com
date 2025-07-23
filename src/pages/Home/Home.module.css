@@ -5,14 +5,14 @@
   font-style: normal;
 }
 
-@media (min-width: 1700px) {
+@media (min-width: 1850px) {
   .fullDiv {
     margin-left: 300px;
     margin-right: 300px;
   }
 }
 
-@media (min-width: 1550px) and (max-width: 1699px) {
+@media (min-width: 1550px) and (max-width: 1849px) {
   .fullDiv {
     margin-left: 200px;
     margin-right: 200px;
