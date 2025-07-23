@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useCallback } from "react";
 import { Helmet } from "react-helmet";
 import styles from "./Home.module.css";
 import Left from "./components/Left/Left";
@@ -15,10 +15,63 @@ export default function Home() {
   const project2Ref = useRef<HTMLDivElement>(null);
 
   const setRefs = homeStore((s) => s.setRefs);
+  const { setSection, setBlur, setScale, setFilter } = homeStore();
+
+  const triggerSlideOverAnimation = useCallback(
+    (section: string) => {
+      setSection(section);
+
+      setTimeout(() => setScale(true), 0);
+      setTimeout(() => setBlur(true), 0);
+      setTimeout(() => setFilter(true), 0);
+      setTimeout(() => setScale(false), 300);
+      setTimeout(() => setBlur(false), 300);
+      setTimeout(() => setFilter(false), 300);
+    },
+    [setSection, setScale, setBlur, setFilter]
+  );
 
   useEffect(() => {
     setRefs({ aboutRef, experience1Ref, project1Ref, project2Ref });
   }, [setRefs]);
+
+  useEffect(() => {
+    const sections = [
+      { id: "about", ref: aboutRef },
+      { id: "experience", ref: experience1Ref },
+      { id: "projects", ref: project1Ref },
+      { id: "education", ref: project2Ref },
+    ];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const found = sections.find((s) => s.ref.current === entry.target);
+            if (found) {
+              triggerSlideOverAnimation(found.id);
+            }
+          }
+        });
+      },
+      {
+        root: null, // viewport
+        threshold: 0.01, // 40% visible
+      }
+    );
+
+    sections.forEach(({ ref }) => {
+      if (ref.current) observer.observe(ref.current);
+    });
+
+    return () => observer.disconnect();
+  }, [
+    aboutRef,
+    experience1Ref,
+    project1Ref,
+    project2Ref,
+    triggerSlideOverAnimation,
+  ]);
 
   return (
     <>

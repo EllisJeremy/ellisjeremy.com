@@ -7,6 +7,12 @@ import projects from "../../assets/projects.svg";
 import education from "../../assets/education.svg";
 
 export default function Left() {
+  const { aboutRef, experience1Ref, project1Ref, project2Ref } = homeStore();
+
+  const scrollTo = (ref: React.RefObject<HTMLDivElement> | null) => {
+    ref?.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   const virginiaTechLink = () => {
     window.open("https://www.vt.edu/", "_blank");
   };
@@ -96,28 +102,40 @@ export default function Left() {
           </svg>
           <button
             className={styles.sectionButton}
-            onClick={() => triggerSlideOverAnimation("about")}
+            onClick={() => {
+              triggerSlideOverAnimation("about");
+              scrollTo(aboutRef);
+            }}
           >
             about
             <img src={about} className={styles.logo} />
           </button>
           <button
             className={styles.sectionButton}
-            onClick={() => triggerSlideOverAnimation("experience")}
+            onClick={() => {
+              triggerSlideOverAnimation("experience");
+              scrollTo(experience1Ref);
+            }}
           >
             experience
             <img src={experience} className={styles.logo} />
           </button>
           <button
             className={styles.sectionButton}
-            onClick={() => triggerSlideOverAnimation("projects")}
+            onClick={() => {
+              triggerSlideOverAnimation("projects");
+              scrollTo(project1Ref);
+            }}
           >
             projects
             <img src={projects} className={styles.logo} />
           </button>
           <button
             className={styles.sectionButton}
-            onClick={() => triggerSlideOverAnimation("education")}
+            onClick={() => {
+              triggerSlideOverAnimation("education");
+              scrollTo(project2Ref);
+            }}
           >
             education
             <img src={education} className={styles.logo} />
