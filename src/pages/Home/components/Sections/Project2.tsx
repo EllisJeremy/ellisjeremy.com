@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import { forwardRef } from "react";
+
 import styles from "./Sections.module.css";
 
 import gitHub from "../.././assets/GitHub_Logo_White.png";
@@ -12,7 +14,7 @@ import php from "../.././assets/php.png";
 
 import calendar from "../.././assets/calendar.png";
 
-export default function Project2() {
+const Project2 = forwardRef<HTMLDivElement>((props, ref) => {
   const navigate = useNavigate();
 
   const calendarLink = () => {
@@ -42,7 +44,7 @@ export default function Project2() {
 
   return (
     <>
-      <div className={styles.projectDiv}>
+      <div className={styles.projectDiv} ref={ref}>
         <div className={styles.titleDiv}>
           <h1 className={styles.title} onClick={calendarLink}>
             Orchard Signup
@@ -101,4 +103,6 @@ export default function Project2() {
       </div>
     </>
   );
-}
+});
+
+export default Project2;

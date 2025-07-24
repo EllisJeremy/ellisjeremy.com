@@ -8,6 +8,12 @@ import education from "../../assets/education.svg";
 import { Link } from "react-scroll";
 
 export default function Left() {
+  const { aboutRef, experience1Ref, project1Ref, project2Ref } = homeStore();
+
+  const scrollTo = (ref: React.RefObject<HTMLDivElement> | null) => {
+    ref?.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   const virginiaTechLink = () => {
     window.open("https://www.vt.edu/", "_blank");
   };
@@ -63,6 +69,7 @@ export default function Left() {
           </div>
         </div>
         <div className={styles.sectionButtonDiv}>
+          {/*there are 2 slideOvers here, 1 for blur and 1 for filter because blur can be transitioned, but filter cannot */}
           <div
             className={styles.slideOver}
             style={{
@@ -102,7 +109,10 @@ export default function Left() {
             duration={600}
             offset={-50}
             className={styles.sectionButton}
-            onClick={() => triggerSlideOverAnimation("about")}
+            onClick={() => {
+              triggerSlideOverAnimation("about");
+              scrollTo(aboutRef);
+            }}
           >
             about
             <img src={about} className={styles.logo} />
@@ -113,7 +123,10 @@ export default function Left() {
             duration={600}
             offset={-50}
             className={styles.sectionButton}
-            onClick={() => triggerSlideOverAnimation("experience")}
+            onClick={() => {
+              triggerSlideOverAnimation("experience");
+              scrollTo(experience1Ref);
+            }}
           >
             experience
             <img src={experience} className={styles.logo} />
@@ -124,7 +137,10 @@ export default function Left() {
             duration={600}
             offset={-50}
             className={styles.sectionButton}
-            onClick={() => triggerSlideOverAnimation("projects")}
+            onClick={() => {
+              triggerSlideOverAnimation("projects");
+              scrollTo(project1Ref);
+            }}
           >
             projects
             <img src={projects} className={styles.logo} />
@@ -135,7 +151,10 @@ export default function Left() {
             duration={600}
             offset={-50}
             className={styles.sectionButton}
-            onClick={() => triggerSlideOverAnimation("education")}
+            onClick={() => {
+              triggerSlideOverAnimation("education");
+              scrollTo(project2Ref);
+            }}
           >
             education
             <img src={education} className={styles.logo} />

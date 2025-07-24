@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import { forwardRef } from "react";
+
 import styles from "./Sections.module.css";
 
 import gitHub from "../.././assets/GitHub_Logo_White.png";
@@ -11,7 +13,7 @@ import numeric from "../.././assets/numeric.png";
 
 import sylvester from "../.././assets/sylvester.png";
 
-export default function Project() {
+const Project1 = forwardRef<HTMLDivElement>((props, ref) => {
   const navigate = useNavigate();
 
   const sylvesterLink = () => {
@@ -56,7 +58,7 @@ export default function Project() {
 
   return (
     <>
-      <div className={styles.projectDiv}>
+      <div className={styles.projectDiv} ref={ref}>
         <div className={styles.titleDiv}>
           <h1 className={styles.title} onClick={sylvesterLink}>
             Sylvester Solver
@@ -119,4 +121,6 @@ export default function Project() {
       </div>
     </>
   );
-}
+});
+
+export default Project1;

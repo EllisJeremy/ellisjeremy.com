@@ -1,3 +1,5 @@
+import { forwardRef } from "react";
+
 import styles from "./Intro.module.css";
 import python from "../.././assets/python.png";
 import java from "../.././assets/java.svg";
@@ -6,9 +8,9 @@ import typescript from "../.././assets/typescript2.svg";
 import html from "../.././assets/html.png";
 import css from "../.././assets/css.png";
 
-export default function Left() {
+const Intro = forwardRef<HTMLDivElement>((props, ref) => {
   return (
-    <div className={styles.introDiv}>
+    <div className={styles.introDiv} ref={ref}>
       <p className={styles.about}>
         Welcome to my portfolio site! I am an aspiring software engineer who
         works with the following languages:
@@ -28,4 +30,6 @@ export default function Left() {
       </p>
     </div>
   );
-}
+});
+
+export default Intro;
