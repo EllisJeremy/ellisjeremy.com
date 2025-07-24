@@ -8,12 +8,6 @@ import education from "../../assets/education.svg";
 import { Link } from "react-scroll";
 
 export default function Left() {
-  const { aboutRef, experience1Ref, project1Ref, project2Ref } = homeStore();
-
-  const scrollTo = (ref: React.RefObject<HTMLDivElement> | null) => {
-    ref?.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
   const virginiaTechLink = () => {
     window.open("https://www.vt.edu/", "_blank");
   };
@@ -111,7 +105,6 @@ export default function Left() {
             className={styles.sectionButton}
             onClick={() => {
               triggerSlideOverAnimation("about");
-              scrollTo(aboutRef);
             }}
           >
             about
@@ -125,7 +118,6 @@ export default function Left() {
             className={styles.sectionButton}
             onClick={() => {
               triggerSlideOverAnimation("experience");
-              scrollTo(experience1Ref);
             }}
           >
             experience
@@ -139,7 +131,6 @@ export default function Left() {
             className={styles.sectionButton}
             onClick={() => {
               triggerSlideOverAnimation("projects");
-              scrollTo(project1Ref);
             }}
           >
             projects
@@ -153,7 +144,6 @@ export default function Left() {
             className={styles.sectionButton}
             onClick={() => {
               triggerSlideOverAnimation("education");
-              scrollTo(project2Ref);
             }}
           >
             education
