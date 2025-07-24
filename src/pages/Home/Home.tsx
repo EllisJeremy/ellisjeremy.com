@@ -6,8 +6,41 @@ import Project from "./components/Sections/Project1";
 import Project2 from "./components/Sections/Project2";
 import Work1 from "./components/Sections/Work1";
 import { Element } from "react-scroll";
+import { useCallback, useEffect } from "react";
+import { homeStore } from "./store";
+import { useInView } from "react-intersection-observer";
 
 export default function Home() {
+  const { setSection, setBlur, setScale, setFilter, allowObserver } =
+    homeStore();
+
+  const triggerSlideOverAnimation = useCallback(
+    (section: string) => {
+      setSection(section);
+
+      setTimeout(() => setScale(true), 0);
+      setTimeout(() => setFilter(true), 0);
+      setTimeout(() => setScale(false), 300);
+      setTimeout(() => setBlur(false), 300);
+      setTimeout(() => setFilter(false), 300);
+    },
+    [setSection, setBlur, setScale, setFilter]
+  );
+
+  const [aboutRef, aboutInView] = useInView({ threshold: 0.5 });
+  const [experienceRef, experienceInView] = useInView({ threshold: 0.5 });
+  const [projectsRef, projectsInView] = useInView({ threshold: 0.5 });
+  const [educationRef, educationInView] = useInView({ threshold: 0.5 });
+
+  useEffect(() => {
+    if (aboutInView && allowObserver) triggerSlideOverAnimation("about");
+    else if (experienceInView && allowObserver)
+      triggerSlideOverAnimation("experience");
+    else if (projectsInView && allowObserver)
+      triggerSlideOverAnimation("projects");
+    else if (educationInView && allowObserver)
+      triggerSlideOverAnimation("education");
+  }, [aboutInView, experienceInView, projectsInView, educationInView]);
   return (
     <>
       <Helmet>
@@ -30,13 +63,19 @@ export default function Home() {
         </div>
         <div className={styles.rightDiv}>
           <Element name="about">
-            <Intro />
+            <div ref={aboutRef}>
+              <Intro />
+            </div>
           </Element>
           <Element name="experience">
-            <Work1 />
+            <div ref={experienceRef}>
+              <Work1 />
+            </div>
           </Element>
           <Element name="projects">
-            <Project />
+            <div ref={projectsRef}>
+              <Project />
+            </div>
           </Element>
           <Project2 />
         </div>

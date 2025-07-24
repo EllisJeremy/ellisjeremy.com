@@ -9,6 +9,8 @@ export interface homeStoreType {
   setScale: (scale: boolean) => void;
   filter: boolean;
   setFilter: (filter: boolean) => void;
+  allowObserver: boolean;
+  setAllowObserver: (allowObserver: boolean) => void;
 }
 
 export const homeStore = create<homeStoreType>((set) => ({
@@ -20,4 +22,6 @@ export const homeStore = create<homeStoreType>((set) => ({
   setScale: (scale: boolean) => set(() => ({ scale })),
   filter: false,
   setFilter: (filter: boolean) => set(() => ({ filter })),
+  allowObserver: true,
+  setAllowObserver: (allowObserver: boolean) => set(() => ({ allowObserver })),
 }));
