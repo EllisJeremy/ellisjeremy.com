@@ -1,4 +1,3 @@
-import { useRef, useEffect, useCallback } from "react";
 import { Helmet } from "react-helmet";
 import styles from "./Home.module.css";
 import Left from "./components/Left/Left";
@@ -6,73 +5,42 @@ import Intro from "./components/Intro/Intro";
 import Project from "./components/Sections/Project1";
 import Project2 from "./components/Sections/Project2";
 import Work1 from "./components/Sections/Work1";
+import { Element } from "react-scroll";
+import { useCallback, useEffect } from "react";
 import { homeStore } from "./store";
+import { useInView } from "react-intersection-observer";
 
 export default function Home() {
-  const aboutRef = useRef<HTMLDivElement>(null);
-  const experience1Ref = useRef<HTMLDivElement>(null);
-  const project1Ref = useRef<HTMLDivElement>(null);
-  const project2Ref = useRef<HTMLDivElement>(null);
-
-  const setRefs = homeStore((s) => s.setRefs);
-  const { setSection, setBlur, setScale, setFilter } = homeStore();
+  const { setSection, setBlur, setScale, setFilter, allowObserver } =
+    homeStore();
 
   const triggerSlideOverAnimation = useCallback(
     (section: string) => {
       setSection(section);
 
       setTimeout(() => setScale(true), 0);
-      setTimeout(() => setBlur(true), 0);
       setTimeout(() => setFilter(true), 0);
       setTimeout(() => setScale(false), 300);
       setTimeout(() => setBlur(false), 300);
       setTimeout(() => setFilter(false), 300);
     },
-    [setSection, setScale, setBlur, setFilter]
+    [setSection, setBlur, setScale, setFilter]
   );
 
-  useEffect(() => {
-    setRefs({ aboutRef, experience1Ref, project1Ref, project2Ref });
-  }, [setRefs]);
+  const [aboutRef, aboutInView] = useInView({ threshold: 0.5 });
+  const [experienceRef, experienceInView] = useInView({ threshold: 0.5 });
+  const [projectsRef, projectsInView] = useInView({ threshold: 0.5 });
+  const [educationRef, educationInView] = useInView({ threshold: 0.5 });
 
   useEffect(() => {
-    const sections = [
-      { id: "about", ref: aboutRef },
-      { id: "experience", ref: experience1Ref },
-      { id: "projects", ref: project1Ref },
-      { id: "education", ref: project2Ref },
-    ];
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const found = sections.find((s) => s.ref.current === entry.target);
-            if (found) {
-              triggerSlideOverAnimation(found.id);
-            }
-          }
-        });
-      },
-      {
-        root: null, // viewport
-        threshold: 0.01, // 40% visible
-      }
-    );
-
-    sections.forEach(({ ref }) => {
-      if (ref.current) observer.observe(ref.current);
-    });
-
-    return () => observer.disconnect();
-  }, [
-    aboutRef,
-    experience1Ref,
-    project1Ref,
-    project2Ref,
-    triggerSlideOverAnimation,
-  ]);
-
+    if (aboutInView && allowObserver) triggerSlideOverAnimation("about");
+    else if (experienceInView && allowObserver)
+      triggerSlideOverAnimation("experience");
+    else if (projectsInView && allowObserver)
+      triggerSlideOverAnimation("projects");
+    else if (educationInView && allowObserver)
+      triggerSlideOverAnimation("education");
+  }, [aboutInView, experienceInView, projectsInView, educationInView]);
   return (
     <>
       <Helmet>
@@ -89,15 +57,27 @@ export default function Home() {
       </Helmet>
       <div className={styles.fullDiv}>
         {/* this empty div is necessary because leftDiv is position: fixed; thus it does not register as an item within fullDiv */}
-        <div className={styles.fillerDiv} />
+        <div className={styles.fillerDiv}></div>
         <div className={styles.leftDiv}>
           <Left />
         </div>
         <div className={styles.rightDiv}>
-          <Intro ref={aboutRef} />
-          <Work1 ref={experience1Ref} />
-          <Project ref={project1Ref} />
-          <Project2 ref={project2Ref} />
+          <Element name="about">
+            <div ref={aboutRef}>
+              <Intro />
+            </div>
+          </Element>
+          <Element name="experience">
+            <div ref={experienceRef}>
+              <Work1 />
+            </div>
+          </Element>
+          <Element name="projects">
+            <div ref={projectsRef}>
+              <Project />
+            </div>
+          </Element>
+          <Project2 />
         </div>
       </div>
     </>
