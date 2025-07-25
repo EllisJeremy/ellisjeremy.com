@@ -20,6 +20,7 @@ export default function Home() {
 
       setTimeout(() => setScale(true), 0);
       setTimeout(() => setFilter(true), 0);
+      setTimeout(() => setBlur(true), 0);
       setTimeout(() => setScale(false), 300);
       setTimeout(() => setBlur(false), 300);
       setTimeout(() => setFilter(false), 300);
@@ -68,11 +69,13 @@ export default function Home() {
             </div>
           </Element>
           <Element name="experience">
+            <div className={styles.headerDiv}>Experience</div>
             <div ref={experienceRef}>
               <Work1 />
             </div>
           </Element>
           <Element name="projects">
+            <div className={styles.headerDiv}>Projects</div>
             <div ref={projectsRef}>
               <Project />
             </div>
