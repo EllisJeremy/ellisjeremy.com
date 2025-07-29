@@ -16,12 +16,6 @@ const Work1 = forwardRef<HTMLDivElement>((props, ref) => {
   const sylvesterLink = () => {
     navigate("/sylvester");
   };
-  const sylvesterGitLink = () => {
-    window.open(
-      "https://github.com/EllisJeremy/ellisjeremy.com/tree/main/src/pages/Sylvester",
-      "_blank"
-    );
-  };
   const reactLink = () => {
     window.open("https://react.dev/", "_blank");
   };
@@ -38,55 +32,22 @@ const Work1 = forwardRef<HTMLDivElement>((props, ref) => {
     window.open("https://ccc-js.github.io/numeric2/", "_blank");
   };
 
-  const linearAlgebraLink = () => {
-    window.open("https://en.wikipedia.org/wiki/Linear_algebra", "_blank");
-  };
-
-  const sylvesterEquationLink = () => {
-    window.open("https://en.wikipedia.org/wiki/Sylvester_equation", "_blank");
-  };
-
-  const methodLink = () => {
-    window.open(
-      "https://en.wikipedia.org/wiki/Sylvester_equation#Existence_and_uniqueness_of_the_solutions",
-      "_blank"
-    );
-  };
-
   return (
     <div className={styles.experienceDiv} ref={ref}>
       <div className={styles.titleDiv}>
-        <h1 className={styles.title} onClick={sylvesterLink}>
-          Xometry: Software Engineering Intern
-        </h1>
-        <div className={styles.gitDiv} onClick={sylvesterGitLink}>
-          <img src={gitHub} className={styles.gitHub} />
-          <img src={gitCat} className={styles.gitCat} />
-        </div>
+        <h2 className={styles.title} onClick={sylvesterLink}>
+          Software Engineering Intern
+        </h2>
+        <h4 className={styles.title} onClick={sylvesterLink}>
+          May 2025 - Present
+        </h4>
       </div>
 
       <div className={styles.midDiv}>
         <ul className={styles.list}>
-          <li className={styles.listItem}>
-            A{" "}
-            <span className={styles.textLink} onClick={linearAlgebraLink}>
-              Linear Algebra{" "}
-            </span>
-            tool that solves the{" "}
-            <span className={styles.textLink} onClick={sylvesterEquationLink}>
-              Sylvester equation
-            </span>{" "}
-            for user inputted matrices
-          </li>
-          <li className={styles.listItem}>
-            Compatible with with n by m matrices up to 9 by 9
-          </li>
-          <li className={styles.listItem}>
-            Solves using the{" "}
-            <span className={styles.textLink} onClick={methodLink}>
-              Kronecker Product Vectorization Method
-            </span>
-          </li>
+          <li className={styles.listItem}></li>
+          <li className={styles.listItem}></li>
+          <li className={styles.listItem}></li>
         </ul>
         <div className={styles.stackDiv}>
           <div className={styles.stackDivChild} onClick={reactLink}>
@@ -98,11 +59,11 @@ const Work1 = forwardRef<HTMLDivElement>((props, ref) => {
             <img src={typescript} className={styles.stackImgTypescript} />
           </div>
           <div className={styles.stackDivChild} onClick={zustandLink}>
-            Zustand
+            placeholder
             <img src={zustand} className={styles.stackImg} />
           </div>
           <div className={styles.stackDivChild} onClick={numericLink}>
-            Numeric
+            placeholder
             <img src={numeric} className={styles.stackImg} />
           </div>
         </div>

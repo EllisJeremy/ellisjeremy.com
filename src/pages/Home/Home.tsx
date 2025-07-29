@@ -62,7 +62,9 @@ export default function Home() {
         <div className={styles.leftDiv}>
           <Left />
         </div>
+
         <div className={styles.rightDiv}>
+          <div className={styles.headerDiv}>About</div>
           <Element name="about">
             <div ref={aboutRef}>
               <Intro />
