@@ -2,13 +2,11 @@ import { forwardRef } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Sections.module.css";
 
-import gitHub from "../.././assets/GitHub_Logo_White.png";
-import gitCat from "../.././assets/github-mark-white.svg";
-
 import react from "../.././assets/react.svg";
 import typescript from "../.././assets/typescript.svg";
 import zustand from "../.././assets/zustand.svg";
 import numeric from "../.././assets/numeric.png";
+import xometryLogo from "../../assets/xometryLogoWhite.svg";
 
 const Work1 = forwardRef<HTMLDivElement>((props, ref) => {
   const navigate = useNavigate();
@@ -34,6 +32,15 @@ const Work1 = forwardRef<HTMLDivElement>((props, ref) => {
 
   return (
     <div className={styles.experienceDiv} ref={ref}>
+      <div
+        className={styles.titleDiv}
+        style={{ marginBottom: "0", fontSize: "24px" }}
+      >
+        <h2 className={styles.title} onClick={sylvesterLink}>
+          Xometry
+        </h2>
+        <img src={xometryLogo} style={{ height: "35px" }} />
+      </div>
       <div className={styles.titleDiv}>
         <h2 className={styles.title} onClick={sylvesterLink}>
           Software Engineering Intern
