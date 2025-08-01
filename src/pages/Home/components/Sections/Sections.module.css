@@ -5,7 +5,7 @@
   position: relative;
   width: 600px;
   height: 578px;
-  border-radius: 20px;
+  border-radius: 30px;
 
   text-align: left;
 
@@ -95,6 +95,7 @@
   border-right: 0.5px solid rgba(255, 255, 255, 0);
   padding-top: 0px;
   transition: background-color 0.25s, box-shadow 0.25s, border-color 0.25s;
+  padding: 20px;
 }
 
 .gitDiv {
@@ -112,6 +113,8 @@
   border-left: 1px solid rgba(255, 255, 255, 0);
   border-bottom: 0.5px solid rgba(255, 255, 255, 0);
   border-right: 0.5px solid rgba(255, 255, 255, 0);
+  border-radius: 20px;
+  padding: 15px;
 }
 
 .gitDiv:hover,
@@ -123,13 +126,8 @@
   border-left: 1px solid rgba(255, 255, 255, 0.4);
   border-bottom: 0.5px solid rgba(255, 255, 255, 0.3);
   border-right: 0.5px solid rgba(255, 255, 255, 0.3);
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.05),
-    rgba(255, 255, 255, 0.125),
-    rgba(255, 255, 255, 0.05),
-    rgba(255, 255, 255, 0.05)
-  );
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 15px;
 }
 
 .gitDiv:active,
@@ -213,7 +211,7 @@
 
 .projectImgDiv {
   height: 338px;
-  border-radius: 6px;
+  border-radius: 20px;
 
   overflow: hidden;
 }

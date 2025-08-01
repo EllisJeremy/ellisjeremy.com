@@ -42,12 +42,8 @@ const Work1 = forwardRef<HTMLDivElement>((props, ref) => {
         <img src={xometryLogo} style={{ height: "35px" }} />
       </div>
       <div className={styles.titleDiv}>
-        <h2 className={styles.title} onClick={sylvesterLink}>
-          Software Engineering Intern
-        </h2>
-        <h4 className={styles.title} onClick={sylvesterLink}>
-          May 2025 - Present
-        </h4>
+        <h2 className={styles.title}>Software Engineering Intern</h2>
+        <h4 className={styles.title}>June 2025 - Present</h4>
       </div>
 
       <div className={styles.midDiv}>
