@@ -25,7 +25,7 @@ import calendar from "./assets/calendar.png";
 export default function Home() {
   const navigate = useNavigate();
 
-  const stack: StackItem[] = [
+  const xometryStack: StackItem[] = [
     {
       label: "React",
       logo: react,
@@ -50,6 +50,57 @@ export default function Home() {
       label: "Postgres",
       logo: numeric,
       onClick: () => window.open("https://ccc-js.github.io/numeric2/", "_blank"),
+    },
+  ];
+
+  const sylvesterStack: StackItem[] = [
+    {
+      label: "React",
+      logo: react,
+      onClick: () => window.open("https://react.dev/", "_blank"),
+    },
+    {
+      label: "Typescript",
+      logo: typescript,
+      onClick: () => window.open("https://www.typescriptlang.org/", "_blank"),
+    },
+    {
+      label: "Zustand",
+      logo: zustand,
+      onClick: () => window.open("https://zustand.docs.pmnd.rs/", "_blank"),
+    },
+    {
+      label: "Numeric",
+      logo: numeric,
+      onClick: () => window.open("https://ccc-js.github.io/numeric2/", "_blank"),
+    },
+  ];
+
+  const orchardStack: StackItem[] = [
+    {
+      label: "React",
+      logo: react,
+      onClick: () => window.open("https://react.dev/", "_blank"),
+    },
+    {
+      label: "Typescript",
+      logo: typescript,
+      onClick: () => window.open("https://www.typescriptlang.org/", "_blank"),
+    },
+    {
+      label: "Zustand",
+      logo: zustand,
+      onClick: () => window.open("https://zustand.docs.pmnd.rs/", "_blank"),
+    },
+    {
+      label: "MySQL",
+      logo: mysql,
+      onClick: () => window.open("https://www.mysql.com/", "_blank"),
+    },
+    {
+      label: "PHP",
+      logo: php,
+      onClick: () => window.open("https://www.php.net/", "_blank"),
     },
   ];
 
@@ -80,6 +131,7 @@ export default function Home() {
     else if (projectsInView && allowObserver) triggerSlideOverAnimation("projects");
     else if (educationInView && allowObserver) triggerSlideOverAnimation("education");
   }, [aboutInView, experienceInView, projectsInView, educationInView]);
+
   return (
     <>
       <Helmet>
@@ -119,7 +171,7 @@ export default function Home() {
                 date="June 2025 - Present"
                 onTitleClick={() => navigate("/sylvester")}
                 bullets={["what i did", "what i did 2", "what i did 3"]}
-                stack={stack}
+                stack={xometryStack}
               />
             </div>
           </Element>
@@ -140,31 +192,11 @@ export default function Home() {
                   "Compatible with n by m matrices up to 9 by 9",
                   "Solves using the Kronecker Product Vectorization Method",
                 ]}
-                stack={[
-                  {
-                    label: "React",
-                    logo: react,
-                    onClick: () => window.open("https://react.dev/", "_blank"),
-                  },
-                  {
-                    label: "Typescript",
-                    logo: typescript,
-                    onClick: () => window.open("https://www.typescriptlang.org/", "_blank"),
-                  },
-                  {
-                    label: "Zustand",
-                    logo: zustand,
-                    onClick: () => window.open("https://zustand.docs.pmnd.rs/", "_blank"),
-                  },
-                  {
-                    label: "Numeric",
-                    logo: numeric,
-                    onClick: () => window.open("https://ccc-js.github.io/numeric2/", "_blank"),
-                  },
-                ]}
+                stack={sylvesterStack}
                 previewImage={sylvester}
                 onImageClick={() => navigate("/sylvester")}
               />
+
               <ProjectCard
                 title="Orchard Signup"
                 onTitleClick={() => navigate("/calendar")}
@@ -176,33 +208,7 @@ export default function Home() {
                   "Allows for admin-level accounts to create tasks and events and for normal accounts to sign up",
                   "The version linked here is separate from the real one, so feel free to add or remove tasks on it",
                 ]}
-                stack={[
-                  {
-                    label: "React",
-                    logo: react,
-                    onClick: () => window.open("https://react.dev/", "_blank"),
-                  },
-                  {
-                    label: "Typescript",
-                    logo: typescript,
-                    onClick: () => window.open("https://www.typescriptlang.org/", "_blank"),
-                  },
-                  {
-                    label: "Zustand",
-                    logo: zustand,
-                    onClick: () => window.open("https://zustand.docs.pmnd.rs/", "_blank"),
-                  },
-                  {
-                    label: "MySQL",
-                    logo: mysql,
-                    onClick: () => window.open("https://www.mysql.com/", "_blank"),
-                  },
-                  {
-                    label: "PHP",
-                    logo: php,
-                    onClick: () => window.open("https://www.php.net/", "_blank"),
-                  },
-                ]}
+                stack={orchardStack}
                 previewImage={calendar}
                 onImageClick={() => navigate("/calendar")}
               />
