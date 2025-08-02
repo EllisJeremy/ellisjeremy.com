@@ -2,3 +2,7 @@ html,
 body {
   /*overscroll-behavior: none;  Prevents rubber-band but breaks going back  */
 }
+
+a {
+  text-decoration: none;
+}

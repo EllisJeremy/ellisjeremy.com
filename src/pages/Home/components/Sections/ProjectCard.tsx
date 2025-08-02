@@ -3,29 +3,29 @@ import styles from "./Sections.module.css";
 import { StackItem } from "./WorkExperience";
 import gitWord from "../../assets/GitHub_Logo_White.png";
 import gitLogo from "../../assets/github-mark-white.svg";
+import { Link } from "react-router-dom";
 
 type ProjectCardProps = {
   title: string;
-  onTitleClick: () => void;
-  onGitClick: () => void;
+  projectLink: string;
+  gitLink: string;
   bullets: string[];
   stack: StackItem[];
   previewImage: string;
-  onImageClick: () => void;
 };
 
 const ProjectCard = forwardRef<HTMLDivElement, ProjectCardProps>(
-  ({ title, onTitleClick, onGitClick, bullets, stack, previewImage, onImageClick }, ref) => {
+  ({ title, projectLink, gitLink, bullets, stack, previewImage }, ref) => {
     return (
       <div className={styles.projectDiv} ref={ref}>
         <div className={styles.titleDiv}>
-          <h1 className={styles.title} onClick={onTitleClick}>
-            {title}
-          </h1>
-          <div className={styles.gitDiv} onClick={onGitClick}>
+          <Link to={projectLink}>
+            <h1 className={styles.title}>{title}</h1>
+          </Link>
+          <a className={styles.gitDiv} href={gitLink} target="_blank" rel="noopener noreferrer">
             <img src={gitWord} className={styles.gitHub} />
             <img src={gitLogo} className={styles.gitCat} />
-          </div>
+          </a>
         </div>
 
         <div className={styles.midDiv}>
@@ -37,17 +37,25 @@ const ProjectCard = forwardRef<HTMLDivElement, ProjectCardProps>(
             ))}
           </ul>
           <div className={styles.stackDiv}>
-            {stack.map(({ label, logo, onClick }, i) => (
-              <div key={i} className={styles.stackDivChild} onClick={onClick}>
+            {stack.map(({ label, logo, link }, i) => (
+              <a
+                key={i}
+                className={styles.stackDivChild}
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {label}
                 <img src={logo} className={styles.stackImg} />
-              </div>
+              </a>
             ))}
           </div>
         </div>
 
         <div className={styles.projectImgDiv}>
-          <img src={previewImage} className={styles.projectImg} onClick={onImageClick} />
+          <a href={projectLink}>
+            <img src={previewImage} className={styles.projectImg} />
+          </a>
         </div>
       </div>
     );

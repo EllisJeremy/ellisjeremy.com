@@ -33,27 +33,27 @@ export default function Home() {
     {
       label: "React",
       logo: react,
-      onClick: () => window.open("https://react.dev/", "_blank"),
+      link: "https://react.dev/",
     },
     {
       label: "Node",
       logo: node,
-      onClick: () => window.open("https://www.typescriptlang.org/", "_blank"),
+      link: "https://nodejs.org/",
     },
     {
       label: "Flask",
       logo: flask,
-      onClick: () => window.open("https://zustand.docs.pmnd.rs/", "_blank"),
+      link: "https://flask.palletsprojects.com/",
     },
     {
       label: "Mongo",
       logo: mongo,
-      onClick: () => window.open("https://ccc-js.github.io/numeric2/", "_blank"),
+      link: "https://www.mongodb.com/",
     },
     {
       label: "Postgres",
       logo: postgreSQL,
-      onClick: () => window.open("https://ccc-js.github.io/numeric2/", "_blank"),
+      link: "https://www.postgresql.org/",
     },
   ];
 
@@ -61,22 +61,22 @@ export default function Home() {
     {
       label: "React",
       logo: react,
-      onClick: () => window.open("https://react.dev/", "_blank"),
+      link: "https://react.dev/",
     },
     {
       label: "Typescript",
       logo: typescript,
-      onClick: () => window.open("https://www.typescriptlang.org/", "_blank"),
+      link: "https://www.typescriptlang.org/",
     },
     {
       label: "Zustand",
       logo: zustand,
-      onClick: () => window.open("https://zustand.docs.pmnd.rs/", "_blank"),
+      link: "https://zustand.docs.pmnd.rs/",
     },
     {
       label: "Numeric",
       logo: numeric,
-      onClick: () => window.open("https://ccc-js.github.io/numeric2/", "_blank"),
+      link: "https://ccc-js.github.io/numeric2/",
     },
   ];
 
@@ -84,27 +84,27 @@ export default function Home() {
     {
       label: "React",
       logo: react,
-      onClick: () => window.open("https://react.dev/", "_blank"),
+      link: "https://react.dev/",
     },
     {
       label: "Typescript",
       logo: typescript,
-      onClick: () => window.open("https://www.typescriptlang.org/", "_blank"),
+      link: "https://www.typescriptlang.org/",
     },
     {
       label: "Zustand",
       logo: zustand,
-      onClick: () => window.open("https://zustand.docs.pmnd.rs/", "_blank"),
+      link: "https://zustand.docs.pmnd.rs/",
     },
     {
       label: "MySQL",
       logo: mysql,
-      onClick: () => window.open("https://www.mysql.com/", "_blank"),
+      link: "https://www.mysql.com/",
     },
     {
       label: "PHP",
       logo: php,
-      onClick: () => window.open("https://www.php.net/", "_blank"),
+      link: "https://www.php.net/",
     },
   ];
 
@@ -173,7 +173,7 @@ export default function Home() {
                 companyLogo={xometryLogo}
                 role="Software Engineering Intern"
                 date="June 2025 - Present"
-                onTitleClick={() => navigate("/sylvester")}
+                companyLink="https://www.xometry.com/"
                 bullets={[
                   "Supported the transition from v2 to v3 of the partner scoring algorithm by updating infrastructure across Node.js and Flask backends, adjusting routing logic, and modifying integrations with MongoDB and PostgreSQL",
                   "Improved the partner onboarding flow by fixing bugs, implementing features, and adding data tracking; notably built a feature allowing certified partners to skip test components, reducing onboarding time by several days",
@@ -187,13 +187,8 @@ export default function Home() {
             <div ref={projectsRef}>
               <ProjectCard
                 title="Sylvester Solver"
-                onTitleClick={() => navigate("/sylvester")}
-                onGitClick={() =>
-                  window.open(
-                    "https://github.com/EllisJeremy/ellisjeremy.com/tree/main/src/pages/Sylvester",
-                    "_blank"
-                  )
-                }
+                projectLink="/sylvester"
+                gitLink="https://github.com/EllisJeremy/sylvestersolver"
                 bullets={[
                   "A Linear Algebra tool that solves the Sylvester equation for user inputted matrices",
                   "Compatible with n by m matrices up to 9 by 9",
@@ -201,15 +196,12 @@ export default function Home() {
                 ]}
                 stack={sylvesterStack}
                 previewImage={sylvester}
-                onImageClick={() => navigate("/sylvester")}
               />
 
               <ProjectCard
                 title="Orchard Signup"
-                onTitleClick={() => navigate("/calendar")}
-                onGitClick={() =>
-                  window.open("https://github.com/EllisJeremy/calendarSignUp", "_blank")
-                }
+                projectLink="/calendar"
+                gitLink="https://github.com/EllisJeremy/calendarSignUp"
                 bullets={[
                   "A Calendar tool made for The Orchard Church for task sign-ups and events",
                   "Allows for admin-level accounts to create tasks and events and for normal accounts to sign up",
@@ -217,7 +209,6 @@ export default function Home() {
                 ]}
                 stack={orchardStack}
                 previewImage={calendar}
-                onImageClick={() => navigate("/calendar")}
               />
             </div>
           </Element>

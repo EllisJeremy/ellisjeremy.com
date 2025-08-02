@@ -4,7 +4,7 @@ import styles from "./Sections.module.css";
 export type StackItem = {
   label: string;
   logo: string;
-  onClick: () => void;
+  link: string;
 };
 
 type WorkExperienceProps = {
@@ -12,19 +12,19 @@ type WorkExperienceProps = {
   companyLogo: string;
   role: string;
   date: string;
-  onTitleClick: () => void;
+  companyLink: string;
   bullets: string[];
   stack: StackItem[];
 };
 
 const WorkExperience = forwardRef<HTMLDivElement, WorkExperienceProps>(
-  ({ company, companyLogo, role, date, onTitleClick, bullets, stack }, ref) => {
+  ({ company, companyLogo, role, date, companyLink, bullets, stack }, ref) => {
     return (
       <div className={styles.experienceDiv} ref={ref}>
         <div className={styles.titleDiv} style={{ marginBottom: "0", fontSize: "24px" }}>
-          <h2 className={styles.title} onClick={onTitleClick}>
-            {company}
-          </h2>
+          <a href={companyLink} target="_blank" rel="noopener noreferrer">
+            <h2 className={styles.title}>{company}</h2>
+          </a>
           <img src={companyLogo} style={{ height: "35px", marginRight: "10.5px" }} />
         </div>
         <div className={styles.titleDiv}>
@@ -41,11 +41,17 @@ const WorkExperience = forwardRef<HTMLDivElement, WorkExperienceProps>(
             ))}
           </ul>
           <div className={styles.stackDiv}>
-            {stack.map(({ label, logo, onClick }, idx) => (
-              <div key={idx} className={styles.stackDivChild} onClick={onClick}>
+            {stack.map(({ label, logo, link }, i) => (
+              <a
+                key={i}
+                className={styles.stackDivChild}
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {label}
                 <img src={logo} className={styles.stackImg} />
-              </div>
+              </a>
             ))}
           </div>
         </div>

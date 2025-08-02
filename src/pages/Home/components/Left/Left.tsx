@@ -12,10 +12,6 @@ import leetcode from "../../assets/leetcode.svg";
 import linkedIn from "../../assets/linkedIn.svg";
 
 export default function Left() {
-  const virginiaTechLink = () => {
-    window.open("https://www.vt.edu/", "_blank");
-  };
-
   const {
     section,
     setSection,
@@ -55,7 +51,12 @@ export default function Left() {
 
           <div className={styles.subtitleDiv}>
             <h2 className={styles.subName}> CS student at&nbsp;</h2>
-            <div className={styles.VirginiaTechDiv} onClick={virginiaTechLink}>
+            <a
+              href="https://cs.vt.edu/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.VirginiaTechDiv}
+            >
               <h2 className={styles.subName}>
                 <span className={styles.maroonSpan}>Virginia</span>
                 <span className={styles.orangeSpan}> Tech</span>
@@ -63,7 +64,7 @@ export default function Left() {
               <div className={styles.hokieDiv}>
                 <img className={styles.hokie} src={hokie}></img>
               </div>
-            </div>
+            </a>
           </div>
         </div>
         <div className={styles.sectionButtonDiv}>
@@ -154,9 +155,19 @@ export default function Left() {
         </div>
       </header>
       <footer className={styles.footer}>
-        <img className={styles.img} src={gitHub} />
-        <img className={styles.img} src={leetcode} />
-        <img className={styles.img} src={linkedIn} />
+        <a href="https://github.com/ellisjeremy" target="_blank" rel="noopener noreferrer">
+          <img className={styles.img} src={gitHub} />
+        </a>
+        <a href="https://leetcode.com/jeremyellis" target="_blank" rel="noopener noreferrer">
+          <img className={styles.img} src={leetcode} />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/jeremy-ellis-866928350/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img className={styles.img} src={linkedIn} />
+        </a>
       </footer>
     </>
   );
