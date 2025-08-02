@@ -36,7 +36,9 @@ const Work1 = forwardRef<HTMLDivElement>((props, ref) => {
         className={styles.titleDiv}
         style={{ marginBottom: "0", fontSize: "24px" }}
       >
-        <h2 className={styles.title} onClick={sylvesterLink}></h2>
+        <h2 className={styles.title} onClick={sylvesterLink}>
+          Xometry
+        </h2>
         <img src={xometryLogo} style={{ height: "35px" }} />
       </div>
       <div className={styles.titleDiv}>
@@ -46,9 +48,9 @@ const Work1 = forwardRef<HTMLDivElement>((props, ref) => {
 
       <div className={styles.midDiv}>
         <ul className={styles.list}>
-          <li className={styles.listItem}></li>
-          <li className={styles.listItem}></li>
-          <li className={styles.listItem}></li>
+          <li className={styles.listItem}>what i did </li>
+          <li className={styles.listItem}>what i did 2</li>
+          <li className={styles.listItem}>what i did 3</li>
         </ul>
         <div className={styles.stackDiv}>
           <div className={styles.stackDivChild} onClick={reactLink}>
@@ -56,15 +58,19 @@ const Work1 = forwardRef<HTMLDivElement>((props, ref) => {
             <img src={react} className={styles.stackImg} />
           </div>
           <div className={styles.stackDivChild} onClick={typescriptLink}>
-            Typescript
+            Node
             <img src={typescript} className={styles.stackImgTypescript} />
           </div>
           <div className={styles.stackDivChild} onClick={zustandLink}>
-            placeholder
+            Flask
             <img src={zustand} className={styles.stackImg} />
           </div>
           <div className={styles.stackDivChild} onClick={numericLink}>
-            placeholder
+            Mongo
+            <img src={numeric} className={styles.stackImg} />
+          </div>
+          <div className={styles.stackDivChild} onClick={numericLink}>
+            Postgres
             <img src={numeric} className={styles.stackImg} />
           </div>
         </div>
