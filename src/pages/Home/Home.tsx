@@ -7,6 +7,7 @@ import { Element } from "react-scroll";
 import { useCallback, useEffect } from "react";
 import { homeStore } from "./store";
 import { useInView } from "react-intersection-observer";
+import Education from "./components/Sections/Education";
 
 import WorkExperience, { StackItem } from "./components/Sections/WorkExperience";
 import react from "./assets/react.svg";
@@ -14,7 +15,6 @@ import typescript from "./assets/typescript.svg";
 import zustand from "./assets/zustand.svg";
 import numeric from "./assets/numeric.png";
 import xometryLogo from "./assets/xometryLogoWhite.svg";
-import { useNavigate } from "react-router-dom";
 
 import sylvester from "./assets/sylvester.png";
 import mongo from "./assets/mongo.svg";
@@ -26,9 +26,11 @@ import mysql from "./assets/mysql.svg";
 import php from "./assets/php.png";
 import calendar from "./assets/calendar.png";
 
-export default function Home() {
-  const navigate = useNavigate();
+import vt from "./assets/vt.svg";
+import c from "./assets/c.png";
+import java from "./assets/java.png";
 
+export default function Home() {
   const xometryStack: StackItem[] = [
     {
       label: "React",
@@ -105,6 +107,24 @@ export default function Home() {
       label: "PHP",
       logo: php,
       link: "https://www.php.net/",
+    },
+  ];
+
+  const VTStack: StackItem[] = [
+    {
+      label: "Java",
+      logo: java,
+      link: "https://www.java.com/",
+    },
+    {
+      label: "C",
+      logo: c,
+      link: "https://en.wikipedia.org/wiki/C_(programming_language)",
+    },
+    {
+      label: "Not sure",
+      logo: zustand,
+      link: "https://zustand.docs.pmnd.rs/",
     },
   ];
 
@@ -209,6 +229,26 @@ export default function Home() {
                 ]}
                 stack={orchardStack}
                 previewImage={calendar}
+              />
+            </div>
+          </Element>
+          <Element name="education">
+            <div className={styles.headerDiv}>Education</div>
+            <div ref={educationRef}>
+              <Education
+                ref={educationRef}
+                company="Virginia Tech"
+                companyLogo={vt}
+                degree="BS Computer Science"
+                date="Expected: Dec 2026"
+                schoolLink="https://www.cs.vt.edu/"
+                gpa="4.0"
+                bullets={[
+                  "Data Structures and Algorithms",
+                  "Computer Origination",
+                  "GUI and Graphics Programming",
+                ]}
+                stack={VTStack}
               />
             </div>
           </Element>
