@@ -7,6 +7,10 @@ import projects from "../../assets/projects.svg";
 import education from "../../assets/education.svg";
 import { Link } from "react-scroll";
 
+import gitHub from "../../assets/github.svg";
+import leetcode from "../../assets/leetcode.svg";
+import linkedIn from "../../assets/linkedIn.svg";
+
 export default function Left() {
   const virginiaTechLink = () => {
     window.open("https://www.vt.edu/", "_blank");
@@ -77,9 +81,7 @@ export default function Left() {
             className={styles.slideOver}
             style={{
               top: topMap[section] || "0px",
-              backdropFilter: blur
-                ? "brightness(1.1) blur(2px)"
-                : "brightness(1.1)",
+              backdropFilter: blur ? "brightness(1.1) blur(2px)" : "brightness(1.1)",
               transform: scale ? "scale(1.075)" : "none",
             }}
           />
@@ -151,7 +153,11 @@ export default function Left() {
           </Link>
         </div>
       </header>
-      <footer>text</footer>
+      <footer className={styles.footer}>
+        <img className={styles.img} src={gitHub} />
+        <img className={styles.img} src={leetcode} />
+        <img className={styles.img} src={linkedIn} />
+      </footer>
     </>
   );
 }
