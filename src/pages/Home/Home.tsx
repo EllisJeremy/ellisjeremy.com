@@ -17,6 +17,10 @@ import xometryLogo from "./assets/xometryLogoWhite.svg";
 import { useNavigate } from "react-router-dom";
 
 import sylvester from "./assets/sylvester.png";
+import mongo from "./assets/mongo.svg";
+import flask from "./assets/flask.svg";
+import postgreSQL from "./assets/postgreSQL.png";
+import node from "./assets/node.svg";
 
 import mysql from "./assets/mysql.svg";
 import php from "./assets/php.png";
@@ -33,22 +37,22 @@ export default function Home() {
     },
     {
       label: "Node",
-      logo: typescript,
+      logo: node,
       onClick: () => window.open("https://www.typescriptlang.org/", "_blank"),
     },
     {
       label: "Flask",
-      logo: zustand,
+      logo: flask,
       onClick: () => window.open("https://zustand.docs.pmnd.rs/", "_blank"),
     },
     {
       label: "Mongo",
-      logo: numeric,
+      logo: mongo,
       onClick: () => window.open("https://ccc-js.github.io/numeric2/", "_blank"),
     },
     {
       label: "Postgres",
-      logo: numeric,
+      logo: postgreSQL,
       onClick: () => window.open("https://ccc-js.github.io/numeric2/", "_blank"),
     },
   ];
@@ -170,7 +174,10 @@ export default function Home() {
                 role="Software Engineering Intern"
                 date="June 2025 - Present"
                 onTitleClick={() => navigate("/sylvester")}
-                bullets={["what i did", "what i did 2", "what i did 3"]}
+                bullets={[
+                  "Supported the transition from v2 to v3 of the partner scoring algorithm by updating infrastructure across Node.js and Flask backends, adjusting routing logic, and modifying integrations with MongoDB and PostgreSQL",
+                  "Improved the partner onboarding flow by fixing bugs, implementing features, and adding data tracking; notably built a feature allowing certified partners to skip test components, reducing onboarding time by several days",
+                ]}
                 stack={xometryStack}
               />
             </div>

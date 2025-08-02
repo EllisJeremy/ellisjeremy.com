@@ -25,7 +25,7 @@ const WorkExperience = forwardRef<HTMLDivElement, WorkExperienceProps>(
           <h2 className={styles.title} onClick={onTitleClick}>
             {company}
           </h2>
-          <img src={companyLogo} style={{ height: "35px" }} />
+          <img src={companyLogo} style={{ height: "35px", marginRight: "10.5px" }} />
         </div>
         <div className={styles.titleDiv}>
           <h2 className={styles.subTitle}>{role}</h2>

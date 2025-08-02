@@ -92,9 +92,10 @@
 .subTitle {
   color: rgba(255, 255, 255, 1);
   font-weight: normal;
-  padding: 15px;
+  padding: 10px;
   margin: 0px;
   margin-left: 1px;
+  margin-right: 0.5px;
 }
 .gitDiv {
   display: flex;
@@ -153,7 +154,6 @@
 .stackDiv {
   display: flex;
   flex-direction: column;
-  margin-right: 4px;
 }
 
 .stackDivChild {
