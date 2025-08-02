@@ -2,22 +2,25 @@ import { Helmet } from "react-helmet";
 import styles from "./Home.module.css";
 import Left from "./components/Left/Left";
 import Intro from "./components/Intro/Intro";
-import Project from "./components/Sections/Project1";
-import Project2 from "./components/Sections/Project2";
+import ProjectCard from "./components/Sections/ProjectCard";
 import { Element } from "react-scroll";
 import { useCallback, useEffect } from "react";
 import { homeStore } from "./store";
 import { useInView } from "react-intersection-observer";
 
-import WorkExperience, {
-  StackItem,
-} from "./components/Sections/WorkExperience";
+import WorkExperience, { StackItem } from "./components/Sections/WorkExperience";
 import react from "./assets/react.svg";
 import typescript from "./assets/typescript.svg";
 import zustand from "./assets/zustand.svg";
 import numeric from "./assets/numeric.png";
 import xometryLogo from "./assets/xometryLogoWhite.svg";
 import { useNavigate } from "react-router-dom";
+
+import sylvester from "./assets/sylvester.png";
+
+import mysql from "./assets/mysql.svg";
+import php from "./assets/php.png";
+import calendar from "./assets/calendar.png";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -41,19 +44,16 @@ export default function Home() {
     {
       label: "Mongo",
       logo: numeric,
-      onClick: () =>
-        window.open("https://ccc-js.github.io/numeric2/", "_blank"),
+      onClick: () => window.open("https://ccc-js.github.io/numeric2/", "_blank"),
     },
     {
       label: "Postgres",
       logo: numeric,
-      onClick: () =>
-        window.open("https://ccc-js.github.io/numeric2/", "_blank"),
+      onClick: () => window.open("https://ccc-js.github.io/numeric2/", "_blank"),
     },
   ];
 
-  const { setSection, setBlur, setScale, setFilter, allowObserver } =
-    homeStore();
+  const { setSection, setBlur, setScale, setFilter, allowObserver } = homeStore();
 
   const triggerSlideOverAnimation = useCallback(
     (section: string) => {
@@ -76,12 +76,9 @@ export default function Home() {
 
   useEffect(() => {
     if (aboutInView && allowObserver) triggerSlideOverAnimation("about");
-    else if (experienceInView && allowObserver)
-      triggerSlideOverAnimation("experience");
-    else if (projectsInView && allowObserver)
-      triggerSlideOverAnimation("projects");
-    else if (educationInView && allowObserver)
-      triggerSlideOverAnimation("education");
+    else if (experienceInView && allowObserver) triggerSlideOverAnimation("experience");
+    else if (projectsInView && allowObserver) triggerSlideOverAnimation("projects");
+    else if (educationInView && allowObserver) triggerSlideOverAnimation("education");
   }, [aboutInView, experienceInView, projectsInView, educationInView]);
   return (
     <>
@@ -129,10 +126,88 @@ export default function Home() {
           <Element name="projects">
             <div className={styles.headerDiv}>Projects</div>
             <div ref={projectsRef}>
-              <Project />
+              <ProjectCard
+                title="Sylvester Solver"
+                onTitleClick={() => navigate("/sylvester")}
+                onGitClick={() =>
+                  window.open(
+                    "https://github.com/EllisJeremy/ellisjeremy.com/tree/main/src/pages/Sylvester",
+                    "_blank"
+                  )
+                }
+                bullets={[
+                  "A Linear Algebra tool that solves the Sylvester equation for user inputted matrices",
+                  "Compatible with n by m matrices up to 9 by 9",
+                  "Solves using the Kronecker Product Vectorization Method",
+                ]}
+                stack={[
+                  {
+                    label: "React",
+                    logo: react,
+                    onClick: () => window.open("https://react.dev/", "_blank"),
+                  },
+                  {
+                    label: "Typescript",
+                    logo: typescript,
+                    onClick: () => window.open("https://www.typescriptlang.org/", "_blank"),
+                  },
+                  {
+                    label: "Zustand",
+                    logo: zustand,
+                    onClick: () => window.open("https://zustand.docs.pmnd.rs/", "_blank"),
+                  },
+                  {
+                    label: "Numeric",
+                    logo: numeric,
+                    onClick: () => window.open("https://ccc-js.github.io/numeric2/", "_blank"),
+                  },
+                ]}
+                previewImage={sylvester}
+                onImageClick={() => navigate("/sylvester")}
+              />
+              <ProjectCard
+                title="Orchard Signup"
+                onTitleClick={() => navigate("/calendar")}
+                onGitClick={() =>
+                  window.open("https://github.com/EllisJeremy/calendarSignUp", "_blank")
+                }
+                bullets={[
+                  "A Calendar tool made for The Orchard Church for task sign-ups and events",
+                  "Allows for admin-level accounts to create tasks and events and for normal accounts to sign up",
+                  "The version linked here is separate from the real one, so feel free to add or remove tasks on it",
+                ]}
+                stack={[
+                  {
+                    label: "React",
+                    logo: react,
+                    onClick: () => window.open("https://react.dev/", "_blank"),
+                  },
+                  {
+                    label: "Typescript",
+                    logo: typescript,
+                    onClick: () => window.open("https://www.typescriptlang.org/", "_blank"),
+                  },
+                  {
+                    label: "Zustand",
+                    logo: zustand,
+                    onClick: () => window.open("https://zustand.docs.pmnd.rs/", "_blank"),
+                  },
+                  {
+                    label: "MySQL",
+                    logo: mysql,
+                    onClick: () => window.open("https://www.mysql.com/", "_blank"),
+                  },
+                  {
+                    label: "PHP",
+                    logo: php,
+                    onClick: () => window.open("https://www.php.net/", "_blank"),
+                  },
+                ]}
+                previewImage={calendar}
+                onImageClick={() => navigate("/calendar")}
+              />
             </div>
           </Element>
-          <Project2 />
         </div>
       </div>
     </>
