@@ -4,13 +4,54 @@ import Left from "./components/Left/Left";
 import Intro from "./components/Intro/Intro";
 import Project from "./components/Sections/Project1";
 import Project2 from "./components/Sections/Project2";
-import Work1 from "./components/Sections/Work1";
 import { Element } from "react-scroll";
 import { useCallback, useEffect } from "react";
 import { homeStore } from "./store";
 import { useInView } from "react-intersection-observer";
 
+import WorkExperience, {
+  StackItem,
+} from "./components/Sections/WorkExperience";
+import react from "./assets/react.svg";
+import typescript from "./assets/typescript.svg";
+import zustand from "./assets/zustand.svg";
+import numeric from "./assets/numeric.png";
+import xometryLogo from "./assets/xometryLogoWhite.svg";
+import { useNavigate } from "react-router-dom";
+
 export default function Home() {
+  const navigate = useNavigate();
+
+  const stack: StackItem[] = [
+    {
+      label: "React",
+      logo: react,
+      onClick: () => window.open("https://react.dev/", "_blank"),
+    },
+    {
+      label: "Node",
+      logo: typescript,
+      onClick: () => window.open("https://www.typescriptlang.org/", "_blank"),
+    },
+    {
+      label: "Flask",
+      logo: zustand,
+      onClick: () => window.open("https://zustand.docs.pmnd.rs/", "_blank"),
+    },
+    {
+      label: "Mongo",
+      logo: numeric,
+      onClick: () =>
+        window.open("https://ccc-js.github.io/numeric2/", "_blank"),
+    },
+    {
+      label: "Postgres",
+      logo: numeric,
+      onClick: () =>
+        window.open("https://ccc-js.github.io/numeric2/", "_blank"),
+    },
+  ];
+
   const { setSection, setBlur, setScale, setFilter, allowObserver } =
     homeStore();
 
@@ -73,7 +114,16 @@ export default function Home() {
           <Element name="experience">
             <div className={styles.headerDiv}>Experience</div>
             <div ref={experienceRef}>
-              <Work1 />
+              <WorkExperience
+                ref={experienceRef}
+                company="Xometry"
+                companyLogo={xometryLogo}
+                role="Software Engineering Intern"
+                date="June 2025 - Present"
+                onTitleClick={() => navigate("/sylvester")}
+                bullets={["what i did", "what i did 2", "what i did 3"]}
+                stack={stack}
+              />
             </div>
           </Element>
           <Element name="projects">
