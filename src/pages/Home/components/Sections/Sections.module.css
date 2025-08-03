@@ -14,9 +14,8 @@
   padding: 20px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: brightness(1.1) blur(1px) url(#displacementFilter);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: brightness(1.1) blur(15px) url(#displacementFilter);
 
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   border-left: 1px solid rgba(255, 255, 255, 0.3);
