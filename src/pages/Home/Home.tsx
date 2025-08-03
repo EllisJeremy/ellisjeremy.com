@@ -30,7 +30,7 @@ import vt from "./assets/vt.svg";
 import c from "./assets/c.png";
 import java from "./assets/java.png";
 
-import WorksCited from "./components/Sections/WorksCited/WorksCited";
+import WorksCited from "./components/Sections/WorksCited";
 
 export default function Home() {
   const xometryStack: StackItem[] = [
@@ -180,8 +180,8 @@ export default function Home() {
         </div>
 
         <div className={styles.rightDiv}>
-          <div className={styles.headerDiv}>About</div>
           <Element name="about">
+            <div className={styles.headerDiv}>About</div>
             <div ref={aboutRef}>
               <Intro />
             </div>
