@@ -222,3 +222,9 @@
   overflow: hidden;
   cursor: pointer;
 }
+
+.worksCitedDiv {
+  display: flex;
+  justify-content: right;
+  gap: 20px;
+}

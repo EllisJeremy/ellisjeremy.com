@@ -1,0 +1,57 @@
+.itemDiv1,
+.itemDiv2 {
+  display: inline-block;
+  margin-bottom: 30px;
+  position: relative;
+  width: 600px;
+  border-radius: 30px;
+
+  text-align: left;
+
+  transition: background-color 0.25s, box-shadow 0.25s, border-color 0.25s;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+
+  padding: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: brightness(1.1) blur(1px) url(#displacementFilter);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
+  border-right: 0.5px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.075),
+    rgba(255, 255, 255, 0.075)
+  );
+}
+
+.itemDiv1::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent,
+    transparent
+  );
+}
+
+.worksCitedDiv {
+  display: flex;
+  justify-content: right;
+  gap: 20px;
+}

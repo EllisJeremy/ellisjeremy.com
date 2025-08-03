@@ -30,6 +30,8 @@ import vt from "./assets/vt.svg";
 import c from "./assets/c.png";
 import java from "./assets/java.png";
 
+import WorksCited from "./components/Sections/WorksCited/WorksCited";
+
 export default function Home() {
   const xometryStack: StackItem[] = [
     {
@@ -252,6 +254,10 @@ export default function Home() {
               />
             </div>
           </Element>
+          <div className={styles.headerDiv} style={{ fontSize: "30px" }}>
+            Works Cited
+          </div>
+          <WorksCited />
         </div>
       </div>
     </>
