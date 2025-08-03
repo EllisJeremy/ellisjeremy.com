@@ -1,13 +1,13 @@
 import { Helmet } from "react-helmet";
 import styles from "./Home.module.css";
 import Left from "./components/Left/Left";
-import Intro from "./components/Intro/Intro";
 import ProjectCard from "./components/Sections/ProjectCard";
 import { Element } from "react-scroll";
 import { useCallback, useEffect } from "react";
 import { homeStore } from "./store";
 import { useInView } from "react-intersection-observer";
 import Education from "./components/Sections/Education";
+import About from "./components/Sections/About";
 
 import WorkExperience, { StackItem } from "./components/Sections/WorkExperience";
 import react from "./assets/react.svg";
@@ -23,8 +23,8 @@ import postgreSQL from "./assets/postgreSQL.png";
 import node from "./assets/node.svg";
 
 import mysql from "./assets/mysql.svg";
-import php from "./assets/php.png";
 import calendar from "./assets/calendar.png";
+import aws from "./assets/aws.svg";
 
 import vt from "./assets/vt.svg";
 import c from "./assets/c.png";
@@ -91,14 +91,9 @@ export default function Home() {
       link: "https://react.dev/",
     },
     {
-      label: "Typescript",
-      logo: typescript,
-      link: "https://www.typescriptlang.org/",
-    },
-    {
-      label: "Zustand",
-      logo: zustand,
-      link: "https://zustand.docs.pmnd.rs/",
+      label: "Node",
+      logo: node,
+      link: "https://www.nodejs.org/",
     },
     {
       label: "MySQL",
@@ -106,9 +101,9 @@ export default function Home() {
       link: "https://www.mysql.com/",
     },
     {
-      label: "PHP",
-      logo: php,
-      link: "https://www.php.net/",
+      label: "AWS",
+      logo: aws,
+      link: "https://zustand.docs.pmnd.rs/",
     },
   ];
 
@@ -124,8 +119,8 @@ export default function Home() {
       link: "https://en.wikipedia.org/wiki/C_(programming_language)",
     },
     {
-      label: "Not sure",
-      logo: zustand,
+      label: "React",
+      logo: react,
       link: "https://zustand.docs.pmnd.rs/",
     },
   ];
@@ -183,7 +178,7 @@ export default function Home() {
           <Element name="about">
             <div className={styles.headerDiv}>About</div>
             <div ref={aboutRef}>
-              <Intro />
+              <About />
             </div>
           </Element>
           <Element name="experience">
