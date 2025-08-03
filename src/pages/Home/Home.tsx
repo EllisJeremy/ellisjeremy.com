@@ -32,8 +32,6 @@ import java from "./assets/java.png";
 
 import WorksCited from "./components/Sections/WorksCited";
 
-import GlowCursor from "./components/GlowCursor/GlowCursor";
-
 export default function Home() {
   const xometryStack: StackItem[] = [
     {
@@ -169,7 +167,7 @@ export default function Home() {
           rel="stylesheet"
         />
       </Helmet>
-      <GlowCursor />
+
       <div className={styles.fullDiv}>
         {/* this empty div is necessary because leftDiv is position: fixed; thus it does not register as an item within fullDiv */}
         <div className={styles.fillerDiv}></div>
