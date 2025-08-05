@@ -56,16 +56,18 @@ export default function Content() {
     { label: "React", logo: react, link: "https://react.dev/" },
   ];
 
-  const { setSection, setBlur, setScale, setFilter, allowObserver } = homeStore();
+  const { setSection, setBlur, setScale, setFilter, setAllowObserver, allowObserver } = homeStore();
 
   const triggerSlideOverAnimation = (section: string) => {
     setSection(section);
+    setTimeout(() => setAllowObserver(false), 0);
     setTimeout(() => setScale(true), 0);
-    setTimeout(() => setFilter(true), 0);
     setTimeout(() => setBlur(true), 0);
+    setTimeout(() => setFilter(true), 0);
     setTimeout(() => setScale(false), 300);
     setTimeout(() => setBlur(false), 300);
     setTimeout(() => setFilter(false), 300);
+    setTimeout(() => setAllowObserver(true), 600);
   };
 
   const [aboutRef, aboutInView] = useInView({ threshold: 0.5 });
@@ -78,7 +80,7 @@ export default function Content() {
     else if (experienceInView && allowObserver) triggerSlideOverAnimation("experience");
     else if (projectsInView && allowObserver) triggerSlideOverAnimation("projects");
     else if (educationInView && allowObserver) triggerSlideOverAnimation("education");
-  }, [aboutInView, experienceInView, projectsInView, educationInView, allowObserver]);
+  }, [aboutInView, experienceInView, projectsInView, educationInView]);
 
   return (
     <>
