@@ -1,6 +1,9 @@
-html,
+html {
+  background-color: rgb(0, 57, 72);
+}
+
 body {
-  /*overscroll-behavior: none;  Prevents rubber-band but breaks going back  */
+  background: linear-gradient(135deg, rgb(0, 57, 72), #10172a);
 }
 
 a {
