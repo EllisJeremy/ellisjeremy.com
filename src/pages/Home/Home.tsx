@@ -6,7 +6,7 @@ import { screenStore } from "./store";
 import { ScreenSizeTracker } from "./components/ScreenSizeTracker";
 
 export default function Home() {
-  const { isMobile, setIsMobile } = screenStore();
+  const { isMobile } = screenStore();
 
   return (
     <>
