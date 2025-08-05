@@ -6,7 +6,7 @@ import WorkExperience from "../Sections/WorkExperience";
 import ProjectCard from "../Sections/ProjectCard";
 import Education from "../Sections/Education";
 import WorksCited from "../Sections/WorksCited";
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 
 import react from "../../assets/react.svg";
 import typescript from "../../assets/typescript.svg";
@@ -55,20 +55,20 @@ export default function Content() {
     { label: "C", logo: c, link: "https://en.wikipedia.org/wiki/C_(programming_language)" },
     { label: "React", logo: react, link: "https://react.dev/" },
   ];
+  const { setSection, setBlur, setScale, setFilter, allowObserver } = homeStore();
+  const triggerSlideOverAnimation = useCallback(
+    (section: string) => {
+      setSection(section);
 
-  const { setSection, setBlur, setScale, setFilter, setAllowObserver, allowObserver } = homeStore();
-
-  const triggerSlideOverAnimation = (section: string) => {
-    setSection(section);
-    setTimeout(() => setAllowObserver(false), 0);
-    setTimeout(() => setScale(true), 0);
-    setTimeout(() => setBlur(true), 0);
-    setTimeout(() => setFilter(true), 0);
-    setTimeout(() => setScale(false), 300);
-    setTimeout(() => setBlur(false), 300);
-    setTimeout(() => setFilter(false), 300);
-    setTimeout(() => setAllowObserver(true), 600);
-  };
+      setTimeout(() => setScale(true), 0);
+      setTimeout(() => setFilter(true), 0);
+      setTimeout(() => setBlur(true), 0);
+      setTimeout(() => setScale(false), 300);
+      setTimeout(() => setBlur(false), 300);
+      setTimeout(() => setFilter(false), 300);
+    },
+    [setSection, setBlur, setScale, setFilter]
+  );
 
   const [aboutRef, aboutInView] = useInView({ threshold: 0.5 });
   const [experienceRef, experienceInView] = useInView({ threshold: 0.5 });
