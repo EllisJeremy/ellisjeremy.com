@@ -1,4 +1,4 @@
-import styles from "./Left.module.css";
+import styles from "./LeftHeader.module.css";
 import hokie from "../.././assets/hokie.png";
 import { homeStore } from "../../store";
 import about from "../../assets/about.svg";
@@ -11,7 +11,7 @@ import gitHub from "../../assets/github.svg";
 import leetcode from "../../assets/leetcode.svg";
 import linkedIn from "../../assets/linkedIn.svg";
 
-export default function Left() {
+export default function LeftHeader() {
   const {
     section,
     setSection,

@@ -25,3 +25,13 @@ export const homeStore = create<homeStoreType>((set) => ({
   allowObserver: true,
   setAllowObserver: (allowObserver: boolean) => set(() => ({ allowObserver })),
 }));
+
+interface screenStoreType {
+  isMobile: boolean;
+  setIsMobile: (val: boolean) => void;
+}
+
+export const screenStore = create<screenStoreType>((set) => ({
+  isMobile: window.innerWidth < 1150,
+  setIsMobile: (val) => set({ isMobile: val }),
+}));
