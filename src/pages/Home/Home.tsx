@@ -25,17 +25,19 @@ export default function Home() {
       </Helmet>
 
       <div className={!isMobile ? styles.fullDiv : styles.mobileDiv}>
-        {!isMobile && (
-          <>
-            <div className={styles.fillerDiv} />
-            <div className={styles.leftDiv}>
-              <LeftHeader />
-            </div>
-          </>
-        )}
+        <div className={styles.subDiv}>
+          {!isMobile && (
+            <>
+              <div className={styles.fillerDiv} />
+              <div className={styles.leftDiv}>
+                <LeftHeader />
+              </div>
+            </>
+          )}
 
-        <div className={styles.rightDiv}>
-          <Content />
+          <div className={styles.rightDiv}>
+            <Content />
+          </div>
         </div>
       </div>
     </>

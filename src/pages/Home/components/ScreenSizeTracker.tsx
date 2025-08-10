@@ -6,7 +6,7 @@ export function ScreenSizeTracker() {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 1150);
+      setIsMobile(window.innerWidth < 1200);
     };
     window.addEventListener("resize", handleResize);
     handleResize();
