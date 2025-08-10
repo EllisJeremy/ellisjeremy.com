@@ -55,15 +55,7 @@ export default function Content() {
     { label: "C", logo: c, link: "https://en.wikipedia.org/wiki/C_(programming_language)" },
     { label: "React", logo: react, link: "https://react.dev/" },
   ];
-  const {
-    setSection,
-    setBlur,
-    setScale,
-    setFilter,
-    allowObserver,
-    allowAnimation,
-    setAllowAnimation,
-  } = homeStore();
+  const { setSection, setBlur, setScale, setFilter, allowObserver } = homeStore();
 
   const triggerSlideOverAnimation = useCallback(
     (currSection: string) => {
