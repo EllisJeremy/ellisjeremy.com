@@ -5,6 +5,7 @@ import Content from "./components/Content/Content";
 import { screenStore } from "./store";
 import { ScreenSizeTracker } from "./components/ScreenSizeTracker";
 import NameHeader from "./components/NameHeader/NameHeader";
+import Footer from "./components/Content/Footer/Footer";
 
 export default function Home() {
   const { isMobile } = screenStore();
@@ -26,8 +27,7 @@ export default function Home() {
       </Helmet>
 
       <div className={!isMobile ? styles.fullDiv : styles.mobileDiv}>
-        <div className={!isMobile ? styles.subDiv: styles.none}>
-
+        <div className={!isMobile ? styles.subDiv : styles.none}>
           {!isMobile && (
             <>
               <div className={styles.fillerDiv} />
@@ -36,10 +36,19 @@ export default function Home() {
               </div>
             </>
           )}
-          
-          {isMobile && ( <NameHeader />)}
+
+          {isMobile && (
+            <header className={styles.mobileHeader} style={{ marginBottom: "30px" }}>
+              <div style={{ paddingLeft: "26px" }}>
+                <NameHeader />
+              </div>
+
+              <Footer />
+            </header>
+          )}
           <div className={styles.rightDiv}>
             <Content />
+            =-
           </div>
         </div>
       </div>
