@@ -22,16 +22,20 @@ export default function LeftHeader() {
     setAllowObserver,
   } = homeStore();
 
-  const triggerSlideOverAnimation = (section: string) => {
-    setSection(section);
-    setTimeout(() => setAllowObserver(false), 0);
-    setTimeout(() => setScale(true), 0);
-    setTimeout(() => setBlur(true), 0);
-    setTimeout(() => setFilter(true), 0);
-    setTimeout(() => setScale(false), 300);
-    setTimeout(() => setBlur(false), 300);
-    setTimeout(() => setFilter(false), 300);
-    setTimeout(() => setAllowObserver(true), 600);
+  const triggerSlideOverAnimation = (currSection: string) => {
+    if (currSection !== section) {
+      console.log(currSection);
+      console.log(section);
+      setSection(currSection);
+      setTimeout(() => setAllowObserver(false), 0);
+      setTimeout(() => setScale(true), 0);
+      setTimeout(() => setBlur(true), 0);
+      setTimeout(() => setFilter(true), 0);
+      setTimeout(() => setScale(false), 300);
+      setTimeout(() => setBlur(false), 300);
+      setTimeout(() => setFilter(false), 300);
+      setTimeout(() => setAllowObserver(true), 600);
+    }
   };
 
   const topMap: Record<string, string> = {

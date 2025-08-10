@@ -55,10 +55,19 @@ export default function Content() {
     { label: "C", logo: c, link: "https://en.wikipedia.org/wiki/C_(programming_language)" },
     { label: "React", logo: react, link: "https://react.dev/" },
   ];
-  const { setSection, setBlur, setScale, setFilter, allowObserver } = homeStore();
+  const {
+    setSection,
+    setBlur,
+    setScale,
+    setFilter,
+    allowObserver,
+    allowAnimation,
+    setAllowAnimation,
+  } = homeStore();
+
   const triggerSlideOverAnimation = useCallback(
-    (section: string) => {
-      setSection(section);
+    (currSection: string) => {
+      setSection(currSection);
 
       setTimeout(() => setScale(true), 0);
       setTimeout(() => setFilter(true), 0);
@@ -76,12 +85,14 @@ export default function Content() {
   const [educationRef, educationInView] = useInView({ threshold: 0.5 });
 
   useEffect(() => {
-    if (aboutInView && allowObserver) triggerSlideOverAnimation("about");
-    else if (experienceInView && allowObserver) triggerSlideOverAnimation("experience");
-    else if (projectsInView && allowObserver) triggerSlideOverAnimation("projects");
-    else if (educationInView && allowObserver) triggerSlideOverAnimation("education");
+    if (allow) {
+      if (aboutInView && allowObserver) triggerSlideOverAnimation("about");
+      else if (experienceInView && allowObserver) triggerSlideOverAnimation("experience");
+      else if (projectsInView && allowObserver) triggerSlideOverAnimation("projects");
+      else if (educationInView && allowObserver) triggerSlideOverAnimation("education");
+    }
   }, [aboutInView, experienceInView, projectsInView, educationInView]);
-
+  const allow = true;
   return (
     <>
       <Element name="about">
