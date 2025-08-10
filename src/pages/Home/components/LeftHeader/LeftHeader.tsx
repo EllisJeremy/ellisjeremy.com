@@ -1,5 +1,4 @@
 import styles from "./LeftHeader.module.css";
-import hokie from "../.././assets/hokie.png";
 import { homeStore } from "../../store";
 import about from "../../assets/about.svg";
 import experience from "../../assets/experience.svg";
@@ -10,6 +9,8 @@ import { Link } from "react-scroll";
 import gitHub from "../../assets/github.svg";
 import leetcode from "../../assets/leetcode.svg";
 import linkedIn from "../../assets/linkedIn.svg";
+
+import NameHeader from "../NameHeader/NameHeader";
 
 export default function LeftHeader() {
   const {
@@ -46,27 +47,7 @@ export default function LeftHeader() {
   return (
     <>
       <header>
-        <div className={styles.nameDiv}>
-          <h1 className={styles.name}>Jeremy Ellis</h1>
-
-          <div className={styles.subtitleDiv}>
-            <h2 className={styles.subName}> CS student at&nbsp;</h2>
-            <a
-              href="https://cs.vt.edu/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.VirginiaTechDiv}
-            >
-              <h2 className={styles.subName}>
-                <span className={styles.maroonSpan}>Virginia</span>
-                <span className={styles.orangeSpan}> Tech</span>
-              </h2>
-              <div className={styles.hokieDiv}>
-                <img className={styles.hokie} src={hokie}></img>
-              </div>
-            </a>
-          </div>
-        </div>
+        <NameHeader />
         <div className={styles.sectionButtonDiv}>
           {/*there are 2 slideOvers here, 1 for blur and 1 for filter because blur can be transitioned, but filter cannot */}
           <div
