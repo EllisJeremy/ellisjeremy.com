@@ -30,7 +30,6 @@ export function CreateMatrixA({ n = 2 }: { n?: number }) {
                 value={matrixA[indexN]?.[indexM]}
                 onChange={(e) => {
                   handleCellChangeA(indexN, indexM, parseFloat(e.target.value));
-                  console.log("Key pressed in cell", indexN, indexM, e.target.value);
                 }}
               />
             </div>
@@ -70,7 +69,6 @@ export function CreateMatrixB({ m = 2 }: { m?: number }) {
                 value={matrixB[indexN]?.[indexM]}
                 onChange={(e) => {
                   handleCellChangeB(indexN, indexM, parseFloat(e.target.value));
-                  console.log("Key pressed in cell", indexN, indexM, e.target.value);
                 }}
               />
             </div>
@@ -113,7 +111,6 @@ export function CreateMatrixC({ n = 2, m = 2 }: { n?: number; m?: number }) {
                 value={matrixC[indexN]?.[indexM]}
                 onChange={(e) => {
                   handleCellChangeC(indexN, indexM, parseFloat(e.target.value));
-                  console.log("Key pressed in cell", indexN, indexM, e.target.value);
                 }}
               />
             </div>

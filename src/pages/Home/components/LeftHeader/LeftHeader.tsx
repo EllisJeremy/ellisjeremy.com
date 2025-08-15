@@ -24,8 +24,6 @@ export default function LeftHeader() {
 
   const triggerSlideOverAnimation = (currSection: string) => {
     if (currSection !== section) {
-      console.log(currSection);
-      console.log(section);
       setSection(currSection);
       setTimeout(() => setAllowObserver(false), 0);
       setTimeout(() => setScale(true), 0);
