@@ -26,7 +26,7 @@ import c from "../../assets/c.png";
 import java from "../../assets/java.png";
 
 import { homeStore } from "../../store";
-// test commit
+
 export default function Content() {
   const xometryStack = [
     { label: "React", logo: react, link: "https://react.dev/" },
