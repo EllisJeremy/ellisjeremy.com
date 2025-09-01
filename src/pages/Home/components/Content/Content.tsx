@@ -104,40 +104,52 @@ export default function Content() {
             date="June 2025 - Present"
             companyLink="https://www.xometry.com/"
             bullets={[
-              "Supported the transition from v2 to v3 of the partner scoring algorithm by updating infrastructure across Node.js and Flask backends, adjusting routing logic, and modifying integrations with MongoDB and PostgreSQL",
+              "Supported the transition from v2 to v3 of the partner scoring algorithm by updating infrastructure across Node.js and Flask backends, modifying the algorithm’s logic, and adjusting integrations with MongoDB and PostgreSQL.",
               "Improved the partner onboarding flow by fixing bugs, implementing features, and adding data tracking; notably built a feature allowing certified partners to skip test components, reducing onboarding time by several days",
+              <>
+                Won 1st place in Xometry’s internal “Shark Tank” competition. My demo website, used
+                for our pitch, can be seen{" "}
+                <a
+                  href="https://github.com/EllisJeremy/XometrySharkTankDemo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "rgba(255, 255, 255, 0.8)", textDecoration: "underline" }}
+                >
+                  here
+                </a>
+                .
+              </>,
             ]}
             stack={xometryStack}
           />
         </div>
       </Element>
+
       <Element name="projects">
         <div className={styles.headerDiv}>Projects</div>
         <div ref={projectsRef}>
+          <ProjectCard
+            title="Orchard Signup"
+            projectLink="https://beyondsunday.org/account"
+            gitLink="https://github.com/EllisJeremy/calendarSignUp"
+            bullets={[
+              "Orchard Signup is a full-stack platform that helps community members manage events and task signups.",
+              "The site features secure login with JWT sessions, password hashing, and email notifications that confirm when users sign up for tasks.",
+            ]}
+            stack={orchardStack}
+            previewImage={calendar}
+          />
+
           <ProjectCard
             title="Sylvester Solver"
             projectLink="/sylvester"
             gitLink="https://github.com/EllisJeremy/sylvestersolver"
             bullets={[
-              "A Linear Algebra tool that solves the Sylvester equation for user inputted matrices",
-              "Compatible with n by m matrices up to 9 by 9",
-              "Solves using the Kronecker Product Vectorization Method",
+              "Sylvester Solver is the first web-based calculator that computes solutions to the Sylvester matrix equation.",
+              "It uses the Kronecker Product Vectorization Method to handle matrices up to 9×9.",
             ]}
             stack={sylvesterStack}
             previewImage={sylvester}
-          />
-
-          <ProjectCard
-            title="Orchard Signup"
-            projectLink="/calendar"
-            gitLink="https://github.com/EllisJeremy/calendarSignUp"
-            bullets={[
-              "A Calendar tool made for The Orchard Church for task sign-ups and events",
-              "Allows for admin-level accounts to create tasks and events and for normal accounts to sign up",
-              "The version linked here is separate from the real one, so feel free to add or remove tasks on it",
-            ]}
-            stack={orchardStack}
-            previewImage={calendar}
           />
         </div>
       </Element>

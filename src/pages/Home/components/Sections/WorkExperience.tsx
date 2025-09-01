@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import { forwardRef, ReactNode } from "react";
 import styles from "./Sections.module.css";
 
 export type StackItem = {
@@ -13,7 +13,7 @@ type WorkExperienceProps = {
   role: string;
   date: string;
   companyLink: string;
-  bullets: string[];
+  bullets: ReactNode[];
   stack: StackItem[];
 };
 
@@ -27,6 +27,7 @@ const WorkExperience = forwardRef<HTMLDivElement, WorkExperienceProps>(
           </a>
           <img src={companyLogo} style={{ height: "35px", marginRight: "10.5px" }} />
         </div>
+
         <div className={styles.titleDiv}>
           <h2 className={styles.subTitle}>{role}</h2>
           <h4 className={styles.subTitle}>{date}</h4>
@@ -34,12 +35,13 @@ const WorkExperience = forwardRef<HTMLDivElement, WorkExperienceProps>(
 
         <div className={styles.midDiv}>
           <ul className={styles.list}>
-            {bullets.map((text, idx) => (
+            {bullets.map((node, idx) => (
               <li key={idx} className={styles.listItem}>
-                {text}
+                {node}
               </li>
             ))}
           </ul>
+
           <div className={styles.stackDiv}>
             {stack.map(({ label, logo, link }, i) => (
               <a
