@@ -25,6 +25,7 @@ import aws from "../../assets/aws.svg";
 import vt from "../../assets/vt.svg";
 import c from "../../assets/c.png";
 import java from "../../assets/java.png";
+import expo from "../../assets/expo.svg";
 
 import { homeStore } from "../../store";
 
@@ -49,6 +50,11 @@ export default function Content() {
     { label: "Node", logo: node, link: "https://nodejs.org/" },
     { label: "MySQL", logo: mysql, link: "https://www.mysql.com/" },
     { label: "AWS", logo: aws, link: "https://aws.amazon.com/" },
+  ];
+
+  const lensStack = [
+    { label: "React Native", logo: react, link: "https://reactnative.dev/" },
+    { label: "Expo", logo: expo, link: "https://expo.dev/" },
   ];
 
   const VTStack = [
@@ -161,7 +167,7 @@ export default function Content() {
               "Orchard Signup is a full-stack platform that helps community members manage events and task signups.",
               "The site features secure login with JWT sessions, password hashing, and email notifications that confirm when users sign up for tasks.",
             ]}
-            stack={orchardStack}
+            stack={lensStack}
             previewImage={behaviorLens}
           />
         </div>
