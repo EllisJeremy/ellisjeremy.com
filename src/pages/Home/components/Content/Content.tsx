@@ -80,7 +80,7 @@ export default function Content() {
 
   const [aboutRef, aboutInView] = useInView({ threshold: 0.5 });
   const [experienceRef, experienceInView] = useInView({ threshold: 0.5 });
-  const [projectsRef, projectsInView] = useInView({ threshold: 0.5 });
+  const [projectsRef, projectsInView] = useInView({ threshold: 0.2 });
   const [educationRef, educationInView] = useInView({ threshold: 0.5 });
 
   useEffect(() => {
