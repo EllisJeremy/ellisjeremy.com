@@ -130,7 +130,7 @@ export default function Content() {
         <div ref={projectsRef}>
           <ProjectCard
             title="Orchard Signup"
-            projectLink="https://beyondsunday.org/account"
+            projectLink="https://beyondsunday.org/account/menu"
             gitLink="https://github.com/EllisJeremy/calendarSignUp"
             bullets={[
               "Orchard Signup is a full-stack platform that helps community members manage events and task signups.",
