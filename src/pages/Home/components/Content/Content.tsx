@@ -20,6 +20,7 @@ import postgreSQL from "../../assets/postgreSQL.png";
 import node from "../../assets/node.svg";
 import mysql from "../../assets/mysql.svg";
 import calendar from "../../assets/calendar.png";
+import behaviorLens from "../../assets/behaviorLens.png";
 import aws from "../../assets/aws.svg";
 import vt from "../../assets/vt.svg";
 import c from "../../assets/c.png";
@@ -150,6 +151,18 @@ export default function Content() {
             ]}
             stack={sylvesterStack}
             previewImage={sylvester}
+          />
+
+          <ProjectCard
+            title="Behavior Lens"
+            projectLink="https://github.com/EllisJeremy/behaviorLens"
+            gitLink="https://github.com/EllisJeremy/behaviorLens"
+            bullets={[
+              "Orchard Signup is a full-stack platform that helps community members manage events and task signups.",
+              "The site features secure login with JWT sessions, password hashing, and email notifications that confirm when users sign up for tasks.",
+            ]}
+            stack={orchardStack}
+            previewImage={behaviorLens}
           />
         </div>
       </Element>
