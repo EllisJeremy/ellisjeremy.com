@@ -148,6 +148,18 @@ export default function Content() {
           />
 
           <ProjectCard
+            title="Behavior Lens"
+            projectLink="https://github.com/EllisJeremy/behaviorLens"
+            gitLink="https://github.com/EllisJeremy/behaviorLens"
+            bullets={[
+              "Behavior Lens is a mobile app designed to help School Psychologists track and analyze behavioral data for students with special needs",
+              "It will be used by psychologists in the Arlington County public school system once complete.",
+            ]}
+            stack={lensStack}
+            previewImage={behaviorLens}
+          />
+
+          <ProjectCard
             title="Sylvester Solver"
             projectLink="/sylvester"
             gitLink="https://github.com/EllisJeremy/sylvestersolver"
@@ -157,18 +169,6 @@ export default function Content() {
             ]}
             stack={sylvesterStack}
             previewImage={sylvester}
-          />
-
-          <ProjectCard
-            title="Behavior Lens"
-            projectLink="https://github.com/EllisJeremy/behaviorLens"
-            gitLink="https://github.com/EllisJeremy/behaviorLens"
-            bullets={[
-              "Orchard Signup is a full-stack platform that helps community members manage events and task signups.",
-              "The site features secure login with JWT sessions, password hashing, and email notifications that confirm when users sign up for tasks.",
-            ]}
-            stack={lensStack}
-            previewImage={behaviorLens}
           />
         </div>
       </Element>
