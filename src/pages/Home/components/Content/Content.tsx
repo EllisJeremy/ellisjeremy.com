@@ -182,7 +182,7 @@ export default function Content() {
             degree="BS Computer Science"
             date="Expected: Dec 2026"
             schoolLink="https://www.cs.vt.edu/"
-            gpa="4.0"
+            gpa="3.83"
             bullets={[
               "Data Structures and Algorithms",
               "Computer Origination",
