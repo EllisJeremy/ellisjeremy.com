@@ -1,0 +1,60 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f7fa;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.card {
+  max-width: 720px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: #0f172a;
+}
+
+.subtitle {
+  font-size: 16px;
+  margin: 0 0 32px 0;
+  color: #475569;
+}
+
+.section {
+  margin-bottom: 32px;
+}
+
+.heading {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  color: #0f172a;
+}
+
+.text {
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0 0 12px 0;
+  color: #334155;
+}
+
+.link {
+  font-size: 15px;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}

@@ -75,7 +75,7 @@ export default function Content() {
       setTimeout(() => setBlur(false), 300);
       setTimeout(() => setFilter(false), 300);
     },
-    [setSection, setBlur, setScale, setFilter]
+    [setSection, setBlur, setScale, setFilter],
   );
 
   const [aboutRef, aboutInView] = useInView({ threshold: 0.5 });
@@ -153,7 +153,7 @@ export default function Content() {
             gitLink="https://github.com/EllisJeremy/behaviorLens"
             bullets={[
               "Behavior Lens is a mobile app designed to help School Psychologists track and analyze behavioral data for students with special needs",
-              "It will be used by psychologists in the Arlington County public school system once complete.",
+              "It was created for and is used by psychologists in the Arlington County public school system.",
             ]}
             stack={lensStack}
             previewImage={behaviorLens}

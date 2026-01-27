@@ -5,6 +5,7 @@ html {
 body {
   /*   background: linear-gradient(135deg, rgb(0, 57, 72), #10172a);*/
   background: rgb(0, 57, 72);
+  margin: 0;
 }
 
 a {
