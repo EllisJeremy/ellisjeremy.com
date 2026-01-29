@@ -149,7 +149,7 @@ export default function Content() {
 
           <ProjectCard
             title="Behavior Lens"
-            projectLink="https://github.com/EllisJeremy/behaviorLens"
+            projectLink="https://apps.apple.com/us/app/behaviorlens/id6758353524"
             gitLink="https://github.com/EllisJeremy/behaviorLens"
             bullets={[
               "Behavior Lens is a mobile app designed to help School Psychologists track and analyze behavioral data for students with special needs",
