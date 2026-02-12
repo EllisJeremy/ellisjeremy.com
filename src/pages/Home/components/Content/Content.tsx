@@ -26,6 +26,7 @@ import vt from "../../assets/vt.svg";
 import c from "../../assets/c.png";
 import java from "../../assets/java.png";
 import expo from "../../assets/expo.svg";
+import NYTGamesSolver from "../../assets/NYTGamesSolver.png";
 
 import { homeStore } from "../../store";
 
@@ -55,6 +56,12 @@ export default function Content() {
   const lensStack = [
     { label: "React Native", logo: react, link: "https://reactnative.dev/" },
     { label: "Expo", logo: expo, link: "https://expo.dev/" },
+  ];
+
+  const NYTGamesSolverStack = [
+    { label: "React", logo: react, link: "https://react.dev/" },
+    { label: "Typescript", logo: typescript, link: "https://www.typescriptlang.org/" },
+    { label: "Zustand", logo: zustand, link: "https://zustand.docs.pmnd.rs/" },
   ];
 
   const VTStack = [
@@ -157,6 +164,18 @@ export default function Content() {
             ]}
             stack={lensStack}
             previewImage={behaviorLens}
+          />
+
+          <ProjectCard
+            title="NYT Games Solver"
+            projectLink="https://github.com/EllisJeremy/NYTGamesSolver"
+            gitLink="https://github.com/EllisJeremy/NYTGamesSolver"
+            bullets={[
+              "A chrome extension that solves NYT games using data structure and algorithms.",
+              "Currently only the wordle one works, but more are coming soon.",
+            ]}
+            stack={NYTGamesSolverStack}
+            previewImage={NYTGamesSolver}
           />
 
           <ProjectCard
