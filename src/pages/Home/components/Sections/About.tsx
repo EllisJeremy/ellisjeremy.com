@@ -8,17 +8,16 @@ export default function About() {
       </h2>
 
       <div className={styles.aboutDiv}>
-        I am currently working at{" "}
+        I am an incoming SWE intern at{" "}
         <a
-          href="https://www.xometry.com/"
+          href="https://www.capitalone.com/about/"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.linkText}
         >
-          Xometry
+          Capital One
         </a>{" "}
-        as a Software Engineering Intern. Outside of school and work I build full stack web and
-        mobile apps primarily in{" "}
+        Outside of school and work I build full stack web and mobile apps primarily in{" "}
         <a
           href="https://react.dev/"
           target="_blank"

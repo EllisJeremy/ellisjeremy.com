@@ -13,8 +13,8 @@ type WorkExperienceProps = {
   role: string;
   date: string;
   companyLink: string;
-  bullets: ReactNode[];
-  stack: StackItem[];
+  bullets?: ReactNode[];
+  stack?: StackItem[];
 };
 
 const WorkExperience = forwardRef<HTMLDivElement, WorkExperienceProps>(
@@ -32,34 +32,35 @@ const WorkExperience = forwardRef<HTMLDivElement, WorkExperienceProps>(
           <h2 className={styles.subTitle}>{role}</h2>
           <h4 className={styles.subTitle}>{date}</h4>
         </div>
+        {bullets && stack && (
+          <div className={styles.midDiv}>
+            <ul className={styles.list}>
+              {bullets.map((node, idx) => (
+                <li key={idx} className={styles.listItem}>
+                  {node}
+                </li>
+              ))}
+            </ul>
 
-        <div className={styles.midDiv}>
-          <ul className={styles.list}>
-            {bullets.map((node, idx) => (
-              <li key={idx} className={styles.listItem}>
-                {node}
-              </li>
-            ))}
-          </ul>
-
-          <div className={styles.stackDiv}>
-            {stack.map(({ label, logo, link }, i) => (
-              <a
-                key={i}
-                className={styles.stackDivChild}
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {label}
-                <img src={logo} className={styles.stackImg} />
-              </a>
-            ))}
+            <div className={styles.stackDiv}>
+              {stack.map(({ label, logo, link }, i) => (
+                <a
+                  key={i}
+                  className={styles.stackDivChild}
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {label}
+                  <img src={logo} className={styles.stackImg} />
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     );
-  }
+  },
 );
 
 export default WorkExperience;

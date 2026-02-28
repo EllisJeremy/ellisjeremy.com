@@ -27,6 +27,7 @@ import c from "../../assets/c.png";
 import java from "../../assets/java.png";
 import expo from "../../assets/expo.svg";
 import NYTGamesSolver from "../../assets/NYTGamesSolver.png";
+import capitalOne from "../../assets/capitalOne.svg";
 
 import { homeStore } from "../../store";
 
@@ -112,10 +113,18 @@ export default function Content() {
         <div ref={experienceRef}>
           <WorkExperience
             ref={experienceRef}
+            company="Capital One"
+            companyLogo={capitalOne}
+            role="Software Engineering Intern"
+            date="Incoming Summer 2026"
+            companyLink="https://www.capitalone.com/about/"
+          />
+          <WorkExperience
+            ref={experienceRef}
             company="Xometry"
             companyLogo={xometryLogo}
             role="Software Engineering Intern"
-            date="June 2025 - Present"
+            date="June 2025 - Dec 2025"
             companyLink="https://www.xometry.com/"
             bullets={[
               "Supported the transition from v2 to v3 of the partner scoring algorithm by updating infrastructure across Node.js and Flask backends, modifying the algorithm’s logic, and adjusting integrations with MongoDB and PostgreSQL.",
