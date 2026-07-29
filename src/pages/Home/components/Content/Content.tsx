@@ -28,6 +28,11 @@ import java from "../../assets/java.png";
 import expo from "../../assets/expo.svg";
 import NYTGamesSolver from "../../assets/NYTGamesSolver.png";
 import capitalOne from "../../assets/capitalOne.svg";
+import go from "../../assets/go.svg";
+import databricks from "../../assets/databricks.svg";
+import snowflake from "../../assets/snowflake.svg";
+import xometryScreenshot from "../../assets/xometry.png";
+import docker from "../../assets/docker.svg";
 
 import { homeStore } from "../../store";
 
@@ -65,10 +70,24 @@ export default function Content() {
     { label: "Zustand", logo: zustand, link: "https://zustand.docs.pmnd.rs/" },
   ];
 
+  const sharkTankStack = [
+    { label: "React", logo: react, link: "https://react.dev/" },
+    { label: "Typescript", logo: typescript, link: "https://www.typescriptlang.org/" },
+    { label: "Zustand", logo: zustand, link: "https://zustand.docs.pmnd.rs/" },
+  ];
+
   const VTStack = [
     { label: "Java", logo: java, link: "https://www.java.com/" },
     { label: "C", logo: c, link: "https://en.wikipedia.org/wiki/C_(programming_language)" },
     { label: "React", logo: react, link: "https://react.dev/" },
+  ];
+
+  const capitalOneStack = [
+    { label: "Go", logo: go, link: "https://en.wikipedia.org/wiki/C_(programming_language)" },
+    { label: "Snowflake", logo: snowflake, link: "https://www.java.com/" },
+    { label: "DataBricks", logo: databricks, link: "https://www.java.com/" },
+    { label: "AWS", logo: aws, link: "https://aws.amazon.com/" },
+    { label: "Docker", logo: docker, link: "https://www.docker.com/" },
   ];
   const { setSection, setBlur, setScale, setFilter, allowObserver } = homeStore();
 
@@ -116,8 +135,14 @@ export default function Content() {
             company="Capital One"
             companyLogo={capitalOne}
             role="Software Engineering Intern"
-            date="Incoming Summer 2026"
+            date="June 2026 - August 2026"
             companyLink="https://www.capitalone.com/about/"
+            bullets={[
+              "Rebuilt the backend for a customer-service tool searching card transaction history, replacing a legacy Databricks pipeline with a Go AWS Lambda service that dynamically constructs queries across 20 tables and handles ~30K production requests/week; cut cold-start latency 3.5x (9.6s to 2.7s) and query latency on the heaviest workloads from ~4-8s to ~2s.",
+              "Built local development tooling for Lambdas where none existed, cut iteration time from a ~15-minute QA deploy to ~10 seconds locally.",
+              "Drove the cross-team migration of 20 source tables from Parquet on object storage into Snowflake.",
+            ]}
+            stack={capitalOneStack}
           />
           <WorkExperience
             ref={experienceRef}
@@ -188,6 +213,18 @@ export default function Content() {
           />
 
           <ProjectCard
+            title="Xometry Shark Tank Demo"
+            projectLink="/Xometry"
+            gitLink="https://github.com/EllisJeremy/XometrySharkTankDemo"
+            bullets={[
+              "The winning pitch from Xometry's 2025 intern 'Shark Tank' competition.",
+              "Adopted and launched company-wide as the Xometry Innovators Program, which commits $1 million annually to expanding engineering education.",
+            ]}
+            stack={sharkTankStack}
+            previewImage={xometryScreenshot}
+          />
+
+          <ProjectCard
             title="Sylvester Solver"
             projectLink="/sylvester"
             gitLink="https://github.com/EllisJeremy/sylvestersolver"
@@ -210,7 +247,7 @@ export default function Content() {
             degree="BS Computer Science"
             date="Expected: Dec 2026"
             schoolLink="https://www.cs.vt.edu/"
-            gpa="3.83"
+            gpa="3.82"
             bullets={[
               "Data Structures and Algorithms",
               "Computer Origination",

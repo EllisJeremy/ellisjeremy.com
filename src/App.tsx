@@ -4,6 +4,7 @@ import { HelmetProvider } from "react-helmet-async";
 import Home from "./pages/Home/Home";
 import Sylvester from "./pages/Sylvester/Sylvester";
 import BehaviorLens from "./pages/BehaviorLens/BehaviorLens";
+import XometrySharkTank from "./pages/XometrySharkTank/XometrySharkTank";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
           <Route path="/Home" element={<Navigate to="/" replace />} />
           <Route path="/Sylvester" element={<Sylvester />} />
           <Route path="/BehaviorLens" element={<BehaviorLens />} />
+          <Route path="/Xometry/*" element={<XometrySharkTank />} />
         </Routes>
       </Router>
     </HelmetProvider>

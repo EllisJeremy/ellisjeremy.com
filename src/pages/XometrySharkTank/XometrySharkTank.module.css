@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+/*
+  The demo originally loaded Xometry's "loft" design system from a CDN in its
+  index.html, which supplied the base reset and type scale every module css in
+  this folder was written against. Those rules are reproduced here, scoped to
+  the page, so the page doesn't depend on an external stylesheet and doesn't
+  leak into the rest of the portfolio.
+*/
+
+.sharkTank,
+.sharkTank *,
+.sharkTank *::before,
+.sharkTank *::after {
+  box-sizing: border-box;
+}
+
+.sharkTank {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #092c47;
+  background-color: #ffffff;
+  margin: 0px;
+  padding: 0px;
+}
+
+.sharkTank h1,
+.sharkTank h2,
+.sharkTank h3,
+.sharkTank h4,
+.sharkTank h5,
+.sharkTank h6 {
+  margin: 0;
+  color: #092c47;
+}
+
+.sharkTank h1 {
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 400;
+}
+
+.sharkTank h2 {
+  font-size: 32px;
+  line-height: 34px;
+  font-weight: 400;
+}
+
+.sharkTank h3 {
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.sharkTank h4 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.sharkTank h5 {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 800;
+}
+
+.sharkTank p {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #092c47;
+}
+
+.sharkTank small {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #22445f;
+}

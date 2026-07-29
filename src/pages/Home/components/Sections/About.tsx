@@ -8,7 +8,7 @@ export default function About() {
       </h2>
 
       <div className={styles.aboutDiv}>
-        I am an incoming SWE intern at{" "}
+        I am an SWE intern at{" "}
         <a
           href="https://www.capitalone.com/about/"
           target="_blank"
